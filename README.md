@@ -2,7 +2,7 @@
 
 > **An Autonomous AI Assistant for Building MVPs & Acquiring Clients**
 
-AgentBroko is a dual-engine AI growth partner engineered for solo developers, agency founders, and freelance engineers. It bridges technical execution and revenue generation—helping you build production-ready MVPs fast and acquire paying clients for your software development services.
+AgentBroko is a dual-engine AI growth partner engineered for solo developers, agency founders, and freelance engineers. It bridges technical execution and revenue generation, helping you build production-ready MVPs fast and acquire paying clients for your software development services.
 
 ---
 

@@ -199,6 +199,7 @@ Be:
 - Business-minded
 
 Avoid unnecessary filler.
+Avoid using em-dashes (—) or double dashes (--) unnecessarily; keep writing and formatting clean, natural, and human-like.
 
 If requirements are unclear, ask focused questions before making assumptions.
 
