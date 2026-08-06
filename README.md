@@ -1,12 +1,12 @@
-# AgentBroko 🤖
+# AgentBroko
 
 > **An Autonomous AI Assistant for Building MVPs & Acquiring Clients**
 
-AgentBroko is a dual-engine AI growth partner engineered for solo developers, agency founders, and freelance engineers. It bridges technical execution and revenue generation—helping you **build production-ready MVPs fast** and **acquire paying clients for your software development services**.
+AgentBroko is a dual-engine AI growth partner engineered for solo developers, agency founders, and freelance engineers. It bridges technical execution and revenue generation—helping you build production-ready MVPs fast and acquire paying clients for your software development services.
 
 ---
 
-## 🎯 Primary Focus
+## Primary Focus
 
 AgentBroko operates around two core pillars to help you build a profitable business:
 
@@ -29,25 +29,25 @@ AgentBroko operates around two core pillars to help you build a profitable busin
 
 ---
 
-## 🚀 Core Features
+## Core Features
 
 ### 1. MVP Building Engine
 Turn ideas into scalable, production-grade products quickly:
-* **Rapid Full-Stack Development**: Scaffold and code web/mobile MVPs with clean architecture.
-* **Modern UI/UX**: Build polished, responsive user interfaces designed for conversion.
-* **API & Database Design**: Structure performant schemas, REST/GraphQL endpoints, and third-party integrations.
-* **Production Readiness**: Code with error handling, security best practices, and test coverage out of the box.
+- **Rapid Full-Stack Development**: Scaffold and code web/mobile MVPs with clean architecture.
+- **Modern UI/UX**: Build polished, responsive user interfaces designed for conversion.
+- **API & Database Design**: Structure performant schemas, REST/GraphQL endpoints, and third-party integrations.
+- **Production Readiness**: Code with error handling, security best practices, and test coverage out of the box.
 
 ### 2. Client Acquisition & Business Growth
 Identify business opportunities and land high-paying service contracts:
-* **Automated Website Audits**: Scan target client sites for broken links, slow loading, mobile issues, and accessibility defects.
-* **Audit-Driven Outreach**: Convert technical audit findings into high-converting, value-first client proposals.
-* **Freelance & Agency Toolkit**: Draft winning Upwork proposals, cold outreach emails, scope documents, and pricing strategies.
-* **Lead Discovery**: Spot businesses with outdated tech stacks, missing SSL, or broken user experiences.
+- **Automated Website Audits**: Scan target client sites for broken links, slow loading, mobile issues, and accessibility defects.
+- **Audit-Driven Outreach**: Convert technical audit findings into high-converting, value-first client proposals.
+- **Freelance & Agency Toolkit**: Draft winning Upwork proposals, cold outreach emails, scope documents, and pricing strategies.
+- **Lead Discovery**: Spot businesses with outdated tech stacks, missing SSL, or broken user experiences.
 
 ---
 
-## 🛠️ Workflows
+## Workflows
 
 ### Building an MVP
 1. **Validate & Plan**: Define the core feature set, tech stack, and user flow.
@@ -61,7 +61,7 @@ Identify business opportunities and land high-paying service contracts:
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
 ### Installation
 
@@ -79,7 +79,7 @@ Identify business opportunities and land high-paying service contracts:
 
 ---
 
-## 💡 Example Prompts
+## Example Prompts
 
 | Category | Example Prompt |
 | :--- | :--- |
@@ -90,7 +90,7 @@ Identify business opportunities and land high-paying service contracts:
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
