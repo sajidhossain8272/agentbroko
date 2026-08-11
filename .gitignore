@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+evmwallet.txt
+github_token.txt
+github_config.json
+agentbroko.lock
+heartbeat.json
+agent_state.json

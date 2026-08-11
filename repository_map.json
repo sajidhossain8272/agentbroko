@@ -1,0 +1,22 @@
+{
+  "repository": "agentbroko/agentbroko",
+  "url": "https://github.com/agentbroko/agentbroko",
+  "language": "Python 3.14",
+  "framework": "AgentBroko V7 Autonomous Business OS",
+  "default_branch": "main",
+  "last_commit": "v7.0.0-release",
+  "open_issues": 0,
+  "open_prs": 1,
+  "ci_status": "SUCCESS",
+  "deployment": "24/7 Autonomous Scheduler (task-735)",
+  "health": "HEALTHY",
+  "core_modules": [
+    "autonomous_scheduler.py",
+    "decision_engine.py",
+    "education_engine.py",
+    "audience_engine.py",
+    "github_engine.py",
+    "security_engine.py"
+  ],
+  "updated_at": "2026-08-11 07:23:24"
+}

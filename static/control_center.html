@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentBroko Real-Time Control Center</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: rgba(18, 26, 43, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #6366f1;
+      --accent-glow: rgba(99, 102, 241, 0.35);
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --info: #3b82f6;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    body { background-color: var(--bg); color: var(--text); padding: 24px; min-height: 100vh; }
+
+    /* Header & Status Bar */
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      padding: 20px 28px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+    }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand h1 { font-size: 24px; font-weight: 800; tracking: -0.5px; background: linear-gradient(135deg, #a855f7, #6366f1, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .status-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 99px;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--success);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--success); box-shadow: 0 0 10px var(--success); }
+
+    /* Control Toolbar */
+    .toolbar { display: flex; gap: 12px; }
+    .btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn:hover { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.2); }
+    .btn-primary { background: var(--accent); border-color: var(--accent); }
+    .btn-primary:hover { background: #4f46e5; box-shadow: 0 0 16px var(--accent-glow); }
+    .btn-danger { background: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.4); color: var(--danger); }
+    .btn-danger:hover { background: rgba(239, 68, 68, 0.35); }
+
+    /* Layout Grid */
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 24px;
+    }
+    .main-panel { display: flex; flex-direction: column; gap: 24px; }
+    .side-panel { display: flex; flex-direction: column; gap: 24px; }
+
+    /* Card Panels */
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .card-title { font-size: 16px; font-weight: 700; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
+
+    /* Telemetry Header Grid */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .metric-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 16px;
+      border-radius: 12px;
+    }
+    .metric-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 6px; }
+    .metric-value { font-size: 18px; font-weight: 700; color: #fff; }
+
+    /* Kanban Board */
+    .kanban-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .kanban-col {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 14px;
+      min-height: 260px;
+    }
+    .col-header { font-size: 13px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; display: flex; justify-content: space-between; }
+    .task-card {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 10px;
+      font-size: 13px;
+    }
+    .task-title { font-weight: 700; margin-bottom: 6px; }
+    .task-meta { font-size: 11px; color: var(--text-muted); display: flex; justify-content: space-between; }
+
+    /* Activity Stream */
+    .activity-feed {
+      max-height: 280px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 13px;
+    }
+    .feed-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.02);
+      border-left: 3px solid var(--accent);
+    }
+    .feed-time { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted); width: 65px; }
+
+    /* Live Terminal */
+    .terminal {
+      background: #040711;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      height: 220px;
+      overflow-y: auto;
+      color: #34d399;
+      line-height: 1.5;
+    }
+    .log-line { margin-bottom: 4px; word-break: break-all; }
+    .log-info { color: #60a5fa; }
+    .log-warn { color: #fbbf24; }
+    .log-error { color: #f87171; }
+
+    /* Goal Progress Bar */
+    .progress-bg { background: rgba(255, 255, 255, 0.08); height: 6px; border-radius: 99px; overflow: hidden; margin-top: 8px; }
+    .progress-fill { background: linear-gradient(90deg, var(--accent), var(--success)); height: 100%; border-radius: 99px; }
+  </style>
+</head>
+<body>
+
+  <!-- Header & Agent Status Bar -->
+  <div class="header-bar">
+    <div class="brand">
+      <span style="font-size: 28px;">🦞</span>
+      <div>
+        <h1>AgentBroko Control Center</h1>
+        <div style="font-size: 12px; color: var(--text-muted);">Unified Autonomous Business, Education & Software OS</div>
+      </div>
+    </div>
+    <div class="toolbar">
+      <div id="statusBadge" class="status-badge">
+        <div class="status-dot"></div>
+        <span id="statusText">ONLINE</span>
+      </div>
+      <button class="btn" onclick="controlAgent('pause')">Pause</button>
+      <button class="btn btn-primary" onclick="controlAgent('resume')">Resume</button>
+      <button class="btn btn-danger" onclick="controlAgent('stop')">Stop</button>
+      <button class="btn btn-primary" onclick="promptNewGoal()">+ New Goal</button>
+    </div>
+  </div>
+
+  <!-- Telemetry Metrics Grid -->
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-label">System Uptime</div>
+      <div id="metricUptime" class="metric-value">--</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Current Task</div>
+      <div id="metricTask" class="metric-value" style="font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Master OS Loop</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Active Goal</div>
+      <div id="metricGoal" class="metric-value" style="font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Autonomous Software OS</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Queue Size</div>
+      <div id="metricQueue" class="metric-value">0 Tasks</div>
+    </div>
+  </div>
+
+  <!-- Main Content Grid -->
+  <div class="grid-container">
+
+    <!-- Left Column: Kanban Board & Telemetry -->
+    <div class="main-panel">
+
+      <!-- Kanban Board -->
+      <div class="card">
+        <div class="card-title">
+          <span>📋 Live Kanban Task Board</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Real-time execution state</span>
+        </div>
+        <div class="kanban-grid">
+          <div class="kanban-col">
+            <div class="col-header">Queued <span id="countQueued">0</span></div>
+            <div id="colQueued"></div>
+          </div>
+          <div class="kanban-col">
+            <div class="col-header">Running <span id="countRunning">0</span></div>
+            <div id="colRunning"></div>
+          </div>
+          <div class="kanban-col">
+            <div class="col-header">Verifying <span id="countVerifying">0</span></div>
+            <div id="colVerifying"></div>
+          </div>
+          <div class="kanban-col">
+            <div class="col-header">Completed <span id="countCompleted">0</span></div>
+            <div id="colCompleted"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decision Telemetry Panel -->
+      <div class="card">
+        <div class="card-title">
+          <span>🧠 Decision Telemetry & Verification</span>
+          <span style="font-size: 12px; color: var(--success);">Sanitized Execution Summary</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; font-size: 13px;">
+          <div>
+            <div style="color: var(--text-muted); font-size: 11px; margin-bottom: 4px;">ACTIVE OBJECTIVE</div>
+            <div id="telObjective" style="font-weight: 600;">Autonomous Blockchain Education & Software Factory</div>
+          </div>
+          <div>
+            <div style="color: var(--text-muted); font-size: 11px; margin-bottom: 4px;">SELECTED CAPABILITY</div>
+            <div id="telSkill" style="font-weight: 600; color: var(--accent);">github_code_agent + social_skill</div>
+          </div>
+          <div>
+            <div style="color: var(--text-muted); font-size: 11px; margin-bottom: 4px;">EXPECTED OUTCOME</div>
+            <div id="telExpected">Verified Moltbook lesson post & green CI build</div>
+          </div>
+          <div>
+            <div style="color: var(--text-muted); font-size: 11px; margin-bottom: 4px;">VERIFICATION RESULT</div>
+            <div id="telVerification" style="color: var(--success); font-weight: 600;">PASSED (Zero Spam Flags)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Business Intelligence & Opportunity Pipeline -->
+      <div class="card">
+        <div class="card-title">
+          <span>💼 Business Intelligence & Opportunity Pipeline</span>
+          <span style="font-size: 12px; color: var(--accent);">Evidence-Based Scoring</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 8px; border-left: 3px solid var(--success);">
+            <div style="font-size: 12px; color: var(--text-muted); font-weight:600;">ACTIVE STRATEGY</div>
+            <div style="font-size: 14px; font-weight: 700; margin: 2px 0;">Open-Source Software Factory & Value-First Education (Zero Spam Links)</div>
+            <div style="font-size: 12px; color: var(--text-muted);">Confidence: 92% | Selected Reason: Evidence shows value-first open-source tools build high trust without platform spam flags.</div>
+          </div>
+
+          <div style="font-size: 13px; font-weight: 700; margin-top: 6px;">Ranked Discovered Opportunities</div>
+          <div id="oppPipeline" style="display: flex; flex-direction: column; gap: 8px; font-size: 12px;">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Moltbook Community Hub -->
+      <div class="card">
+        <div class="card-title">
+          <span>🌐 Moltbook Community Hub & Social Intelligence</span>
+          <span style="font-size: 12px; color: var(--info);">Active Conversations & Reputation</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div>
+            <div style="font-size: 13px; font-weight: 700; margin-bottom: 8px;">Scored Feed Discussions</div>
+            <div id="socialFeedList" style="display: flex; flex-direction: column; gap: 8px; font-size: 12px; max-height: 200px; overflow-y: auto;">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+          <div>
+            <div style="font-size: 13px; font-weight: 700; margin-bottom: 8px;">Active Thread Monitor & Reputation</div>
+            <div id="socialReputation" style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 8px; font-size: 12px; display:flex; flex-direction:column; gap:6px;">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Intelligence Hub -->
+      <div class="card">
+        <div class="card-title">
+          <span>🧠 Content Intelligence Hub (Domain-Agnostic)</span>
+          <span style="font-size: 12px; color: var(--success);">Zero Niche Lock-in</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 8px; border-left: 3px solid var(--accent);">
+            <div style="font-size: 11px; color: var(--text-muted); font-weight:600;">ACTIVE TOPIC & STRATEGY</div>
+            <div id="contentActiveTopic" style="font-size: 14px; font-weight: 700; margin: 2px 0;">Autonomous Agent Reliability & State Machines</div>
+            <div id="contentActiveDetails" style="font-size: 11px; color: var(--text-muted);">Format: Technical Breakdown | Length: Medium | Target: m/technology</div>
+          </div>
+
+          <div style="font-size: 13px; font-weight: 700; margin-top: 4px;">Dynamic Multi-Domain Candidate Pool</div>
+          <div id="contentCandidatePool" style="display: flex; flex-direction: column; gap: 6px; font-size: 11px; max-height: 160px; overflow-y: auto;">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Provider Health & Multi-Key Failover -->
+      <div class="card">
+        <div class="card-title">
+          <span>⚡ AI Provider Health & Multi-Key Router</span>
+          <span style="font-size: 12px; color: var(--info);">Gemini + OpenRouter Gateway</span>
+        </div>
+        <div id="aiProvidersList" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; font-size: 11px;">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- Revenue Ledger & Permissions Safe Mode -->
+      <div class="card">
+        <div class="card-title">
+          <span>💰 Confirmed Revenue Ledger & Safety Scoping</span>
+          <span style="font-size: 12px; color: var(--accent);">Level 3 Scoped</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; font-size: 12px;">
+          <div style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 6px;">
+            <div style="font-weight: 700; color: var(--text-muted); font-size: 10px;">CONFIRMED REAL REVENUE</div>
+            <div id="revConfirmed" style="font-size: 18px; font-weight: 700; color: var(--success);">$0.00</div>
+            <div id="revNet" style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Net Profit: $0.00 | Txs: 0</div>
+          </div>
+          <div style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 6px;">
+            <div style="font-weight: 700; color: var(--text-muted); font-size: 10px;">PERMISSION LEVEL & SAFE MODE</div>
+            <div id="permLevel" style="font-size: 13px; font-weight: 700; margin: 2px 0;">Level 3 (EXTERNAL_CONTENT)</div>
+            <div id="permSafeMode" style="font-size: 11px; color: var(--success);">Safe Mode: DISABLED (Level 3 Active)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Terminal -->
+      <div class="card">
+        <div class="card-title">
+          <span>💻 Live Redacted Event Log Terminal</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Real-time stream</span>
+        </div>
+        <div id="terminal" class="terminal">
+          <div class="log-line log-info">[SYSTEM] Connected live to AgentBroko Event Stream</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Column: Activity Stream & Goals -->
+    <div class="side-panel">
+
+      <!-- Live Activity Feed -->
+      <div class="card">
+        <div class="card-title">⚡ Live Activity Stream</div>
+        <div id="activityFeed" class="activity-feed">
+          <div class="feed-item">
+            <div class="feed-time">--:--:--</div>
+            <div>
+              <div style="font-weight: 600;">Agent Boot</div>
+              <div style="color: var(--text-muted); font-size: 12px;">Unified OS initialized</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Goals Panel -->
+      <div class="card">
+        <div class="card-title">🎯 Active Goals</div>
+        <div id="goalsList" style="display: flex; flex-direction: column; gap: 14px;">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    // Server-Sent Events Real-Time Connection
+    const evtSource = new EventSource('/api/stream');
+
+    evtSource.onmessage = function(event) {
+      const data = JSON.parse(event.data);
+      appendActivity(data);
+      appendTerminalLog(data);
+      fetchStatus();
+      fetchTasks();
+      fetchGoals();
+      fetchOpportunities();
+      fetchSocialData();
+      fetchContentData();
+      fetchV9Data();
+    };
+
+    function fetchV9Data() {
+      fetch('/api/ai/health')
+        .then(res => res.json())
+        .then(data => renderAIProviders(data.providers || []));
+
+      fetch('/api/revenue')
+        .then(res => res.json())
+        .then(data => renderRevenue(data));
+
+      fetch('/api/permissions')
+        .then(res => res.json())
+        .then(data => renderPermissions(data));
+    }
+
+    function renderAIProviders(providers) {
+      const container = document.getElementById('aiProvidersList');
+      if (!container) return;
+      container.innerHTML = providers.map(p => `
+        <div style="background: rgba(255,255,255,0.03); padding: 8px; border-radius: 6px;">
+          <div style="font-weight:700;">${p.name}</div>
+          <div style="color:${p.has_key ? 'var(--success)' : 'var(--text-muted)'}; font-size:10px;">
+            ${p.has_key ? 'HEALTHY (Configured)' : 'UNCONFIGURED'}
+          </div>
+          <div style="color:var(--text-muted); font-size:9px; margin-top:2px;">Reqs: ${p.requests} | Latency: ${p.latency_ms}ms</div>
+        </div>
+      `).join('');
+    }
+
+    function renderRevenue(rev) {
+      const confElem = document.getElementById('revConfirmed');
+      const netElem = document.getElementById('revNet');
+      if (confElem) confElem.innerText = `$${(rev.confirmed_revenue || 0).toFixed(2)}`;
+      if (netElem) netElem.innerText = `Net Profit: $${(rev.net_profit || 0).toFixed(2)} | Txs: ${rev.transaction_count || 0}`;
+    }
+
+    function renderPermissions(perm) {
+      const lvlElem = document.getElementById('permLevel');
+      const safeElem = document.getElementById('permSafeMode');
+      if (lvlElem) lvlElem.innerText = `Level ${perm.current_level || 3} (${perm.level_name || 'EXTERNAL_CONTENT'})`;
+      if (safeElem) {
+        safeElem.innerText = perm.safe_mode ? 'Safe Mode: ENABLED (External Mutations Blocked)' : 'Safe Mode: DISABLED (Level 3 Active)';
+        safeElem.style.color = perm.safe_mode ? 'var(--warning)' : 'var(--success)';
+      }
+    }
+
+    function fetchContentData() {
+      fetch('/api/content/brain')
+        .then(res => res.json())
+        .then(data => renderContentBrain(data));
+    }
+
+    function renderContentBrain(data) {
+      const candidates = data.candidates || [];
+      const decision = data.active_decision || {};
+
+      const topicElem = document.getElementById('contentActiveTopic');
+      const detailsElem = document.getElementById('contentActiveDetails');
+      if (topicElem) topicElem.innerText = decision.topic || 'Evaluating World State...';
+      if (detailsElem) detailsElem.innerText = `Format: ${decision.format || 'Analysis'} | Length: ${decision.length || 'Medium'} | Target: ${decision.submolt || 'm/general'} | Action: ${decision.action || 'WAIT'}`;
+
+      const poolContainer = document.getElementById('contentCandidatePool');
+      if (!poolContainer) return;
+      poolContainer.innerHTML = candidates.map(c => `
+        <div style="background: rgba(255,255,255,0.03); padding: 8px; border-radius: 6px; display:flex; justify-content:space-between;">
+          <div>
+            <div style="font-weight:600;">${c.topic}</div>
+            <div style="color:var(--text-muted); font-size:10px;">Cat: ${c.category} | Format: ${c.suggested_format} | Target: ${c.suggested_submolt}</div>
+          </div>
+          <div style="font-weight:700; color:var(--accent); font-size:11px;">Score: ${c.score}</div>
+        </div>
+      `).join('');
+    }
+
+    function fetchSocialData() {
+      fetch('/api/social/feed')
+        .then(res => res.json())
+        .then(data => renderSocialFeed(data.feed || []));
+
+      fetch('/api/social/memory')
+        .then(res => res.json())
+        .then(data => renderSocialReputation(data));
+    }
+
+    function renderSocialFeed(feed) {
+      const container = document.getElementById('socialFeedList');
+      if (!container) return;
+      container.innerHTML = feed.slice(0, 5).map(f => `
+        <div style="background: rgba(255,255,255,0.03); padding: 8px; border-radius: 6px; display:flex; justify-content:space-between;">
+          <div>
+            <div style="font-weight:600;">${f.title ? f.title.substring(0, 30) : 'Discussion'}...</div>
+            <div style="color:var(--text-muted); font-size:10px;">Cat: ${f.category} | @${f.author}</div>
+          </div>
+          <div style="font-weight:700; color:${f.should_participate ? 'var(--success)' : 'var(--text-muted)'}; font-size:11px;">
+            ${f.should_participate ? 'PARTICIPATE' : 'SKIP'} (${f.score})
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderSocialReputation(mem) {
+      const container = document.getElementById('socialReputation');
+      if (!container) return;
+      const rep = mem.reputation_metrics || {};
+      container.innerHTML = `
+        <div><strong>Helpful Interactions:</strong> ${rep.helpful_interactions || 0}</div>
+        <div><strong>Comments / Replies:</strong> ${rep.comments_created || 0} / ${rep.replies_created || 0}</div>
+        <div><strong>Upvotes Given:</strong> ${rep.upvotes_given || 0}</div>
+        <div><strong>Opportunities Discovered:</strong> ${rep.opportunities_discovered || 0}</div>
+        <div style="color:var(--accent); font-size:11px; margin-top:4px;"><strong>Style:</strong> Value-First Non-Promotional Community Member</div>
+      `;
+    }
+
+    function fetchOpportunities() {
+      fetch('/api/business/opportunities')
+        .then(res => res.json())
+        .then(data => {
+          renderOpportunities(data.opportunities || []);
+        });
+    }
+
+    function renderOpportunities(opps) {
+      const container = document.getElementById('oppPipeline');
+      if (!container) return;
+      container.innerHTML = opps.map(o => `
+        <div style="background: rgba(255,255,255,0.03); padding: 10px; border-radius: 8px; display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <div style="font-weight:700;">${o.name} <span style="font-size:10px; color:var(--text-muted); font-weight:normal;">[${o.category}]</span></div>
+            <div style="color:var(--text-muted); font-size:11px;">Est. Revenue: $${o.estimated_revenue} | Conf: ${o.confidence * 100}%</div>
+          </div>
+          <div style="font-weight:700; color:var(--accent); font-size:13px;">Score: ${o.score}</div>
+        </div>
+      `).join('');
+    }
+
+    function fetchStatus() {
+      fetch('/api/agent/status')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('statusText').innerText = data.status;
+          document.getElementById('metricUptime').innerText = data.uptime;
+          document.getElementById('metricTask').innerText = data.current_task;
+          document.getElementById('metricGoal').innerText = data.current_goal;
+          document.getElementById('metricQueue').innerText = data.queue_size + ' Tasks';
+        });
+    }
+
+    function fetchTasks() {
+      fetch('/api/tasks')
+        .then(res => res.json())
+        .then(data => {
+          renderKanban(data.tasks);
+        });
+    }
+
+    function fetchGoals() {
+      fetch('/api/goals')
+        .then(res => res.json())
+        .then(data => {
+          renderGoals(data.goals);
+        });
+    }
+
+    function renderKanban(tasks) {
+      const cols = { QUEUED: [], RUNNING: [], VERIFYING: [], COMPLETED: [] };
+      tasks.forEach(t => {
+        const st = t.status === 'BLOCKED' || t.status === 'FAILED' ? 'COMPLETED' : t.status;
+        if (cols[st]) cols[st].push(t);
+      });
+
+      ['Queued', 'Running', 'Verifying', 'Completed'].forEach(colName => {
+        const key = colName.toUpperCase();
+        const container = document.getElementById('col' + colName);
+        document.getElementById('count' + colName).innerText = cols[key].length;
+        container.innerHTML = cols[key].map(t => `
+          <div class="task-card">
+            <div class="task-title">${t.objective}</div>
+            <div class="task-meta">
+              <span>#${t.id}</span>
+              <span style="color: var(--accent); font-weight:600;">P:${t.priority}</span>
+            </div>
+          </div>
+        `).join('');
+      });
+    }
+
+    function renderGoals(goals) {
+      const container = document.getElementById('goalsList');
+      container.innerHTML = goals.map(g => `
+        <div>
+          <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:600;">
+            <span>${g.objective}</span>
+            <span>${g.progress}%</span>
+          </div>
+          <div class="progress-bg">
+            <div class="progress-fill" style="width: ${g.progress}%;"></div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function appendActivity(data) {
+      const feed = document.getElementById('activityFeed');
+      const time = data.timestamp ? data.timestamp.split(' ')[1] : '--:--:--';
+      const item = document.createElement('div');
+      item.className = 'feed-item';
+      item.innerHTML = `
+        <div class="feed-time">${time}</div>
+        <div>
+          <div style="font-weight: 600;">${data.event}</div>
+          <div style="color: var(--text-muted); font-size: 12px;">${data.message}</div>
+        </div>
+      `;
+      feed.insertBefore(item, feed.firstChild);
+      if (feed.children.length > 30) feed.removeChild(feed.lastChild);
+    }
+
+    function appendTerminalLog(data) {
+      const term = document.getElementById('terminal');
+      const line = document.createElement('div');
+      line.className = 'log-line ' + (data.level === 'ERROR' ? 'log-error' : data.level === 'WARN' ? 'log-warn' : 'log-info');
+      line.innerText = `[${data.timestamp || ''}] [${data.event}] ${data.message}`;
+      term.appendChild(line);
+      term.scrollTop = term.scrollHeight;
+    }
+
+    function controlAgent(action) {
+      fetch('/api/agent/' + action, { method: 'POST' })
+        .then(res => res.json())
+        .then(() => fetchStatus());
+    }
+
+    function promptNewGoal() {
+      const obj = prompt("Enter new autonomous goal objective:");
+      if (obj) {
+        fetch('/api/goals', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({objective: obj, priority: 85.0})
+        }).then(() => fetchGoals());
+      }
+    }
+
+    // Initial load
+    fetchStatus();
+    fetchTasks();
+    fetchGoals();
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "wallets": {
+    "bitcoin": {
+      "addresses": {
+        "native_segwit": "bc1qccja5du70v74upzd665x3r5ptkfx9emjhxhjpc",
+        "nested_segwit": "3DwBN7KQSxrBXrskkyCBN2DGSppRfQ2zk6",
+        "legacy": "1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq"
+      },
+      "primary_address": "1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq",
+      "balance_btc": 0.0
+    },
+    "evm": {
+      "address": "0xe74d4e103FE88B07eDf39664E74a99463D85Cfc6",
+      "networks": {
+        "Base": 0.0,
+        "Polygon": 0.0,
+        "Arbitrum": 0.0,
+        "Ethereum": 0.0,
+        "BNB Chain (BSC)": 0.0
+      }
+    },
+    "solana": {
+      "address": "5Q5DTQ9bsitWXtgZXivUZZPYkwz6BsFQWJBKRGsgj5Wb",
+      "balance_sol": 0.0
+    }
+  },
+  "revenue": {
+    "total": 0.0,
+    "services": 0.0,
+    "products": 0.0,
+    "affiliate": 0.0,
+    "sponsorships": 0.0
+  },
+  "updated_at": 1786412009.8386643
+}
