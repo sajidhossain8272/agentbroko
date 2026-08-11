@@ -7,6 +7,11 @@ from funding_ledger import FundingLedger
 from agentbroko_dashboard import generate_v5_education_report
 
 def test_v5_suite():
+    # Clean up any leftover test files from previous runs
+    for tf in ["test_gaps.json", "test_funding.json"]:
+        if os.path.exists(tf):
+            os.remove(tf)
+
     print("Testing EducationEngine 5-Level Curriculum...")
     for lvl in ["level_1", "level_2", "level_3", "level_4", "level_5"]:
         post = EducationEngine.generate_educational_post(lvl)

@@ -18,9 +18,11 @@ class GitHubEngine:
 
     @staticmethod
     def load_token():
-        # 1. Environment Variable
-        if os.environ.get("GITHUB_TOKEN"):
-            return os.environ.get("GITHUB_TOKEN").strip()
+        # 1. Environment Variable (check both common casings)
+        for env_key in ("GITHUB_TOKEN", "github_token"):
+            val = os.environ.get(env_key)
+            if val:
+                return val.strip()
 
         # 2. github_token.txt file
         if os.path.exists("github_token.txt"):

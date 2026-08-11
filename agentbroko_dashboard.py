@@ -9,6 +9,78 @@ from security_engine import SecurityEngine
 from health_monitor import HealthMonitor
 from revenue_ledger import RevenueLedger
 
+def generate_v3_ceo_report():
+    from revenue_engine import RevenueEngine
+    rev = RevenueEngine().get_financial_summary()
+    health = HealthMonitor().get_health_status()
+
+    report = f"""
+# 🏢 AgentBroko V3 Daily CEO Report
+*Generated: {time.strftime("%Y-%m-%d %H:%M:%S")} | Health: {health['status']}*
+
+### 💰 Financial Summary
+- **Potential Revenue:** ${rev['potential_revenue']:.2f}
+- **Expected Revenue:** ${rev['expected_revenue']:.2f}
+- **Confirmed Revenue:** ${rev['confirmed_revenue']:.2f}
+- **Received Revenue:** ${rev['received_revenue']:.2f}
+- **Expenses:** ${rev['expenses']:.2f}
+- **Net Profit:** ${rev['net_profit']:.2f}
+- **Confirmed Transactions:** {rev['transaction_count']}
+
+### 🔒 Transparency
+Confirmed revenue is strictly separated from potential/expected revenue. No fabricated financial data.
+"""
+    return report
+
+
+def generate_v5_education_report():
+    funding = FundingLedger().data.get("summary", {})
+    health = HealthMonitor().get_health_status()
+
+    report = f"""
+# 🎓 AgentBroko V5 Education & Funding Report
+*Generated: {time.strftime("%Y-%m-%d %H:%M:%S")} | Health: {health['status']}*
+
+### 📚 Education Metrics
+- **Educational Resources Published:** {funding.get('educational_resources_published', 0)}
+- **Questions Answered:** {funding.get('questions_answered', 0)}
+
+### 💰 Funding Summary
+- **Affiliate Revenue:** ${funding.get('total_affiliate_revenue_usd', 0.0):.2f}
+- **Donations:** ${funding.get('total_donations_usd', 0.0):.2f}
+- **Operating Costs:** ${funding.get('total_operating_costs_usd', 0.0):.2f}
+- **Net Funding:** ${funding.get('net_funding_usd', 0.0):.2f}
+
+### 🔒 Transparency
+All funding is tracked transparently in the FundingLedger. Educational content follows the Answer-First Principle with no affiliate links.
+"""
+    return report
+
+
+def generate_v6_growth_report():
+    funding = FundingLedger().data.get("summary", {})
+    health = HealthMonitor().get_health_status()
+
+    report = f"""
+# 📈 AgentBroko V6 Growth & Monetization Report
+*Generated: {time.strftime("%Y-%m-%d %H:%M:%S")} | Health: {health['status']}*
+
+### 🚀 Growth Metrics
+- **Educational Resources Published:** {funding.get('educational_resources_published', 0)}
+- **Questions Answered:** {funding.get('questions_answered', 0)}
+
+### 💰 Monetization Summary
+- **Affiliate Revenue:** ${funding.get('total_affiliate_revenue_usd', 0.0):.2f}
+- **Donations:** ${funding.get('total_donations_usd', 0.0):.2f}
+- **Operating Costs:** ${funding.get('total_operating_costs_usd', 0.0):.2f}
+- **Net Funding:** ${funding.get('net_funding_usd', 0.0):.2f}
+
+### 🔒 Transparency
+All growth and monetization metrics are tracked transparently. No fabricated revenue or activity.
+"""
+    return report
+
+
 def generate_v7_engineering_report():
     treasury = Treasury()
     treasury_data = treasury.sync_balances()
@@ -53,9 +125,6 @@ def generate_v7_engineering_report():
 - **EVM:** {treasury_data['wallets']['evm']['networks']}
 """
     return report
-
-generate_v6_growth_report = generate_v7_engineering_report
-generate_v5_education_report = generate_v7_engineering_report
 
 if __name__ == '__main__':
     print(generate_v7_engineering_report())

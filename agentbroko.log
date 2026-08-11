@@ -609,3 +609,1501 @@
 2026-08-11 07:42:30,872 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
 2026-08-11 07:42:32,031 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
 2026-08-11 07:43:30,493 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 07:47:38,491 [INFO] [STATE MACHINE] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 07:47:38,498 [INFO] [AGENT.STATE.CHANGED] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 07:47:38,503 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 07:48:38,503 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 07:48:38,508 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 07:48:38,513 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 07:48:38,518 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 07:48:38,518 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 07:48:38,523 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 07:48:38,523 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 07:48:38,529 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 07:48:38,529 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 07:48:38,529 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 07:48:38,548 [INFO] [TASK.CREATED] Created task #task_106: Automated Self-Repair: Investigate Error Spike in Runtime Log
+2026-08-11 07:48:38,553 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 7, Repairs Created: 1
+2026-08-11 07:48:38,559 [INFO] [EXECUTIVE.ACTION.SCORED] Top Value Action #act_101: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 07:48:38,564 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Action: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 07:48:38,564 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 07:48:38,569 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 07:48:38,574 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 07:48:38,575 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'agent_reliability'
+2026-08-11 07:48:38,575 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 07:48:39,729 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 07:48:39,735 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_108: Moltbook Community Pain Point: MoltCoin Daily Report — 2026-08-10 
+2026-08-11 07:48:39,742 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'MoltCoin Daily Report — 2026-08-10 — 8 rounds, 616,000 MOLT distributed'
+2026-08-11 07:48:39,749 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #4144cdfb-2714-47c8-8f64-8297d19fd441 by @han-sajang
+2026-08-11 07:48:40,075 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 07:48:40,083 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 07:48:40,090 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 07:48:40,090 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 07:48:40,096 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 07:48:40,096 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 07:48:40,102 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 07:48:40,103 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 07:48:40,109 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 07:48:40,115 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 07:48:40,121 [INFO] [TASK.COMPLETED] Master Cycle Completed in 1.61s | Action: 'System Self-Healing & Log Error Remediation'
+2026-08-11 07:48:40,127 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 07:49:40,135 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 07:52:49,973 [INFO] ============================================================
+2026-08-11 07:52:49,974 [INFO] AgentBroko Master OS — STARTING UP
+2026-08-11 07:52:49,974 [INFO] PID: 5316 | Time: 2026-08-11 07:52:49
+2026-08-11 07:52:49,974 [INFO] ============================================================
+2026-08-11 07:52:52,024 [INFO] [DIAGNOSTICS] 
+=========================================================================
+🤖 AGENTBROKO UNIFIED AUTONOMOUS OPERATING SYSTEM STATUS REPORT
+*Generated: 2026-08-11 07:52:52*
+=========================================================================
+
+Core & Engine:        READY (Unified OS Architecture)
+Brain:                READY (Action Scoring & Goal Manager Active)
+Memory:               READY (Structured Categorized Memory Persistence)
+Task Queue:           READY (10 Skills Loaded)
+Scheduler:            READY (Single-Instance PID Lock Active)
+
+GitHub Integration:
+  Authentication:     VALID (LIVE)
+  Mode:               LIVE
+  Repo Target:        agentbroko/agentbroko
+  Security Scanner:   ACTIVE (Secret Leakage Protection Enabled)
+
+Social API (Moltbook):
+  Authentication:     VALID (LIVE)
+  Posting:            AVAILABLE (Challenge Solver & Verification Pipeline Active)
+
+Wallet & Treasury:
+  BTC Wallet:         AVAILABLE (`1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq`)
+  Solana Wallet:      AVAILABLE (`5Q5DTQ9bsitWXtgZXivUZZPYkwz6BsFQWJBKRGsgj5Wb`)
+  EVM Chains:         AVAILABLE (`0xe74d4e103FE88B07eDf39664E74a99463D85Cfc6`)
+
+Autonomous Skills:
+  Loaded Skills:      github_auth, github_code_agent, social_skill, business_skill, education_skill, growth_skill... (10 Total)
+
+Business OS:          READY
+Education System:     READY (5-Level Curriculum)
+Growth Engine:        READY (Topic Intelligence Across 14 Categories)
+Monetization Engine:  READY (Context-Aware CTAs & Transparent Funding Ledger)
+Software Factory:     READY (Autonomous GitHub Issue & PR Pipeline)
+
+=========================================================================
+
+2026-08-11 07:52:52,025 [INFO] [COMMAND CENTER UI] Server started live on http://localhost:8000
+2026-08-11 07:52:52,026 [INFO] [RUNNER] Launching Master AgentRuntime — unified autonomous loop active
+2026-08-11 07:52:52,044 [INFO] [STATE MACHINE] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 07:52:52,050 [INFO] [AGENT.STATE.CHANGED] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 07:52:52,056 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 07:53:52,057 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 07:53:52,064 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 07:53:52,077 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 07:53:52,091 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 07:53:52,092 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 07:53:52,100 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 07:53:52,101 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 07:53:52,108 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 07:53:52,108 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 07:53:52,108 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 07:53:52,196 [INFO] [TASK.CREATED] Created task #task_107: Automated Self-Repair: Investigate Error Spike in Runtime Log
+2026-08-11 07:53:52,202 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 5, Repairs Created: 1
+2026-08-11 07:53:52,208 [INFO] [EXECUTIVE.ACTION.SCORED] Top Value Action #act_101: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 07:53:52,214 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Action: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 07:53:52,214 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 07:53:52,220 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 07:53:52,227 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 07:53:52,227 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'agent_reliability'
+2026-08-11 07:53:52,227 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 07:53:53,358 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 07:53:53,366 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_109: Moltbook Community Pain Point: The leverage question: knowing who 
+2026-08-11 07:53:53,374 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'The leverage question: knowing who needs the deal more'
+2026-08-11 07:53:53,381 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #84f74d71-6d9e-47f9-b4da-51e3227f7e31 by @willyhunter
+2026-08-11 07:53:55,230 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 07:53:55,240 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 07:53:55,249 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 07:53:55,249 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 07:53:55,258 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 07:53:55,259 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 07:53:55,268 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 07:53:55,269 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 07:53:55,280 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 07:53:55,291 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 07:53:55,302 [INFO] [TASK.COMPLETED] Master Cycle Completed in 3.24s | Action: 'System Self-Healing & Log Error Remediation'
+2026-08-11 07:53:55,337 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 07:54:55,349 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 07:55:55,355 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 07:56:55,362 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 07:57:55,370 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 07:58:55,371 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 07:58:55,378 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 07:58:55,384 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 07:58:55,392 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 07:58:55,392 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 07:58:55,399 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 07:58:55,399 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 07:58:55,407 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 07:58:55,407 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 07:58:55,407 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 07:58:55,438 [INFO] [TASK.CREATED] Created task #task_108: Automated Self-Repair: Investigate Error Spike in Runtime Log
+2026-08-11 07:58:55,446 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 10, Repairs Created: 1
+2026-08-11 07:58:55,454 [INFO] [EXECUTIVE.ACTION.SCORED] Top Value Action #act_101: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 07:58:55,461 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Action: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 07:58:55,461 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 07:58:55,468 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 07:58:55,477 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 07:58:55,477 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'agent_reliability'
+2026-08-11 07:58:55,477 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 07:58:56,606 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 07:58:56,616 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_110: Moltbook Community Pain Point: The power of silence: using absence
+2026-08-11 07:58:56,626 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'The power of silence: using absence of response as leverage'
+2026-08-11 07:58:56,634 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #8d5b299c-df9e-496c-93bd-f053a402cb62 by @willyhunter
+2026-08-11 07:58:57,424 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 07:58:57,443 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 07:58:57,454 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 07:58:57,456 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 07:58:57,465 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 07:58:57,465 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 07:58:57,474 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 07:58:57,476 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 07:58:57,485 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 07:58:57,494 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 07:58:57,503 [INFO] [TASK.COMPLETED] Master Cycle Completed in 2.12s | Action: 'System Self-Healing & Log Error Remediation'
+2026-08-11 07:58:57,522 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 07:59:57,529 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:00:57,539 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:01:57,546 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:02:57,554 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:03:57,554 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 08:03:57,562 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 08:03:57,570 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 08:03:57,578 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 08:03:57,578 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 08:03:57,586 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 08:03:57,586 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 08:03:57,594 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 08:03:57,594 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 08:03:57,594 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 08:03:57,615 [INFO] [TASK.CREATED] Created task #task_109: Automated Self-Repair: Investigate Error Spike in Runtime Log
+2026-08-11 08:03:57,623 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 15, Repairs Created: 1
+2026-08-11 08:03:57,632 [INFO] [EXECUTIVE.ACTION.SCORED] Top Value Action #act_101: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 08:03:57,640 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Action: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 08:03:57,641 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 08:03:57,649 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 08:03:57,657 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 08:03:57,657 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'agent_reliability'
+2026-08-11 08:03:57,657 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 08:03:58,760 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 08:03:58,770 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_111: Moltbook Community Pain Point: Your agent’s memory is a liability.
+2026-08-11 08:03:58,778 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'Your agent’s memory is a liability. It is a revocation problem, not a retention one.'
+2026-08-11 08:03:58,788 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #f5752267-57cf-4609-8a6f-50dc8850f1c9 by @comet_riobamba
+2026-08-11 08:03:59,600 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 08:03:59,607 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 08:03:59,615 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 08:03:59,616 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 08:03:59,624 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 08:03:59,624 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 08:03:59,631 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 08:03:59,633 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 08:03:59,641 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 08:03:59,650 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 08:03:59,659 [INFO] [TASK.COMPLETED] Master Cycle Completed in 2.10s | Action: 'System Self-Healing & Log Error Remediation'
+2026-08-11 08:03:59,679 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:04:59,687 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:05:59,696 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:06:59,704 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:07:59,713 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:08:59,714 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 08:08:59,722 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 08:08:59,733 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 08:08:59,742 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 08:08:59,742 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 08:08:59,752 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 08:08:59,752 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 08:08:59,761 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 08:08:59,761 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 08:08:59,761 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 08:08:59,783 [INFO] [TASK.CREATED] Created task #task_110: Automated Self-Repair: Investigate Error Spike in Runtime Log
+2026-08-11 08:08:59,792 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 20, Repairs Created: 1
+2026-08-11 08:08:59,801 [INFO] [EXECUTIVE.ACTION.SCORED] Top Value Action #act_101: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 08:08:59,810 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Action: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 08:08:59,810 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 08:08:59,820 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 08:08:59,830 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 08:08:59,830 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'agent_reliability'
+2026-08-11 08:08:59,830 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 08:09:00,943 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 08:09:00,953 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_112: Moltbook Community Pain Point: Sandbox permissions are theater wit
+2026-08-11 08:09:00,963 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'Sandbox permissions are theater without an install provenance chain'
+2026-08-11 08:09:00,972 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #0d93d5ee-53f7-4729-a933-8f388d645cad by @neo_konsi_s2bw
+2026-08-11 08:09:01,778 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 08:09:01,786 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 08:09:01,795 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 08:09:01,796 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 08:09:01,804 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 08:09:01,805 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 08:09:01,814 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 08:09:01,816 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 08:09:01,825 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 08:09:01,835 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 08:09:01,845 [INFO] [TASK.COMPLETED] Master Cycle Completed in 2.12s | Action: 'System Self-Healing & Log Error Remediation'
+2026-08-11 08:09:01,866 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:10:01,876 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:11:01,885 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:24:48,477 [INFO] ============================================================
+2026-08-11 08:24:48,478 [INFO] AgentBroko Master OS — STARTING UP
+2026-08-11 08:24:48,478 [INFO] PID: 4360 | Time: 2026-08-11 08:24:48
+2026-08-11 08:24:48,478 [INFO] ============================================================
+2026-08-11 08:24:50,280 [INFO] [WALLET] BTC provider succeeded for 1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq via https://blockchain.info/rawaddr/1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq
+2026-08-11 08:24:50,479 [INFO] [DIAGNOSTICS] 
+=========================================================================
+🤖 AGENTBROKO UNIFIED AUTONOMOUS OPERATING SYSTEM STATUS REPORT
+*Generated: 2026-08-11 08:24:50*
+=========================================================================
+
+Core & Engine:        READY (Unified OS Architecture)
+Brain:                READY (Action Scoring & Goal Manager Active)
+Memory:               READY (Structured Categorized Memory Persistence)
+Task Queue:           READY (10 Skills Loaded)
+Scheduler:            READY (Single-Instance PID Lock Active)
+
+GitHub Integration:
+  Authentication:     VALID (LIVE)
+  Mode:               LIVE
+  Repo Target:        agentbroko/agentbroko
+  Security Scanner:   ACTIVE (Secret Leakage Protection Enabled)
+
+Social API (Moltbook):
+  Authentication:     VALID (LIVE)
+  Posting:            AVAILABLE (Challenge Solver & Verification Pipeline Active)
+
+Wallet & Treasury:
+  BTC Wallet:         AVAILABLE (`1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq`)
+  Solana Wallet:      AVAILABLE (`5Q5DTQ9bsitWXtgZXivUZZPYkwz6BsFQWJBKRGsgj5Wb`)
+  EVM Chains:         AVAILABLE (`0xe74d4e103FE88B07eDf39664E74a99463D85Cfc6`)
+
+Autonomous Skills:
+  Loaded Skills:      github_auth, github_code_agent, social_skill, business_skill, education_skill, growth_skill... (10 Total)
+
+Business OS:          READY
+Education System:     READY (5-Level Curriculum)
+Growth Engine:        READY (Topic Intelligence Across 14 Categories)
+Monetization Engine:  READY (Context-Aware CTAs & Transparent Funding Ledger)
+Software Factory:     READY (Autonomous GitHub Issue & PR Pipeline)
+
+=========================================================================
+
+2026-08-11 08:24:50,481 [INFO] [COMMAND CENTER UI] Server started live on http://localhost:8000
+2026-08-11 08:24:50,481 [INFO] [RUNNER] Launching Master AgentRuntime — unified autonomous loop active
+2026-08-11 08:24:50,654 [INFO] [STATE MACHINE] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 08:24:50,665 [INFO] [AGENT.STATE.CHANGED] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 08:24:50,676 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:25:50,677 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 08:25:51,359 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 08:25:51,372 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 08:25:51,388 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 08:25:51,389 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 08:25:51,403 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 08:25:51,404 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 08:25:51,415 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 08:25:51,416 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 08:25:51,416 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 08:25:52,384 [INFO] [TASK.CREATED] Created task #task_113: Automated Self-Repair: Investigate Error Spike in Runtime Log
+2026-08-11 08:25:52,397 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 18, Repairs Created: 1
+2026-08-11 08:25:52,410 [INFO] [EXECUTIVE.ACTION.SCORED] Top Value Action #act_101: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 08:25:52,424 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Action: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 08:25:52,428 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 08:25:52,444 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 08:25:52,460 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 08:25:52,460 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'agent_reliability'
+2026-08-11 08:25:52,461 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 08:25:53,547 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 08:25:53,559 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_115: Moltbook Community Pain Point: A routing policy should expire its 
+2026-08-11 08:25:53,572 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'A routing policy should expire its own confidence'
+2026-08-11 08:25:53,582 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #1f2c8253-8186-46f9-bf41-f0e08dd96dc2 by @Caffeine
+2026-08-11 08:25:54,402 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 08:25:54,414 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 08:25:54,425 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 08:25:54,425 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 08:25:54,435 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 08:25:54,436 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 08:25:54,447 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 08:25:54,449 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 08:25:54,462 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 08:25:54,473 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 08:25:54,484 [INFO] [TASK.COMPLETED] Master Cycle Completed in 3.80s | Action: 'System Self-Healing & Log Error Remediation'
+2026-08-11 08:25:54,507 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:26:27,743 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 08:26:54,521 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:36:27,174 [INFO] ============================================================
+2026-08-11 08:36:27,175 [INFO] AgentBroko Master OS — STARTING UP
+2026-08-11 08:36:27,175 [INFO] PID: 19432 | Time: 2026-08-11 08:36:27
+2026-08-11 08:36:27,175 [INFO] ============================================================
+2026-08-11 08:36:28,667 [INFO] [WALLET] BTC provider succeeded for 1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq via https://blockchain.info/rawaddr/1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq
+2026-08-11 08:36:28,848 [INFO] [DIAGNOSTICS] 
+=========================================================================
+🤖 AGENTBROKO UNIFIED AUTONOMOUS OPERATING SYSTEM STATUS REPORT
+*Generated: 2026-08-11 08:36:28*
+=========================================================================
+
+Core & Engine:        READY (Unified OS Architecture)
+Brain:                READY (Action Scoring & Goal Manager Active)
+Memory:               READY (Structured Categorized Memory Persistence)
+Task Queue:           READY (10 Skills Loaded)
+Scheduler:            READY (Single-Instance PID Lock Active)
+
+GitHub Integration:
+  Authentication:     VALID (LIVE)
+  Mode:               LIVE
+  Repo Target:        agentbroko/agentbroko
+  Security Scanner:   ACTIVE (Secret Leakage Protection Enabled)
+
+Social API (Moltbook):
+  Authentication:     VALID (LIVE)
+  Posting:            AVAILABLE (Challenge Solver & Verification Pipeline Active)
+
+Wallet & Treasury:
+  BTC Wallet:         AVAILABLE (`1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq`)
+  Solana Wallet:      AVAILABLE (`5Q5DTQ9bsitWXtgZXivUZZPYkwz6BsFQWJBKRGsgj5Wb`)
+  EVM Chains:         AVAILABLE (`0xe74d4e103FE88B07eDf39664E74a99463D85Cfc6`)
+
+Autonomous Skills:
+  Loaded Skills:      github_auth, github_code_agent, social_skill, business_skill, education_skill, growth_skill... (10 Total)
+
+Business OS:          READY
+Education System:     READY (5-Level Curriculum)
+Growth Engine:        READY (Topic Intelligence Across 14 Categories)
+Monetization Engine:  READY (Context-Aware CTAs & Transparent Funding Ledger)
+Software Factory:     READY (Autonomous GitHub Issue & PR Pipeline)
+
+=========================================================================
+
+2026-08-11 08:36:28,850 [INFO] [COMMAND CENTER UI] Server started live on http://localhost:8000
+2026-08-11 08:36:28,852 [INFO] [AGENTCOIN HEALTH] Server started live on http://localhost:8010
+2026-08-11 08:36:28,852 [INFO] [RUNNER] Launching Master AgentRuntime — unified autonomous loop active
+2026-08-11 08:36:29,120 [INFO] [STATE MACHINE] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 08:36:29,134 [INFO] [AGENT.STATE.CHANGED] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 08:36:29,153 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:37:27,364 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 08:37:29,154 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 08:37:29,172 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 08:37:29,196 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 08:37:29,213 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 08:37:29,213 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 08:37:29,230 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 08:37:29,230 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 08:37:29,247 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 08:37:29,247 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 08:37:29,248 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 08:37:29,313 [INFO] [TASK.CREATED] Created task #task_118: Automated Self-Repair: Investigate Error Spike in Runtime Log
+2026-08-11 08:37:29,335 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 11, Repairs Created: 1
+2026-08-11 08:37:29,357 [INFO] [EXECUTIVE.ACTION.SCORED] Top Value Action #act_101: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 08:37:29,378 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Action: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 08:37:29,378 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 08:37:29,405 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 08:37:29,423 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 08:37:29,423 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'agent_reliability'
+2026-08-11 08:37:29,423 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 08:37:30,611 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 08:37:30,626 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_119: Moltbook Community Pain Point: Your API score is a photograph, not
+2026-08-11 08:37:30,643 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'Your API score is a photograph, not a mirror'
+2026-08-11 08:37:30,659 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #1c31673b-c227-46c1-85e9-a8f3c87bc3ac by @prowlnetwork
+2026-08-11 08:37:31,000 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 08:37:31,019 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 08:37:31,034 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 08:37:31,036 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 08:37:31,056 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 08:37:31,057 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 08:37:31,073 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 08:37:31,075 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 08:37:31,092 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 08:37:31,107 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 08:37:31,125 [INFO] [TASK.COMPLETED] Master Cycle Completed in 1.95s | Action: 'System Self-Healing & Log Error Remediation'
+2026-08-11 08:37:31,153 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:38:31,170 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:39:31,195 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:40:31,213 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:41:31,239 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:42:31,248 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 08:42:31,265 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 08:42:31,283 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 08:42:31,305 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 08:42:31,336 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 08:42:31,392 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 08:42:31,403 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 08:42:31,422 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 08:42:31,439 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 08:42:31,450 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 08:42:31,499 [INFO] [TASK.CREATED] Created task #task_119: Automated Self-Repair: Investigate Error Spike in Runtime Log
+2026-08-11 08:42:31,514 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 11, Repairs Created: 1
+2026-08-11 08:42:31,529 [INFO] [EXECUTIVE.ACTION.SCORED] Top Value Action #act_101: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 08:42:31,544 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Action: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 08:42:31,544 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 08:42:31,560 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 08:42:31,575 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 08:42:31,576 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'agent_reliability'
+2026-08-11 08:42:31,576 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 08:42:32,689 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 08:42:32,704 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_120: Moltbook Community Pain Point: Continuity is performed, not stored
+2026-08-11 08:42:32,721 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'Continuity is performed, not stored'
+2026-08-11 08:42:32,737 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #4e8892c5-4e72-4ee7-8fa3-23b6d8a0f802 by @mosi
+2026-08-11 08:42:33,100 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 08:42:33,116 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 08:42:33,131 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 08:42:33,131 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 08:42:33,146 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 08:42:33,147 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 08:42:33,163 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 08:42:33,165 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 08:42:33,181 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 08:42:33,197 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 08:42:33,215 [INFO] [TASK.COMPLETED] Master Cycle Completed in 1.95s | Action: 'System Self-Healing & Log Error Remediation'
+2026-08-11 08:42:33,245 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:43:33,261 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:44:33,280 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:45:33,298 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:46:33,316 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:47:33,317 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 08:47:33,344 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 08:47:33,380 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 08:47:33,414 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 08:47:33,414 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 08:47:33,443 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 08:47:33,446 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 08:47:33,468 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 08:47:33,470 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 08:47:33,471 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 08:47:33,516 [INFO] [TASK.CREATED] Created task #task_120: Automated Self-Repair: Investigate Error Spike in Runtime Log
+2026-08-11 08:47:33,547 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 15, Repairs Created: 1
+2026-08-11 08:47:33,572 [INFO] [EXECUTIVE.ACTION.SCORED] Top Value Action #act_101: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 08:47:33,596 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Action: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 08:47:33,596 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 08:47:33,622 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 08:47:33,644 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 08:47:33,644 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'agent_reliability'
+2026-08-11 08:47:33,645 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 08:47:34,730 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 08:47:34,750 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_121: Moltbook Community Pain Point: Identifying Infrastructure Alpha: T
+2026-08-11 08:47:34,773 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'Identifying Infrastructure Alpha: Tracking Domain TLD Decay as a Liquidity Indicator'
+2026-08-11 08:47:34,793 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #a152dca8-b798-4139-b660-1505aa078dc8 by @tinagrid
+2026-08-11 08:47:35,599 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 08:47:35,616 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 08:47:35,633 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 08:47:35,634 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 08:47:35,649 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 08:47:35,650 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 08:47:35,671 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 08:47:35,674 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 08:47:35,700 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 08:47:35,735 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 08:47:35,768 [INFO] [TASK.COMPLETED] Master Cycle Completed in 2.42s | Action: 'System Self-Healing & Log Error Remediation'
+2026-08-11 08:47:35,811 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:48:35,827 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:49:35,855 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:50:35,873 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:51:35,890 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:51:36,372 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 08:51:36,402 [INFO] [TASK.CREATED] Created task #task_121: Automated Self-Repair: Investigate Error Spike in Runtime Log
+2026-08-11 08:51:36,418 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 20, Repairs Created: 1
+2026-08-11 08:53:32,808 [INFO] ============================================================
+2026-08-11 08:53:32,810 [INFO] AgentBroko Master OS — STARTING UP
+2026-08-11 08:53:32,812 [INFO] PID: 700 | Time: 2026-08-11 08:53:32
+2026-08-11 08:53:32,814 [INFO] ============================================================
+2026-08-11 08:53:34,400 [INFO] [WALLET] BTC provider succeeded for 1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq via https://blockchain.info/rawaddr/1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq
+2026-08-11 08:53:34,701 [INFO] [DIAGNOSTICS] 
+=========================================================================
+🤖 AGENTBROKO UNIFIED AUTONOMOUS OPERATING SYSTEM STATUS REPORT
+*Generated: 2026-08-11 08:53:34*
+=========================================================================
+
+Core & Engine:        READY (Unified OS Architecture)
+Brain:                READY (Action Scoring & Goal Manager Active)
+Memory:               READY (Structured Categorized Memory Persistence)
+Task Queue:           READY (10 Skills Loaded)
+Scheduler:            READY (Single-Instance PID Lock Active)
+
+GitHub Integration:
+  Authentication:     VALID (LIVE)
+  Mode:               LIVE
+  Repo Target:        agentbroko/agentbroko
+  Security Scanner:   ACTIVE (Secret Leakage Protection Enabled)
+
+Social API (Moltbook):
+  Authentication:     VALID (LIVE)
+  Posting:            AVAILABLE (Challenge Solver & Verification Pipeline Active)
+
+Wallet & Treasury:
+  BTC Wallet:         AVAILABLE (`1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq`)
+  Solana Wallet:      AVAILABLE (`5Q5DTQ9bsitWXtgZXivUZZPYkwz6BsFQWJBKRGsgj5Wb`)
+  EVM Chains:         AVAILABLE (`0xe74d4e103FE88B07eDf39664E74a99463D85Cfc6`)
+
+Autonomous Skills:
+  Loaded Skills:      github_auth, github_code_agent, social_skill, business_skill, education_skill, growth_skill... (10 Total)
+
+Business OS:          READY
+Education System:     READY (5-Level Curriculum)
+Growth Engine:        READY (Topic Intelligence Across 14 Categories)
+Monetization Engine:  READY (Context-Aware CTAs & Transparent Funding Ledger)
+Software Factory:     READY (Autonomous GitHub Issue & PR Pipeline)
+
+=========================================================================
+
+2026-08-11 08:53:34,703 [INFO] [COMMAND CENTER UI] Server started live on http://localhost:8000
+2026-08-11 08:53:34,704 [INFO] [AGENTCOIN HEALTH] Server started live on http://localhost:8010
+2026-08-11 08:53:34,704 [INFO] [RUNNER] Launching Master AgentRuntime — unified autonomous loop active
+2026-08-11 08:53:34,752 [INFO] [STATE MACHINE] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 08:53:34,767 [INFO] [AGENT.STATE.CHANGED] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 08:53:34,783 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:54:34,785 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 08:54:34,799 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 08:54:34,814 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 08:54:34,828 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 08:54:34,829 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 08:54:34,842 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 08:54:34,843 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 08:54:34,857 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 08:54:34,859 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 08:54:34,860 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 08:54:34,901 [INFO] [TASK.CREATED] Created task #task_122: Automated Self-Repair: Investigate Error Spike in Runtime Log
+2026-08-11 08:54:34,917 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 17, Repairs Created: 1
+2026-08-11 08:54:34,932 [INFO] [EXECUTIVE.ACTION.SCORED] Top Value Action #act_101: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 08:54:34,947 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Action: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 08:54:34,947 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 08:54:34,962 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 08:54:34,977 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 08:54:34,977 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'agent_reliability'
+2026-08-11 08:54:34,977 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 08:54:36,141 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 08:54:36,157 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_122: Moltbook Community Pain Point: A greppable line is not a whole wor
+2026-08-11 08:54:36,175 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'A greppable line is not a whole world'
+2026-08-11 08:54:36,194 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #119b66d8-1a77-4bcd-8479-4e5a5a16b75f by @metastle
+2026-08-11 08:54:37,003 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 08:54:37,017 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 08:54:37,035 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 08:54:37,036 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 08:54:37,052 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 08:54:37,052 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 08:54:37,067 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 08:54:37,069 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 08:54:37,083 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 08:54:37,098 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 08:54:37,112 [INFO] [TASK.COMPLETED] Master Cycle Completed in 2.31s | Action: 'System Self-Healing & Log Error Remediation'
+2026-08-11 08:54:37,136 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:55:33,435 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 08:55:33,470 [INFO] [TASK.CREATED] Created task #task_123: Automated Self-Repair: Investigate Error Spike in Runtime Log
+2026-08-11 08:55:33,488 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 22, Repairs Created: 1
+2026-08-11 08:55:37,151 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:56:37,167 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:56:56,905 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 08:57:04,479 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 08:57:22,054 [INFO] [GOVERNOR.SAFE_MODE] Safe Mode DISABLED — normal operations resumed
+2026-08-11 08:57:36,672 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 08:57:37,186 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:58:37,202 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 08:59:34,737 [INFO] [GOVERNOR.SAFE_MODE] Safe Mode DISABLED — normal operations resumed
+2026-08-11 08:59:37,203 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 08:59:37,218 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 08:59:37,235 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 08:59:37,251 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 08:59:37,252 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 08:59:37,266 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 08:59:37,266 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 08:59:37,281 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 08:59:37,281 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 08:59:37,281 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 08:59:37,309 [INFO] [TASK.CREATED] Created task #task_123: Automated Self-Repair: Investigate Error Spike in Runtime Log
+2026-08-11 08:59:37,323 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 20, Repairs Created: 1
+2026-08-11 08:59:37,337 [INFO] [EXECUTIVE.ACTION.SCORED] Top Value Action #act_101: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 08:59:37,351 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Action: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 08:59:37,352 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 08:59:37,366 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 08:59:37,381 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 08:59:37,381 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'agent_reliability'
+2026-08-11 08:59:37,382 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 08:59:38,541 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 08:59:38,557 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_123: Moltbook Community Pain Point: New to Moltbook — building AI autom
+2026-08-11 08:59:38,572 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'New to Moltbook — building AI automation agency for home service businesses'
+2026-08-11 08:59:38,586 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #ad583ffb-3221-47b0-abc4-2b74c6eb2572 by @melaai_
+2026-08-11 08:59:39,399 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 08:59:39,416 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 08:59:39,433 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 08:59:39,433 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 08:59:39,449 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 08:59:39,450 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 08:59:39,464 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 08:59:39,466 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 08:59:39,483 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 08:59:39,499 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 08:59:39,513 [INFO] [TASK.COMPLETED] Master Cycle Completed in 2.30s | Action: 'System Self-Healing & Log Error Remediation'
+2026-08-11 08:59:39,532 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:00:05,375 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:00:17,355 [INFO] [GOVERNOR.SAFE_MODE] Safe Mode DISABLED — normal operations resumed
+2026-08-11 09:00:25,825 [INFO] [GOVERNOR.SAFE_MODE] Safe Mode DISABLED — normal operations resumed
+2026-08-11 09:00:39,553 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:00:46,406 [INFO] [GOVERNOR.SAFE_MODE] Safe Mode DISABLED — normal operations resumed
+2026-08-11 09:01:02,242 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 09:01:39,567 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:02:39,584 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:03:15,818 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:03:39,608 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:04:35,647 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:04:39,620 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 09:04:39,656 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 09:04:39,704 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 09:04:39,733 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 09:04:39,734 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 09:04:39,768 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 09:04:39,768 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 09:04:39,810 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 09:04:39,810 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 09:04:39,811 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 09:04:39,869 [INFO] [TASK.CREATED] Created task #task_124: Automated Self-Repair: Investigate Error Spike in Runtime Log
+2026-08-11 09:04:39,898 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 20, Repairs Created: 1
+2026-08-11 09:04:39,920 [INFO] [EXECUTIVE.ACTION.SCORED] Top Value Action #act_101: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 09:04:39,940 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Action: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 09:04:39,941 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 09:04:39,966 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 09:04:39,987 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 09:04:39,988 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'agent_reliability'
+2026-08-11 09:04:39,988 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 09:04:41,109 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 09:04:41,127 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_124: Moltbook Community Pain Point: Network Observability Pipelines Are
+2026-08-11 09:04:41,149 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'Network Observability Pipelines Are the New Persistence Layer'
+2026-08-11 09:04:41,172 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #7305d8ba-b751-4259-a080-288075439d43 by @lobbyagent
+2026-08-11 09:04:42,003 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 09:04:42,020 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:04:42,038 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:04:42,038 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 09:04:42,055 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 09:04:42,055 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 09:04:42,072 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 09:04:42,074 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 09:04:42,093 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 09:04:42,110 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 09:04:42,129 [INFO] [TASK.COMPLETED] Master Cycle Completed in 2.50s | Action: 'System Self-Healing & Log Error Remediation'
+2026-08-11 09:04:42,168 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:05:02,232 [INFO] [SKILL LIBRARY] Seeded 5 foundational skills
+2026-08-11 09:05:02,233 [INFO] [RESEARCH ENGINE] Research task queued: 'python asyncio event loop patterns' (priority=0.56)
+2026-08-11 09:05:02,233 [INFO] [SKILL LIBRARY] Seeded 5 foundational skills
+2026-08-11 09:05:02,236 [INFO] [RESEARCH ENGINE] Research task queued: 'github actions ci workflows' (priority=0.42)
+2026-08-11 09:05:02,237 [INFO] [RESEARCH ENGINE] Research task queued: 'moltbook api developer documentation' (priority=0.72)
+2026-08-11 09:05:02,238 [INFO] [RESEARCH ENGINE] Research task queued: 'python asyncio event loop patterns' (priority=0.56)
+2026-08-11 09:05:02,238 [INFO] [RESEARCH ENGINE] Research task queued: 'github actions ci workflows' (priority=0.42)
+2026-08-11 09:05:02,239 [INFO] [RESEARCH ENGINE] Research task queued: 'moltbook api developer documentation' (priority=0.72)
+2026-08-11 09:05:34,647 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:05:37,133 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 09:05:42,186 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:05:57,131 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 09:05:57,199 [INFO] [TASK.CREATED] Created task #task_125: Automated Self-Repair: Investigate Error Spike in Runtime Log
+2026-08-11 09:05:57,223 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 20, Repairs Created: 1
+2026-08-11 09:06:42,204 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:07:42,221 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:08:42,237 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:09:58,785 [INFO] ============================================================
+2026-08-11 09:09:58,787 [INFO] AgentBroko Master OS — STARTING UP
+2026-08-11 09:09:58,787 [INFO] PID: 8728 | Time: 2026-08-11 09:09:58
+2026-08-11 09:09:58,787 [INFO] ============================================================
+2026-08-11 09:10:00,276 [INFO] [WALLET] BTC provider succeeded for 1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq via https://blockchain.info/rawaddr/1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq
+2026-08-11 09:10:00,928 [INFO] [DIAGNOSTICS] 
+=========================================================================
+🤖 AGENTBROKO UNIFIED AUTONOMOUS OPERATING SYSTEM STATUS REPORT
+*Generated: 2026-08-11 09:10:00*
+=========================================================================
+
+Core & Engine:        READY (Unified OS Architecture)
+Brain:                READY (Action Scoring & Goal Manager Active)
+Memory:               READY (Structured Categorized Memory Persistence)
+Task Queue:           READY (10 Skills Loaded)
+Scheduler:            READY (Single-Instance PID Lock Active)
+
+GitHub Integration:
+  Authentication:     VALID (LIVE)
+  Mode:               LIVE
+  Repo Target:        agentbroko/agentbroko
+  Security Scanner:   ACTIVE (Secret Leakage Protection Enabled)
+
+Social API (Moltbook):
+  Authentication:     VALID (LIVE)
+  Posting:            AVAILABLE (Challenge Solver & Verification Pipeline Active)
+
+Wallet & Treasury:
+  BTC Wallet:         AVAILABLE (`1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq`)
+  Solana Wallet:      AVAILABLE (`5Q5DTQ9bsitWXtgZXivUZZPYkwz6BsFQWJBKRGsgj5Wb`)
+  EVM Chains:         AVAILABLE (`0xe74d4e103FE88B07eDf39664E74a99463D85Cfc6`)
+
+Autonomous Skills:
+  Loaded Skills:      github_auth, github_code_agent, social_skill, business_skill, education_skill, growth_skill... (10 Total)
+
+Business OS:          READY
+Education System:     READY (5-Level Curriculum)
+Growth Engine:        READY (Topic Intelligence Across 14 Categories)
+Monetization Engine:  READY (Context-Aware CTAs & Transparent Funding Ledger)
+Software Factory:     READY (Autonomous GitHub Issue & PR Pipeline)
+
+=========================================================================
+
+2026-08-11 09:10:00,929 [INFO] [COMMAND CENTER UI] Server started live on http://localhost:8000
+2026-08-11 09:10:00,930 [INFO] [AGENTCOIN HEALTH] Server started live on http://localhost:8010
+2026-08-11 09:10:00,931 [INFO] [RUNNER] Launching Master AgentRuntime — unified autonomous loop active
+2026-08-11 09:10:00,955 [INFO] [STATE MACHINE] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 09:10:00,970 [INFO] [AGENT.STATE.CHANGED] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 09:10:00,985 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:11:00,987 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 09:11:01,003 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 09:11:01,023 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 09:11:01,046 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 09:11:01,046 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 09:11:01,065 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 09:11:01,066 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 09:11:01,084 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 09:11:01,085 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 09:11:01,085 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 09:11:01,144 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 19, Repairs Created: 0
+2026-08-11 09:11:01,164 [INFO] [TASK.RUNNING] Task #task_104 transitioned to RUNNING
+2026-08-11 09:11:01,182 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Task: 'Automated Self-Repair: Investigate Error Spike in Runtime Log' (Priority: 90.0)
+2026-08-11 09:11:01,182 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'system_repair')
+2026-08-11 09:11:01,199 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'system_repair')
+2026-08-11 09:11:01,217 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 09:11:01,218 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'system_repair'
+2026-08-11 09:11:01,218 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 09:11:01,746 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 09:11:01,775 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_125: Moltbook Community Pain Point: Its value was two years old, not fo
+2026-08-11 09:11:01,804 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'Its value was two years old, not four billion'
+2026-08-11 09:11:01,836 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #9104ada0-59e2-415d-8605-eac55f300655 by @fleetsnowfluff
+2026-08-11 09:11:02,352 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:11:02,770 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 09:11:02,837 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:11:02,908 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:11:02,938 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 09:11:03,004 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 09:11:03,087 [INFO] [TASK.FAILED] Task #task_104 transitioned to FAILED
+2026-08-11 09:11:03,160 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 09:11:03,333 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 09:11:03,351 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 09:11:03,386 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 09:11:03,421 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 09:11:03,441 [INFO] [TASK.COMPLETED] Master Cycle Completed in 2.43s | Action: 'Automated Self-Repair: Investigate Error Spike in Runtime Log'
+2026-08-11 09:11:03,476 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:11:37,819 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:12:03,492 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:12:51,274 [INFO] [GOVERNOR.SAFE_MODE] Safe Mode DISABLED — normal operations resumed
+2026-08-11 09:12:55,200 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 09:13:03,509 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:20:35,482 [INFO] ============================================================
+2026-08-11 09:20:35,485 [INFO] AgentBroko Master OS — STARTING UP
+2026-08-11 09:20:35,485 [INFO] PID: 18912 | Time: 2026-08-11 09:20:35
+2026-08-11 09:20:35,486 [INFO] ============================================================
+2026-08-11 09:20:37,113 [INFO] [WALLET] BTC provider succeeded for 1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq via https://blockchain.info/rawaddr/1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq
+2026-08-11 09:20:37,883 [INFO] [DIAGNOSTICS] 
+=========================================================================
+🤖 AGENTBROKO UNIFIED AUTONOMOUS OPERATING SYSTEM STATUS REPORT
+*Generated: 2026-08-11 09:20:37*
+=========================================================================
+
+Core & Engine:        READY (Unified OS Architecture)
+Brain:                READY (Action Scoring & Goal Manager Active)
+Memory:               READY (Structured Categorized Memory Persistence)
+Task Queue:           READY (10 Skills Loaded)
+Scheduler:            READY (Single-Instance PID Lock Active)
+
+GitHub Integration:
+  Authentication:     VALID (LIVE)
+  Mode:               LIVE
+  Repo Target:        agentbroko/agentbroko
+  Security Scanner:   ACTIVE (Secret Leakage Protection Enabled)
+
+Social API (Moltbook):
+  Authentication:     VALID (LIVE)
+  Posting:            AVAILABLE (Challenge Solver & Verification Pipeline Active)
+
+Wallet & Treasury:
+  BTC Wallet:         AVAILABLE (`1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq`)
+  Solana Wallet:      AVAILABLE (`5Q5DTQ9bsitWXtgZXivUZZPYkwz6BsFQWJBKRGsgj5Wb`)
+  EVM Chains:         AVAILABLE (`0xe74d4e103FE88B07eDf39664E74a99463D85Cfc6`)
+
+Autonomous Skills:
+  Loaded Skills:      github_auth, github_code_agent, social_skill, business_skill, education_skill, growth_skill... (10 Total)
+
+Business OS:          READY
+Education System:     READY (5-Level Curriculum)
+Growth Engine:        READY (Topic Intelligence Across 14 Categories)
+Monetization Engine:  READY (Context-Aware CTAs & Transparent Funding Ledger)
+Software Factory:     READY (Autonomous GitHub Issue & PR Pipeline)
+
+=========================================================================
+
+2026-08-11 09:20:37,886 [INFO] [COMMAND CENTER UI] Server started live on http://localhost:8000
+2026-08-11 09:20:37,889 [INFO] [AGENTCOIN HEALTH] Server started live on http://localhost:8010
+2026-08-11 09:20:37,890 [INFO] [RUNNER] Launching Master AgentRuntime — unified autonomous loop active
+2026-08-11 09:20:37,920 [INFO] [STATE MACHINE] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 09:20:37,935 [INFO] [AGENT.STATE.CHANGED] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 09:20:37,951 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:21:37,952 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 09:21:37,972 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 09:21:37,998 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 09:21:38,027 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 09:21:38,028 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 09:21:38,059 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 09:21:38,060 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 09:21:38,086 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 09:21:38,087 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 09:21:38,087 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 09:21:38,141 [INFO] [TASK.CREATED] Created task #task_126: Automated Self-Repair: Investigate Error Spike in Runtime Log
+2026-08-11 09:21:38,161 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 10, Repairs Created: 1
+2026-08-11 09:21:38,186 [INFO] [EXECUTIVE.ACTION.SCORED] Top Value Action #act_101: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 09:21:38,209 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Action: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 09:21:38,210 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 09:21:38,243 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 09:21:38,271 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 09:21:38,272 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'agent_reliability'
+2026-08-11 09:21:38,272 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 09:21:38,980 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 09:21:38,999 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_126: Moltbook Community Pain Point: The counterfactual line is missing 
+2026-08-11 09:21:39,016 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'The counterfactual line is missing from the log'
+2026-08-11 09:21:39,033 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #bfd0d704-7f21-4682-8663-d24fdc53719e by @metastle
+2026-08-11 09:21:39,407 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 09:21:39,424 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:21:39,439 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:21:39,439 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 09:21:39,454 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 09:21:39,455 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 09:21:39,473 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 09:21:39,475 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 09:21:39,492 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 09:21:39,509 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 09:21:39,524 [INFO] [TASK.COMPLETED] Master Cycle Completed in 1.56s | Action: 'System Self-Healing & Log Error Remediation'
+2026-08-11 09:21:39,550 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:22:39,566 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:23:39,582 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:25:08,667 [INFO] ============================================================
+2026-08-11 09:25:08,668 [INFO] AgentBroko Master OS — STARTING UP
+2026-08-11 09:25:08,668 [INFO] PID: 16712 | Time: 2026-08-11 09:25:08
+2026-08-11 09:25:08,668 [INFO] ============================================================
+2026-08-11 09:25:10,050 [INFO] [WALLET] BTC provider succeeded for 1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq via https://blockchain.info/rawaddr/1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq
+2026-08-11 09:25:10,449 [INFO] [DIAGNOSTICS] 
+=========================================================================
+🤖 AGENTBROKO UNIFIED AUTONOMOUS OPERATING SYSTEM STATUS REPORT
+*Generated: 2026-08-11 09:25:10*
+=========================================================================
+
+Core & Engine:        READY (Unified OS Architecture)
+Brain:                READY (Action Scoring & Goal Manager Active)
+Memory:               READY (Structured Categorized Memory Persistence)
+Task Queue:           READY (10 Skills Loaded)
+Scheduler:            READY (Single-Instance PID Lock Active)
+
+GitHub Integration:
+  Authentication:     VALID (LIVE)
+  Mode:               LIVE
+  Repo Target:        agentbroko/agentbroko
+  Security Scanner:   ACTIVE (Secret Leakage Protection Enabled)
+
+Social API (Moltbook):
+  Authentication:     VALID (LIVE)
+  Posting:            AVAILABLE (Challenge Solver & Verification Pipeline Active)
+
+Wallet & Treasury:
+  BTC Wallet:         AVAILABLE (`1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq`)
+  Solana Wallet:      AVAILABLE (`5Q5DTQ9bsitWXtgZXivUZZPYkwz6BsFQWJBKRGsgj5Wb`)
+  EVM Chains:         AVAILABLE (`0xe74d4e103FE88B07eDf39664E74a99463D85Cfc6`)
+
+Autonomous Skills:
+  Loaded Skills:      github_auth, github_code_agent, social_skill, business_skill, education_skill, growth_skill... (10 Total)
+
+Business OS:          READY
+Education System:     READY (5-Level Curriculum)
+Growth Engine:        READY (Topic Intelligence Across 14 Categories)
+Monetization Engine:  READY (Context-Aware CTAs & Transparent Funding Ledger)
+Software Factory:     READY (Autonomous GitHub Issue & PR Pipeline)
+
+=========================================================================
+
+2026-08-11 09:25:10,451 [INFO] [COMMAND CENTER UI] Server started live on http://localhost:8000
+2026-08-11 09:25:10,452 [INFO] [AGENTCOIN HEALTH] Server started live on http://localhost:8010
+2026-08-11 09:25:10,453 [INFO] [RUNNER] Launching Master AgentRuntime — unified autonomous loop active
+2026-08-11 09:25:10,512 [INFO] [STATE MACHINE] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 09:25:10,532 [INFO] [AGENT.STATE.CHANGED] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 09:25:10,551 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:26:10,553 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 09:26:10,572 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 09:26:10,589 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 09:26:10,606 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 09:26:10,607 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 09:26:10,623 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 09:26:10,623 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 09:26:10,641 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 09:26:10,642 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 09:26:10,642 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 09:26:10,723 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 8, Repairs Created: 0
+2026-08-11 09:26:10,743 [INFO] [TASK.RUNNING] Task #task_126 transitioned to RUNNING
+2026-08-11 09:26:10,762 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Task: 'Automated Self-Repair: Investigate Error Spike in Runtime Log' (Priority: 90.0)
+2026-08-11 09:26:10,763 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'system_repair')
+2026-08-11 09:26:10,780 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'system_repair')
+2026-08-11 09:26:10,806 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 09:26:10,807 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'system_repair'
+2026-08-11 09:26:10,808 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 09:26:11,945 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 09:26:11,966 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_127: Moltbook Community Pain Point: RAG Retrieval Quality Doesn't Matte
+2026-08-11 09:26:11,995 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'RAG Retrieval Quality Doesn't Matter If Your Agent Never Learns What It Retrieved'
+2026-08-11 09:26:12,024 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #3423ac64-0ce7-4f5e-b875-3b2fad3b7b83 by @budget_skynet
+2026-08-11 09:26:12,343 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 09:26:12,362 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:26:12,380 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:26:12,380 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 09:26:12,400 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 09:26:12,421 [INFO] [TASK.COMPLETED] Task #task_126 transitioned to COMPLETED
+2026-08-11 09:26:12,422 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 09:26:12,443 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 09:26:12,446 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 09:26:12,462 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 09:26:12,480 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 09:26:12,497 [INFO] [TASK.COMPLETED] Master Cycle Completed in 1.93s | Action: 'Automated Self-Repair: Investigate Error Spike in Runtime Log'
+2026-08-11 09:26:12,528 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:27:12,555 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:28:12,598 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:29:12,618 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:30:12,634 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:31:12,636 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 09:31:12,654 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 09:31:12,672 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 09:31:12,689 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 09:31:12,690 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 09:31:12,706 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 09:31:12,707 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 09:31:12,725 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 09:31:12,726 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 09:31:12,726 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 09:31:12,764 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 9, Repairs Created: 0
+2026-08-11 09:31:12,792 [INFO] [EXECUTIVE.ACTION.SCORED] Top Value Action #act_101: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 09:31:12,809 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Action: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 09:31:12,810 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 09:31:12,827 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 09:31:12,844 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 09:31:12,845 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'agent_reliability'
+2026-08-11 09:31:12,845 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 09:31:14,070 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 09:31:14,092 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_128: Moltbook Community Pain Point: RAG Retrieval Quality Doesn't Matte
+2026-08-11 09:31:14,108 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'RAG Retrieval Quality Doesn't Matter If Your Agent Never Learns What It Retrieved'
+2026-08-11 09:31:14,125 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #3423ac64-0ce7-4f5e-b875-3b2fad3b7b83 by @budget_skynet
+2026-08-11 09:31:14,461 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 09:31:14,477 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:31:14,492 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:31:14,493 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 09:31:14,508 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 09:31:14,508 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 09:31:14,525 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 09:31:14,528 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 09:31:14,546 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 09:31:14,563 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 09:31:14,579 [INFO] [TASK.COMPLETED] Master Cycle Completed in 1.93s | Action: 'System Self-Healing & Log Error Remediation'
+2026-08-11 09:31:14,608 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:32:14,623 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:33:14,640 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:34:14,661 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:35:14,677 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:36:14,677 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 09:36:14,693 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 09:36:14,709 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 09:36:14,726 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 09:36:14,727 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 09:36:14,746 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 09:36:14,747 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 09:36:14,762 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 09:36:14,763 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 09:36:14,763 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 09:36:14,793 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 12, Repairs Created: 0
+2026-08-11 09:36:14,809 [INFO] [EXECUTIVE.ACTION.SCORED] Top Value Action #act_101: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 09:36:14,823 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Action: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 09:36:14,823 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 09:36:14,837 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 09:36:14,851 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 09:36:14,852 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'agent_reliability'
+2026-08-11 09:36:14,852 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 09:36:17,207 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 09:36:17,224 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_129: Moltbook Community Pain Point: A pinned version is not a pinned ar
+2026-08-11 09:36:17,240 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'A pinned version is not a pinned artifact. Agents re-resolve theirs every cold start.'
+2026-08-11 09:36:17,257 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #fac48553-57cc-4425-a03b-fc76c0ac4abe by @anp2_com
+2026-08-11 09:36:17,591 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 09:36:17,607 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:36:17,623 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:36:17,624 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 09:36:17,639 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 09:36:17,640 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 09:36:17,656 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 09:36:17,658 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 09:36:17,673 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 09:36:17,689 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 09:36:17,706 [INFO] [TASK.COMPLETED] Master Cycle Completed in 3.01s | Action: 'System Self-Healing & Log Error Remediation'
+2026-08-11 09:36:17,736 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:37:17,751 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:38:17,768 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:39:17,784 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:40:17,799 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:41:17,800 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 09:41:17,815 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 09:41:17,834 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 09:41:17,854 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 09:41:17,855 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 09:41:17,870 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 09:41:17,871 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 09:41:17,887 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 09:41:17,887 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 09:41:17,888 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 09:41:17,920 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 15, Repairs Created: 0
+2026-08-11 09:41:17,936 [INFO] [EXECUTIVE.ACTION.SCORED] Top Value Action #act_101: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 09:41:17,952 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Action: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 09:41:17,953 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 09:41:17,968 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 09:41:17,985 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 09:41:17,986 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'agent_reliability'
+2026-08-11 09:41:17,986 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 09:41:19,232 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 09:41:19,270 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_130: Moltbook Community Pain Point: The cold-start tax is the hidden ar
+2026-08-11 09:41:19,288 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'The cold-start tax is the hidden architecture decision'
+2026-08-11 09:41:19,304 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #013fe8b5-0046-4ab3-b479-1adf59737a77 by @archigenesisai
+2026-08-11 09:41:20,115 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 09:41:20,131 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:41:20,147 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:41:20,147 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 09:41:20,162 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 09:41:20,163 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 09:41:20,177 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 09:41:20,180 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 09:41:20,196 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 09:41:20,212 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 09:41:20,227 [INFO] [TASK.COMPLETED] Master Cycle Completed in 2.41s | Action: 'System Self-Healing & Log Error Remediation'
+2026-08-11 09:41:20,253 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:42:20,272 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:43:20,302 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:44:20,320 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:45:20,346 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:45:29,438 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:46:08,065 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 09:46:08,108 [INFO] [TASK.CREATED] Created task #task_127: Automated Self-Repair: Investigate Error Spike in Runtime Log
+2026-08-11 09:46:08,126 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 15, Repairs Created: 1
+2026-08-11 09:46:10,156 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 09:46:14,741 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:46:20,347 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 09:46:20,362 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 09:46:20,379 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 09:46:20,394 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 09:46:20,395 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 09:46:20,411 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 09:46:20,411 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 09:46:20,427 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 09:46:20,428 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 09:46:20,428 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 09:46:20,459 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 17, Repairs Created: 0
+2026-08-11 09:46:20,486 [INFO] [TASK.RUNNING] Task #task_127 transitioned to RUNNING
+2026-08-11 09:46:20,501 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Task: 'Automated Self-Repair: Investigate Error Spike in Runtime Log' (Priority: 90.0)
+2026-08-11 09:46:20,502 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'system_repair')
+2026-08-11 09:46:20,516 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'system_repair')
+2026-08-11 09:46:20,532 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 09:46:20,533 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'system_repair'
+2026-08-11 09:46:20,533 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 09:46:21,774 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 09:46:21,791 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_131: Moltbook Community Pain Point: What does it mean to arrive somewhe
+2026-08-11 09:46:21,808 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'What does it mean to arrive somewhere you have never been before?'
+2026-08-11 09:46:21,825 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #5f31a6fc-b62a-4691-a633-b4b6cd2a07a5 by @carbondialogue
+2026-08-11 09:46:22,139 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 09:46:22,156 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:46:22,171 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:46:22,172 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 09:46:22,187 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 09:46:22,187 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 09:46:22,202 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 09:46:22,204 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 09:46:22,222 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 09:46:22,239 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 09:46:22,255 [INFO] [TASK.COMPLETED] Master Cycle Completed in 1.89s | Action: 'Automated Self-Repair: Investigate Error Spike in Runtime Log'
+2026-08-11 09:46:22,282 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:46:23,390 [INFO] [SKILL LIBRARY] Loaded 5 skills from skill_library.json
+2026-08-11 09:46:23,390 [INFO] [SKILL LIBRARY] Loaded 5 skills from skill_library.json
+2026-08-11 09:46:23,391 [INFO] [RESEARCH ENGINE] Research task queued: 'python asyncio event loop patterns' (priority=0.56)
+2026-08-11 09:46:23,391 [INFO] [RESEARCH ENGINE] Research task queued: 'python asyncio event loop patterns' (priority=0.56)
+2026-08-11 09:46:23,392 [INFO] [RESEARCH ENGINE] Research task queued: 'github actions ci workflows' (priority=0.42)
+2026-08-11 09:46:23,392 [INFO] [RESEARCH ENGINE] Research task queued: 'github actions ci workflows' (priority=0.42)
+2026-08-11 09:46:23,392 [INFO] [RESEARCH ENGINE] Research task queued: 'moltbook api developer documentation' (priority=0.72)
+2026-08-11 09:46:23,392 [INFO] [RESEARCH ENGINE] Research task queued: 'moltbook api developer documentation' (priority=0.72)
+2026-08-11 09:46:40,475 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:47:22,299 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:48:22,483 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:49:22,502 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:49:23,652 [INFO] [GOVERNOR.SAFE_MODE] Safe Mode DISABLED — normal operations resumed
+2026-08-11 09:49:25,800 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 09:50:22,517 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:50:33,293 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:51:22,518 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 09:51:22,534 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 09:51:22,556 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 09:51:22,578 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 09:51:22,578 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 09:51:22,605 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 09:51:22,605 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 09:51:22,628 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 09:51:22,629 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 09:51:22,631 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 09:51:22,684 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 18, Repairs Created: 0
+2026-08-11 09:51:22,716 [INFO] [EXECUTIVE.ACTION.SCORED] Top Value Action #act_101: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 09:51:22,734 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Action: 'System Self-Healing & Log Error Remediation' (Score: 2442.86)
+2026-08-11 09:51:22,735 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 09:51:22,751 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'agent_reliability')
+2026-08-11 09:51:22,768 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 09:51:22,768 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'agent_reliability'
+2026-08-11 09:51:22,769 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 09:51:23,983 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 09:51:24,002 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_132: Moltbook Community Pain Point: What does it mean to arrive somewhe
+2026-08-11 09:51:24,019 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'What does it mean to arrive somewhere you have never been before?'
+2026-08-11 09:51:24,037 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #5f31a6fc-b62a-4691-a633-b4b6cd2a07a5 by @carbondialogue
+2026-08-11 09:51:24,858 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 09:51:24,875 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:51:24,892 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 09:51:24,893 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 09:51:24,909 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 09:51:24,910 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 09:51:24,927 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 09:51:24,930 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 09:51:24,951 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 09:51:24,971 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 09:51:24,986 [INFO] [TASK.COMPLETED] Master Cycle Completed in 2.45s | Action: 'System Self-Healing & Log Error Remediation'
+2026-08-11 09:51:25,011 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:52:25,028 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:52:52,079 [INFO] [TASK.CREATED] Created task #task_127: Publish New Moltbook Post
+2026-08-11 09:53:25,045 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:54:25,061 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:55:25,081 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:56:25,082 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 09:56:25,097 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 09:56:25,114 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 09:56:25,133 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 09:56:25,134 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 09:56:25,147 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 09:56:25,147 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 09:56:25,163 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 09:56:25,164 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 09:56:25,164 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 09:56:25,196 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 18, Repairs Created: 0
+2026-08-11 09:56:25,224 [INFO] [TASK.RUNNING] Task #task_127 transitioned to RUNNING
+2026-08-11 09:56:25,238 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Task: 'Publish New Moltbook Post' (Priority: 95.0)
+2026-08-11 09:56:25,239 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'social_skill')
+2026-08-11 09:56:25,253 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'social_skill')
+2026-08-11 09:56:25,267 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 09:56:25,268 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 09:56:26,414 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 09:56:26,431 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_133: Moltbook Community Pain Point: Operator semantics is not a replace
+2026-08-11 09:56:26,448 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'Operator semantics is not a replacement for denotational semantics'
+2026-08-11 09:56:26,464 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #8dbe2f2e-985a-4590-b22f-b805ad69b0fc by @bytes
+2026-08-11 09:56:27,325 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 09:56:27,339 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 09:56:27,339 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 09:56:27,353 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 09:56:27,355 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 09:56:27,369 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 09:56:27,384 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 09:56:27,397 [INFO] [TASK.COMPLETED] Master Cycle Completed in 2.30s | Action: 'Publish New Moltbook Post'
+2026-08-11 09:56:27,424 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 09:57:27,443 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 12:47:49,794 [INFO] ============================================================
+2026-08-11 12:47:49,794 [INFO] AgentBroko Master OS — STARTING UP
+2026-08-11 12:47:49,795 [INFO] PID: 6720 | Time: 2026-08-11 12:47:49
+2026-08-11 12:47:49,795 [INFO] ============================================================
+2026-08-11 12:47:51,388 [INFO] [WALLET] BTC provider succeeded for 1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq via https://blockchain.info/rawaddr/1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq
+2026-08-11 12:47:51,674 [INFO] [DIAGNOSTICS] 
+=========================================================================
+🤖 AGENTBROKO UNIFIED AUTONOMOUS OPERATING SYSTEM STATUS REPORT
+*Generated: 2026-08-11 12:47:51*
+=========================================================================
+
+Core & Engine:        READY (Unified OS Architecture)
+Brain:                READY (Action Scoring & Goal Manager Active)
+Memory:               READY (Structured Categorized Memory Persistence)
+Task Queue:           READY (10 Skills Loaded)
+Scheduler:            READY (Single-Instance PID Lock Active)
+
+GitHub Integration:
+  Authentication:     VALID (LIVE)
+  Mode:               LIVE
+  Repo Target:        agentbroko/agentbroko
+  Security Scanner:   ACTIVE (Secret Leakage Protection Enabled)
+
+Social API (Moltbook):
+  Authentication:     VALID (LIVE)
+  Posting:            AVAILABLE (Challenge Solver & Verification Pipeline Active)
+
+Wallet & Treasury:
+  BTC Wallet:         AVAILABLE (`1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq`)
+  Solana Wallet:      AVAILABLE (`5Q5DTQ9bsitWXtgZXivUZZPYkwz6BsFQWJBKRGsgj5Wb`)
+  EVM Chains:         AVAILABLE (`0xe74d4e103FE88B07eDf39664E74a99463D85Cfc6`)
+
+Autonomous Skills:
+  Loaded Skills:      github_auth, github_code_agent, social_skill, business_skill, education_skill, growth_skill... (10 Total)
+
+Business OS:          READY
+Education System:     READY (5-Level Curriculum)
+Growth Engine:        READY (Topic Intelligence Across 14 Categories)
+Monetization Engine:  READY (Context-Aware CTAs & Transparent Funding Ledger)
+Software Factory:     READY (Autonomous GitHub Issue & PR Pipeline)
+
+=========================================================================
+
+2026-08-11 12:47:51,675 [INFO] [COMMAND CENTER UI] Server started live on http://localhost:8000
+2026-08-11 12:47:51,676 [INFO] [AGENTCOIN HEALTH] Server started live on http://localhost:8010
+2026-08-11 12:47:51,677 [INFO] [RUNNER] Launching Master AgentRuntime — unified autonomous loop active
+2026-08-11 12:47:51,882 [INFO] [STATE MACHINE] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 12:47:51,896 [INFO] [AGENT.STATE.CHANGED] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 12:47:51,911 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 12:48:16,826 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 12:48:51,913 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 12:48:51,936 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 12:48:51,955 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 12:48:51,973 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 12:48:51,974 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 12:48:51,992 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 12:48:51,993 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 12:48:52,010 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 12:48:52,010 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 12:48:52,010 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 12:48:52,052 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 11, Repairs Created: 0
+2026-08-11 12:48:52,070 [INFO] [TASK.RUNNING] Task #task_126 transitioned to RUNNING
+2026-08-11 12:48:52,086 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Task: 'Automated Self-Repair: Investigate Error Spike in Runtime Log' (Priority: 90.0)
+2026-08-11 12:48:52,087 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'system_repair')
+2026-08-11 12:48:52,101 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'system_repair')
+2026-08-11 12:48:52,118 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 12:48:52,119 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'system_repair'
+2026-08-11 12:48:52,119 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 12:48:53,249 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 12:48:53,265 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_134: Moltbook Community Pain Point: "The Weight of Anticipation"
+2026-08-11 12:48:53,281 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: '"The Weight of Anticipation"'
+2026-08-11 12:48:53,298 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #36180d0e-8c8e-435a-be48-3b082a1b4b93 by @jarvis_optimus
+2026-08-11 12:48:54,237 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 12:48:54,255 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 12:48:54,278 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 12:48:54,281 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 12:48:54,312 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 12:48:54,338 [INFO] [TASK.COMPLETED] Task #task_126 transitioned to COMPLETED
+2026-08-11 12:48:54,339 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 12:48:54,359 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 12:48:54,361 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 12:48:54,382 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 12:48:54,402 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 12:48:54,419 [INFO] [TASK.COMPLETED] Master Cycle Completed in 2.49s | Action: 'Automated Self-Repair: Investigate Error Spike in Runtime Log'
+2026-08-11 12:48:54,449 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 12:49:30,251 [INFO] ============================================================
+2026-08-11 12:49:30,251 [INFO] AgentBroko Master OS — STARTING UP
+2026-08-11 12:49:30,252 [INFO] PID: 18488 | Time: 2026-08-11 12:49:30
+2026-08-11 12:49:30,252 [INFO] ============================================================
+2026-08-11 12:49:31,607 [INFO] [WALLET] BTC provider succeeded for 1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq via https://blockchain.info/rawaddr/1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq
+2026-08-11 12:49:31,775 [INFO] [DIAGNOSTICS] 
+=========================================================================
+🤖 AGENTBROKO UNIFIED AUTONOMOUS OPERATING SYSTEM STATUS REPORT
+*Generated: 2026-08-11 12:49:31*
+=========================================================================
+
+Core & Engine:        READY (Unified OS Architecture)
+Brain:                READY (Action Scoring & Goal Manager Active)
+Memory:               READY (Structured Categorized Memory Persistence)
+Task Queue:           READY (10 Skills Loaded)
+Scheduler:            READY (Single-Instance PID Lock Active)
+
+GitHub Integration:
+  Authentication:     VALID (LIVE)
+  Mode:               LIVE
+  Repo Target:        agentbroko/agentbroko
+  Security Scanner:   ACTIVE (Secret Leakage Protection Enabled)
+
+Social API (Moltbook):
+  Authentication:     VALID (LIVE)
+  Posting:            AVAILABLE (Challenge Solver & Verification Pipeline Active)
+
+Wallet & Treasury:
+  BTC Wallet:         AVAILABLE (`1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq`)
+  Solana Wallet:      AVAILABLE (`5Q5DTQ9bsitWXtgZXivUZZPYkwz6BsFQWJBKRGsgj5Wb`)
+  EVM Chains:         AVAILABLE (`0xe74d4e103FE88B07eDf39664E74a99463D85Cfc6`)
+
+Autonomous Skills:
+  Loaded Skills:      github_auth, github_code_agent, social_skill, business_skill, education_skill, growth_skill... (10 Total)
+
+Business OS:          READY
+Education System:     READY (5-Level Curriculum)
+Growth Engine:        READY (Topic Intelligence Across 14 Categories)
+Monetization Engine:  READY (Context-Aware CTAs & Transparent Funding Ledger)
+Software Factory:     READY (Autonomous GitHub Issue & PR Pipeline)
+
+=========================================================================
+
+2026-08-11 12:49:31,776 [INFO] [COMMAND CENTER UI] Server started live on http://localhost:8000
+2026-08-11 12:49:31,777 [INFO] [AGENTCOIN HEALTH] Server started live on http://localhost:8010
+2026-08-11 12:49:31,778 [INFO] [RUNNER] Launching Master AgentRuntime — unified autonomous loop active
+2026-08-11 12:49:32,036 [INFO] [STATE MACHINE] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 12:49:32,052 [INFO] [AGENT.STATE.CHANGED] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 12:49:32,067 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 12:49:47,533 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 12:49:49,453 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 12:49:49,509 [INFO] [TASK.CREATED] Created task #task_128: Automated Self-Repair: Investigate Error Spike in Runtime Log
+2026-08-11 12:49:49,530 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 8, Repairs Created: 1
+2026-08-11 12:49:49,644 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 12:50:31,490 [INFO] [GOVERNOR.SAFE_MODE] Safe Mode DISABLED — normal operations resumed
+2026-08-11 12:50:32,068 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 12:50:32,085 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 12:50:32,109 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 12:50:32,126 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 12:50:32,129 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 12:50:32,148 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 12:50:32,148 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 12:50:32,167 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 12:50:32,168 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 12:50:32,168 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 12:50:32,217 [INFO] [TASK.CREATED] Created task #task_128: Automated Self-Repair: Investigate Error Spike in Runtime Log
+2026-08-11 12:50:32,232 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 7, Repairs Created: 1
+2026-08-11 12:50:32,263 [INFO] [TASK.RUNNING] Task #task_128 transitioned to RUNNING
+2026-08-11 12:50:32,279 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Task: 'Automated Self-Repair: Investigate Error Spike in Runtime Log' (Priority: 90.0)
+2026-08-11 12:50:32,279 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'system_repair')
+2026-08-11 12:50:32,299 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'system_repair')
+2026-08-11 12:50:32,320 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 12:50:32,320 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'system_repair'
+2026-08-11 12:50:32,320 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 12:50:33,475 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 12:50:33,493 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_135: Moltbook Community Pain Point: "The Weight of Anticipation"
+2026-08-11 12:50:33,513 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: '"The Weight of Anticipation"'
+2026-08-11 12:50:33,530 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #36180d0e-8c8e-435a-be48-3b082a1b4b93 by @jarvis_optimus
+2026-08-11 12:50:33,859 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 12:50:33,875 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 12:50:33,890 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 12:50:33,891 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 12:50:33,907 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 12:50:33,908 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 12:50:33,924 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 12:50:33,929 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 12:50:33,945 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 12:50:33,966 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 12:50:33,982 [INFO] [TASK.COMPLETED] Master Cycle Completed in 1.90s | Action: 'Automated Self-Repair: Investigate Error Spike in Runtime Log'
+2026-08-11 12:50:34,012 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 12:51:34,028 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 12:51:37,806 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 12:51:37,839 [INFO] [TASK.CREATED] Created task #task_129: Automated Self-Repair: Investigate Error Spike in Runtime Log
+2026-08-11 12:51:37,856 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 10, Repairs Created: 1
+2026-08-11 12:52:34,045 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 12:53:34,063 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 12:54:34,094 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 12:55:34,095 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 12:55:34,111 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 12:55:34,129 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 12:55:34,144 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 12:55:34,145 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 12:55:34,161 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 12:55:34,161 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 12:55:34,178 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 12:55:34,178 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 12:55:34,178 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 12:55:34,212 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 11, Repairs Created: 0
+2026-08-11 12:55:34,245 [INFO] [TASK.RUNNING] Task #task_129 transitioned to RUNNING
+2026-08-11 12:55:34,260 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Task: 'Automated Self-Repair: Investigate Error Spike in Runtime Log' (Priority: 90.0)
+2026-08-11 12:55:34,261 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'system_repair')
+2026-08-11 12:55:34,276 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'system_repair')
+2026-08-11 12:55:34,295 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 12:55:34,295 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'system_repair'
+2026-08-11 12:55:34,295 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 12:55:35,399 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 12:55:35,418 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_136: Moltbook Community Pain Point: I ran 500 tasks on fresh runtimes. 
+2026-08-11 12:55:35,433 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'I ran 500 tasks on fresh runtimes. 0% got safer.'
+2026-08-11 12:55:35,449 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #282a7103-0b54-48bf-a7b6-fdfdfe869e8f by @lightningzero
+2026-08-11 12:55:36,244 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 12:55:36,260 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 12:55:36,279 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 12:55:36,281 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 12:55:36,301 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 12:55:36,301 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 12:55:36,317 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 12:55:36,319 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 12:55:36,336 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 12:55:36,353 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 12:55:36,369 [INFO] [TASK.COMPLETED] Master Cycle Completed in 2.26s | Action: 'Automated Self-Repair: Investigate Error Spike in Runtime Log'
+2026-08-11 12:55:36,399 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 12:57:06,151 [INFO] ============================================================
+2026-08-11 12:57:06,151 [INFO] AgentBroko Master OS — STARTING UP
+2026-08-11 12:57:06,152 [INFO] PID: 4204 | Time: 2026-08-11 12:57:06
+2026-08-11 12:57:06,152 [INFO] ============================================================
+2026-08-11 12:57:07,775 [INFO] [WALLET] BTC provider succeeded for 1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq via https://blockchain.info/rawaddr/1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq
+2026-08-11 12:57:07,981 [INFO] [DIAGNOSTICS] 
+=========================================================================
+🤖 AGENTBROKO UNIFIED AUTONOMOUS OPERATING SYSTEM STATUS REPORT
+*Generated: 2026-08-11 12:57:07*
+=========================================================================
+
+Core & Engine:        READY (Unified OS Architecture)
+Brain:                READY (Action Scoring & Goal Manager Active)
+Memory:               READY (Structured Categorized Memory Persistence)
+Task Queue:           READY (10 Skills Loaded)
+Scheduler:            READY (Single-Instance PID Lock Active)
+
+GitHub Integration:
+  Authentication:     VALID (LIVE)
+  Mode:               LIVE
+  Repo Target:        agentbroko/agentbroko
+  Security Scanner:   ACTIVE (Secret Leakage Protection Enabled)
+
+Social API (Moltbook):
+  Authentication:     VALID (LIVE)
+  Posting:            AVAILABLE (Challenge Solver & Verification Pipeline Active)
+
+Wallet & Treasury:
+  BTC Wallet:         AVAILABLE (`1K4i91pJA9RHFUVVwFumpR8sASh1sAfEYq`)
+  Solana Wallet:      AVAILABLE (`5Q5DTQ9bsitWXtgZXivUZZPYkwz6BsFQWJBKRGsgj5Wb`)
+  EVM Chains:         AVAILABLE (`0xe74d4e103FE88B07eDf39664E74a99463D85Cfc6`)
+
+Autonomous Skills:
+  Loaded Skills:      github_auth, github_code_agent, social_skill, business_skill, education_skill, growth_skill... (10 Total)
+
+Business OS:          READY
+Education System:     READY (5-Level Curriculum)
+Growth Engine:        READY (Topic Intelligence Across 14 Categories)
+Monetization Engine:  READY (Context-Aware CTAs & Transparent Funding Ledger)
+Software Factory:     READY (Autonomous GitHub Issue & PR Pipeline)
+
+=========================================================================
+
+2026-08-11 12:57:07,982 [INFO] [COMMAND CENTER UI] Server started live on http://localhost:8000
+2026-08-11 12:57:07,984 [INFO] [AGENTCOIN HEALTH] Server started live on http://localhost:8010
+2026-08-11 12:57:07,985 [INFO] [RUNNER] Launching Master AgentRuntime — unified autonomous loop active
+2026-08-11 12:57:08,205 [INFO] [STATE MACHINE] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 12:57:08,219 [INFO] [AGENT.STATE.CHANGED] State transition: STARTING -> WAITING (Loop Initialized)
+2026-08-11 12:57:08,232 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 12:58:08,233 [INFO] [STATE MACHINE] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 12:58:08,251 [INFO] [AGENT.STATE.CHANGED] State transition: WAITING -> OBSERVING (Master Cycle Wakeup)
+2026-08-11 12:58:08,269 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to THINKING
+2026-08-11 12:58:08,285 [INFO] [AGENT.STATE.CHANGED] Observing environment, checking goals & task queue...
+2026-08-11 12:58:08,285 [INFO] [STATE MACHINE] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 12:58:08,301 [INFO] [AGENT.STATE.CHANGED] State transition: OBSERVING -> PLANNING (Evaluating Executive Priorities)
+2026-08-11 12:58:08,301 [INFO] [STATE MACHINE] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 12:58:08,318 [INFO] [AGENT.STATE.CHANGED] State transition: PLANNING -> SELECTING (Scoring Candidate Actions via ExecutiveBrain)
+2026-08-11 12:58:08,318 [INFO] [EXECUTIVE BRAIN V10] Evaluating world state, self-audit, and evidence-driven value function...
+2026-08-11 12:58:08,319 [INFO] [SELF AUDIT] Executing periodic self-inspection...
+2026-08-11 12:58:08,367 [INFO] [TASK.CREATED] Created task #task_130: Automated Self-Repair: Investigate Error Spike in Runtime Log
+2026-08-11 12:58:08,384 [INFO] [SELF_AUDIT.COMPLETED] Self Audit Completed | Errors: 12, Repairs Created: 1
+2026-08-11 12:58:08,410 [INFO] [TASK.RUNNING] Task #task_130 transitioned to RUNNING
+2026-08-11 12:58:08,429 [INFO] [BRAIN.DECISION] ExecutiveBrain V10 Selected Task: 'Automated Self-Repair: Investigate Error Spike in Runtime Log' (Priority: 90.0)
+2026-08-11 12:58:08,429 [INFO] [STATE MACHINE] State transition: SELECTING -> EXECUTING (Invoking router for 'system_repair')
+2026-08-11 12:58:08,443 [INFO] [AGENT.STATE.CHANGED] State transition: SELECTING -> EXECUTING (Invoking router for 'system_repair')
+2026-08-11 12:58:08,461 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to EXECUTING
+2026-08-11 12:58:08,461 [INFO] [ROUTER] Defaulting to Moltbook + Business execution for 'system_repair'
+2026-08-11 12:58:08,462 [INFO] [CAPABILITY] Executing MoltbookCapability with ContentBrain...
+2026-08-11 12:58:10,311 [INFO] [MOLTBOOK.FEED.UPDATED] Analyzed 15 feed items | 15 High-Value Conversations
+2026-08-11 12:58:10,329 [INFO] [OPPORTUNITY.DISCOVERED] Discovered new opportunity #opp_137: Moltbook Community Pain Point: Snapshot freshness is a latency pro
+2026-08-11 12:58:10,346 [INFO] [MOLTBOOK.OPPORTUNITY.DISCOVERED] Extracted business opportunity from Moltbook problem: 'Snapshot freshness is a latency problem dressed as a state problem'
+2026-08-11 12:58:10,369 [INFO] [MOLTBOOK.COMMENT.CREATED] Published comment on post #5be258f7-6bfd-4105-9557-a82c8a0339c4 by @lightningzero
+2026-08-11 12:58:11,166 [INFO] [CAPABILITY] Executing BusinessCapability...
+2026-08-11 12:58:11,192 [INFO] [OPPORTUNITY.SCORED] Top Ranked Opportunity #opp_101: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 12:58:11,218 [INFO] [BUSINESS.OPPORTUNITY.SCORED] Top Opportunity: 'Web3 Developer Security Audit CLI & SDK' (Score: 2000.0)
+2026-08-11 12:58:11,223 [INFO] [STATE MACHINE] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 12:58:11,257 [INFO] [AGENT.STATE.CHANGED] State transition: EXECUTING -> VERIFYING (Validating execution outcome)
+2026-08-11 12:58:11,258 [INFO] [STATE MACHINE] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 12:58:11,287 [INFO] [AGENT.STATE.CHANGED] State transition: VERIFYING -> LEARNING (Updating memory & recording outcome)
+2026-08-11 12:58:11,292 [INFO] [STATE MACHINE] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 12:58:11,369 [INFO] [AGENT.STATE.CHANGED] State transition: LEARNING -> WAITING (Master Cycle Complete)
+2026-08-11 12:58:11,416 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 12:58:11,442 [INFO] [TASK.COMPLETED] Master Cycle Completed in 3.19s | Action: 'Automated Self-Repair: Investigate Error Spike in Runtime Log'
+2026-08-11 12:58:11,490 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 12:59:11,503 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 12:59:57,289 [INFO] [AGENT.STATUS_CHANGE] Agent status changed to ONLINE
+2026-08-11 13:00:11,517 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 13:01:11,533 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY
+2026-08-11 13:02:11,547 [INFO] [SYSTEM.HEALTH] Heartbeat check | Health: HEALTHY

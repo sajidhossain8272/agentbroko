@@ -23,14 +23,41 @@ class AgentRuntime:
         self.goal_mgr = GoalManager()
         self.task_mgr = TaskManager()
         self.memory = AgentMemory()
-        
-        # Explicit initialization of all scheduler timing variables
+
+        # Explicit initialization of all scheduler timing variables.
+        # This is deterministic and prevents a classic NameError/UnboundLocalError
+        # path where a runtime loop expects a cycle marker that was never set.
         self.last_business_cycle = 0.0
         self.last_growth_cycle = 0.0
         self.last_moltbook_cycle = 0.0
         self.last_engineering_cycle = 0.0
         self.last_education_cycle = 0.0
         self.last_wallet_check = 0.0
+        self.last_research_cycle = 0.0
+        self.last_health_check = 0.0
+
+    def _prime_runtime_timers(self):
+        """Initialize deterministic scheduler markers once when the loop starts."""
+        now = time.time()
+        self.last_business_cycle = now - self.scheduler.BUSINESS_CYCLE + 5.0
+        self.last_wallet_check = now
+        self.last_research_cycle = now
+        self.last_health_check = now
+        self.last_growth_cycle = now
+        self.last_moltbook_cycle = now
+        self.last_engineering_cycle = now
+        self.last_education_cycle = now
+        return now
+
+    def get_runtime_health(self):
+        """Return a basic health structure for dashboard/observability."""
+        return {
+            "state": getattr(self.sm, "current_state", "UNKNOWN"),
+            "last_business_cycle": self.last_business_cycle,
+            "last_wallet_check": self.last_wallet_check,
+            "last_health_check": getattr(self, "last_health_check", 0.0),
+            "status": "ONLINE"
+        }
 
     def run_master_cycle(self):
         cycle_start = time.time()
@@ -59,6 +86,19 @@ class AgentRuntime:
             # 4. Measure & Learn
             self.sm.transition_to("VERIFYING", "Validating execution outcome")
             status = exec_result.get("status") if isinstance(exec_result, dict) else "SUCCESS"
+            # Router default execution returns {"moltbook": ..., "business": ...} without a "status" key.
+            # Treat any non-error result as SUCCESS.
+            if status is None:
+                status = "SUCCESS"
+            
+            # 4b. Complete claimed task if this decision came from the task queue
+            task_id = action_decision.get("task_id")
+            if task_id:
+                self.task_mgr.update_task_status(
+                    task_id,
+                    "COMPLETED" if status == "SUCCESS" else "FAILED",
+                    verification_result=f"Executed via {action_name} | Result: {status}"
+                )
             
             self.sm.transition_to("LEARNING", "Updating memory & recording outcome")
             self.memory.record_event("episodic_memory", {
@@ -92,10 +132,8 @@ class AgentRuntime:
         print("🚀 AgentBroko V9 Master AgentRuntime is ACTIVE...")
         self.sm.transition_to("WAITING", "Loop Initialized")
 
-        # Explicit initialization of timing markers right before loop
-        now = time.time()
-        self.last_business_cycle = now - self.scheduler.BUSINESS_CYCLE + 5.0
-        self.last_wallet_check = now
+        # Explicit initialization of timing markers right before loop.
+        self._prime_runtime_timers()
 
         while True:
             try:
@@ -105,6 +143,13 @@ class AgentRuntime:
                 if now - self.last_business_cycle >= self.scheduler.BUSINESS_CYCLE:
                     self.run_master_cycle()
                     self.last_business_cycle = time.time()
+                    self.scheduler.update_heartbeat("master_cycle")
+                    # Flush all log handlers so the log file is always current on disk
+                    for handler in logging.getLogger().handlers:
+                        try:
+                            handler.flush()
+                        except Exception:
+                            pass
 
                 # Rapid monitor heartbeat (every 60s)
                 self.supervisor.emit_heartbeat()
@@ -121,3 +166,15 @@ class AgentRuntime:
                 self.sm.transition_to("WAITING", "Loop Recovered")
 
             time.sleep(self.scheduler.RAPID_MONITOR)
+
+
+class UnifiedAgentRuntime(AgentRuntime):
+    """Compatibility alias for the unified runtime surface.
+
+    The production runtime is already implemented through AgentRuntime, but this
+    name is part of the operating system contract the repository is asked to
+    support. Keeping a concrete class here avoids accidental duplication or
+    divergent runtime loops.
+    """
+
+    pass

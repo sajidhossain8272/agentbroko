@@ -18,6 +18,11 @@ class TaskManager:
                 pass
         return self.get_seed_tasks()
 
+    def reload_tasks(self):
+        """Reload tasks from disk to pick up changes made by other instances."""
+        self.tasks = self.load_tasks()
+        return self.tasks
+
     def save_tasks(self):
         try:
             with open(self.tasks_file, 'w') as f:

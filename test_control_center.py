@@ -10,6 +10,29 @@ from agent_supervisor import AgentSupervisor
 from control_center_server import ControlCenterServer
 from moltbook_client import MoltbookClient
 
+def test_control_center_send_json_handles_disconnects():
+    from control_center_server import ControlCenterHTTPHandler
+
+    class FailingWriter:
+        def write(self, payload):
+            raise BrokenPipeError("simulated disconnect")
+
+    ctx = ControlCenterHTTPHandler.__new__(ControlCenterHTTPHandler)
+    ctx.wfile = FailingWriter()
+    ctx.send_response = lambda status: None
+    ctx.send_header = lambda *args, **kwargs: None
+    ctx.end_headers = lambda: None
+    ctx.close_connection = False
+
+    try:
+        ctx.send_json({"ok": True})
+    except Exception as e:
+        raise AssertionError(f"send_json should tolerate a socket disconnect: {e}")
+
+    assert getattr(ctx, 'close_connection', False) is True
+    print("✅ Regression: send_json suppresses transport write disconnects.")
+
+
 def test_control_center_suite():
     print("Test 1: EventBus pub/sub & event replay...")
     bus = EventBus("test_event_history.json")

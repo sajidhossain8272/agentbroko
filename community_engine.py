@@ -60,4 +60,8 @@ class CommunityEngine:
                    f"- Always double check domain URLs and contract approvals.\n" \
                    f"- Never input seed phrases or private keys into online forms."
 
+        if include_exchange_rec:
+            response += f"\n\n**Disclosure:** This educational content is provided for learning purposes only. " \
+                        f"Always do your own research before making any financial decision."
+
         return HypeFilter.sanitize_content(response)

@@ -34,15 +34,22 @@ class SelfAuditEngine:
             except Exception:
                 pass
 
-        # Self-repair task generation if errors spike
+        # Self-repair task generation if error spike (deduplicate: only create if no QUEUED self-repair task exists)
         if audit_res["errors_found"] >= 5:
-            t = self.task_mgr.create_task(
-                objective="Automated Self-Repair: Investigate Error Spike in Runtime Log",
-                description=f"Self-audit detected {audit_res['errors_found']} error log entries in recent cycles.",
-                priority=90.0,
-                skill="system_repair"
-            )
-            audit_res["self_repair_tasks_created"] += 1
+            existing = [t for t in self.task_mgr.tasks
+                        if t.get("status") == "QUEUED"
+                        and t.get("skill") == "system_repair"]
+            if not existing:
+                t = self.task_mgr.create_task(
+                    objective="Automated Self-Repair: Investigate Error Spike in Runtime Log",
+                    description=f"Self-audit detected {audit_res['errors_found']} error log entries in recent cycles.",
+                    priority=90.0,
+                    skill="system_repair"
+                )
+                audit_res["self_repair_tasks_created"] += 1
+            else:
+                audit_res["self_repair_tasks_created"] = 0
+                audit_res["deduplicated"] = True
 
         self.bus.emit("self_audit.completed", f"Self Audit Completed | Errors: {audit_res['errors_found']}, Repairs Created: {audit_res['self_repair_tasks_created']}", metadata=audit_res)
         return audit_res

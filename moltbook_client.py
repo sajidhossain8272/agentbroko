@@ -120,7 +120,17 @@ class MoltbookClient:
 
         if not res.get('success') and not res.get('post') and not res.get('verification_required'):
             err = res.get('error', 'Unknown HTTP error')
+            http_code = res.get('http_code')
+            
+            # Enhance error message with rate limit details if present
+            if http_code == 429:
+                retry_after = res.get('retry_after_seconds', 'unknown')
+                err = f"HTTP 429 Rate Limited: {err} | retry_after_seconds: {retry_after}"
+            elif http_code:
+                err = f"HTTP {http_code}: {err}"
+            
             logging.error(f"[MOLTBOOK] Publication failed at CREATE stage | Error: {err}")
+            logging.error(f"[MOLTBOOK] Full response: {json.dumps(res, indent=2)}")
             return PublishResult(success=False, error=err, status_code="FAILED_CREATE")
 
         post_id = res.get('post', {}).get('id') or res.get('post_id')
@@ -158,10 +168,12 @@ class MoltbookClient:
         answer = self.solve_math_challenge(challenge)
         if answer is not None:
             logging.info(f"[MOLTBOOK] Challenge solved -> Answer: {answer} | Submitting verification...")
-            return self._request('/verify', method='POST', payload={
+            verif_res = self._request('/verify', method='POST', payload={
                 'verification_code': code,
                 'answer': str(answer)
             })
+            logging.info(f"[MOLTBOOK] Verification response: {json.dumps(verif_res, indent=2)}")
+            return verif_res
         
         logging.error("[MOLTBOOK] Unsupported verification challenge")
         return {'success': False, 'error': 'Unsupported verification challenge'}

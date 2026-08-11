@@ -13,6 +13,54 @@ from agent_supervisor import AgentSupervisor
 from agent_memory import AgentMemory
 from skill_registry import SkillRegistry
 
+class ThreadingControlCenterServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
+    """Threaded TCP server so SSE streams do not block other API endpoints."""
+    allow_reuse_address = True
+    daemon_threads = True
+
+class AgentCoinHealthHTTPHandler(http.server.BaseHTTPRequestHandler):
+    def do_GET(self):
+        parsed = urllib.parse.urlparse(self.path)
+        path = parsed.path
+        if path in ('/', '/health', '/api/health'):
+            payload = {
+                "service": "agentcoin_protocol",
+                "status": "ONLINE",
+                "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
+                "version": "v0.1",
+                "providers": [],
+                "last_event": "agentcoin.healthcheck"
+            }
+            self.send_json(payload)
+        else:
+            self.send_error(404, "Endpoint Not Found")
+
+    def send_json(self, data, status=200):
+        body = json.dumps(data, indent=2).encode('utf-8')
+        try:
+            self.send_response(status)
+            self.send_header('Content-Type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.send_header('Content-Length', str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+        except (BrokenPipeError, ConnectionAbortedError, ConnectionResetError, OSError):
+            self.close_connection = True
+            return
+
+    def log_message(self, format, *args):
+        return
+
+class AgentCoinHealthServer:
+    def __init__(self, port=8010):
+        self.port = port
+        self.server = None
+
+    def start(self):
+        self.server = ThreadingControlCenterServer(("", self.port), AgentCoinHealthHTTPHandler)
+        print(f"🌐 [AGENTCOIN HEALTH] Server listening live on http://localhost:{self.port}")
+        self.server.serve_forever()
+
 class ControlCenterHTTPHandler(http.server.BaseHTTPRequestHandler):
     bus = EventBus()
     goal_mgr = GoalManager()
@@ -106,6 +154,28 @@ class ControlCenterHTTPHandler(http.server.BaseHTTPRequestHandler):
             from strategy_memory import StrategyMemory
             sm = StrategyMemory()
             self.send_json(sm.data)
+        elif path == '/api/v11/skills':
+            try:
+                from self_teaching_engine import SelfTeachingEngine
+                ste = SelfTeachingEngine()
+                self.send_json(ste.to_api_skills())
+            except Exception as e:
+                self.send_json({"skills": [], "total": 0, "error": str(e)})
+        elif path == '/api/v11/research':
+            try:
+                from self_teaching_engine import SelfTeachingEngine
+                ste = SelfTeachingEngine()
+                self.send_json(ste.to_api_research())
+            except Exception as e:
+                self.send_json({"research_tasks": [], "knowledge_gaps": [], "error": str(e)})
+        elif path == '/api/governor/status':
+            try:
+                from governor import Governor
+                gov = Governor()
+                self.send_json(gov.get_status())
+            except Exception as e:
+                self.send_json({"safe_mode": False, "action_counts_today": {}, "action_limits": {}, "error": str(e)})
+
         elif path == '/api/stream':
             self.handle_sse_stream()
         else:
@@ -151,29 +221,50 @@ class ControlCenterHTTPHandler(http.server.BaseHTTPRequestHandler):
             pri = payload.get("priority", 75.0)
             t = self.task_mgr.create_task(obj, desc, g_id, sk, pri)
             self.send_json({"success": True, "task": t})
+        elif path == '/api/governor/safe-mode':
+            try:
+                from governor import Governor
+                gov = Governor()
+                enabled = payload.get('enabled', True)
+                gov.set_safe_mode(enabled)
+                self.send_json({"success": True, "safe_mode": enabled})
+            except Exception as e:
+                self.send_json({"success": False, "error": str(e)})
         else:
             self.send_error(404, "Endpoint Not Found")
 
+
     def send_json(self, data, status=200):
         body = json.dumps(data, indent=2).encode('utf-8')
-        self.send_response(status)
-        self.send_header('Content-Type', 'application/json')
-        self.send_header('Access-Control-Allow-Origin', '*')
-        self.send_header('Content-Length', str(len(body)))
-        self.end_headers()
-        self.wfile.write(body)
+        try:
+            self.send_response(status)
+            self.send_header('Content-Type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.send_header('Content-Length', str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+        except (BrokenPipeError, ConnectionAbortedError, ConnectionResetError, OSError):
+            self.close_connection = True
+            return
 
     def serve_static(self, filepath, content_type):
         try:
             with open(filepath, 'rb') as f:
                 content = f.read()
-            self.send_response(200)
-            self.send_header('Content-Type', content_type)
-            self.send_header('Content-Length', str(len(content)))
-            self.end_headers()
-            self.wfile.write(content)
+            try:
+                self.send_response(200)
+                self.send_header('Content-Type', content_type)
+                self.send_header('Content-Length', str(len(content)))
+                self.end_headers()
+                self.wfile.write(content)
+            except (BrokenPipeError, ConnectionAbortedError, ConnectionResetError, OSError):
+                self.close_connection = True
+                return
         except Exception as e:
-            self.send_error(500, f"Error serving file: {e}")
+            try:
+                self.send_error(500, f"Error serving file: {e}")
+            except (BrokenPipeError, ConnectionAbortedError, ConnectionResetError, OSError):
+                self.close_connection = True
 
     def handle_sse_stream(self):
         self.send_response(200)
@@ -192,14 +283,20 @@ class ControlCenterHTTPHandler(http.server.BaseHTTPRequestHandler):
         try:
             # Replay recent 10 events
             for evt in self.bus.get_recent_events(10):
-                self.wfile.write(f"data: {json.dumps(evt)}\n\n".encode('utf-8'))
-                self.wfile.flush()
+                try:
+                    self.wfile.write(f"data: {json.dumps(evt)}\n\n".encode('utf-8'))
+                    self.wfile.flush()
+                except (BrokenPipeError, ConnectionAbortedError, ConnectionResetError, OSError):
+                    break
 
             while True:
                 if event_queue:
                     evt = event_queue.pop(0)
-                    self.wfile.write(f"data: {json.dumps(evt)}\n\n".encode('utf-8'))
-                    self.wfile.flush()
+                    try:
+                        self.wfile.write(f"data: {json.dumps(evt)}\n\n".encode('utf-8'))
+                        self.wfile.flush()
+                    except (BrokenPipeError, ConnectionAbortedError, ConnectionResetError, OSError):
+                        break
                 time.sleep(0.5)
         except Exception:
             pass
@@ -217,7 +314,7 @@ class ControlCenterServer:
     def start(self):
         os.makedirs('static', exist_ok=True)
         handler = ControlCenterHTTPHandler
-        self.server = socketserver.TCPServer(("", self.port), handler)
+        self.server = ThreadingControlCenterServer(("", self.port), handler)
         print(f"🌐 [CONTROL CENTER UI] Server listening live on http://localhost:{self.port}")
         self.server.serve_forever()
 
