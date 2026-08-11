@@ -98,6 +98,14 @@ class ControlCenterHTTPHandler(http.server.BaseHTTPRequestHandler):
             from daily_reflection import DailyReflectionEngine
             refl = DailyReflectionEngine()
             self.send_json(refl.generate_daily_report())
+        elif path == '/api/v10/audit':
+            from self_audit_engine import SelfAuditEngine
+            audit = SelfAuditEngine()
+            self.send_json(audit.run_self_audit())
+        elif path == '/api/v10/strategy':
+            from strategy_memory import StrategyMemory
+            sm = StrategyMemory()
+            self.send_json(sm.data)
         elif path == '/api/stream':
             self.handle_sse_stream()
         else:
