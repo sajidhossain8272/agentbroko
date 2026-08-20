@@ -36,6 +36,16 @@ agentbroko video-forge captions --file my-video/script.txt --output my-video/cap
 
 The direct `video-forge` command remains available for backwards compatibility. See [docs/QUICKSTART.md](docs/QUICKSTART.md), [docs/PROJECT.md](docs/PROJECT.md), and [docs/TTS.md](docs/TTS.md).
 
+## Skill: PDF Playbook
+
+Create a polished, dark-theme, 20-page developer handbook with required AgentBroko branding and a responsibility disclaimer:
+
+```bash
+agentbroko pdf-playbook --output my-guide.pdf
+```
+
+The interactive flow asks for the guide title, audience, and core promise. Add repeatable custom questions with `--extra-question`. Use `--non-interactive` for automation. The free edition always includes AgentBroko branding; see [docs/PDF_PLAYBOOK.md](docs/PDF_PLAYBOOK.md).
+
 ## Extending AgentBroko
 
 Register each future skill in `src/agentbroko/cli.py`, give it documentation and tests, and keep it local-first with no hidden network calls. See [AGENTS.md](AGENTS.md).
