@@ -9,6 +9,11 @@ All notable changes will be documented here. This project follows Semantic Versi
 - Added Python and npm CLI entrypoints.
 - Added project governance, privacy, terms, credits, architecture, and contribution documentation.
 
+## 1.1.0 - 2026-08-20
+
+- Added the AgentBroko PDF skill for metadata, text extraction, and page rendering.
+- Added a complete end-user usage guide.
+
 ## 1.0.1 - 2026-08-20
 
 - Bundled the Python skill implementation in the npm package.

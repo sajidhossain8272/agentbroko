@@ -36,6 +36,18 @@ agentbroko video-forge captions --file my-video/script.txt --output my-video/cap
 
 The direct `video-forge` command remains available for backwards compatibility. See [docs/QUICKSTART.md](docs/QUICKSTART.md), [docs/PROJECT.md](docs/PROJECT.md), and [docs/TTS.md](docs/TTS.md).
 
+## PDF skill
+
+AgentBroko also includes local PDF utilities. They do not upload documents or require an API:
+
+```bash
+agentbroko pdf info document.pdf
+agentbroko pdf text document.pdf --output document.txt
+agentbroko pdf render document.pdf --output rendered-pages
+```
+
+Install `pypdf` for text extraction and Poppler (`pdfinfo` and `pdftoppm`) for metadata and page rendering. See [docs/PDF.md](docs/PDF.md).
+
 ## Extending AgentBroko
 
 Register each future skill in `src/agentbroko/cli.py`, give it documentation and tests, and keep it local-first with no hidden network calls. See [AGENTS.md](AGENTS.md).
@@ -51,6 +63,7 @@ MIT licensed. See [LICENSE](LICENSE).
 ## Documentation
 
 - [Installation](docs/INSTALL.md) and [quickstart](docs/QUICKSTART.md)
+- [Complete usage guide](docs/USAGE.md)
 - [Architecture](docs/ARCHITECTURE.md) and [technology stack](docs/TECH_STACK.md)
 - [Video Forge project format](docs/PROJECT.md) and [offline TTS](docs/TTS.md)
 - [Open-source credits](docs/CREDITS.md) and [roadmap](docs/ROADMAP.md)

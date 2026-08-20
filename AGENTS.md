@@ -8,6 +8,7 @@ This repository is designed to be operated and extended by coding agents. AgentB
 - Keep a direct skill command for scripting compatibility.
 - Add documentation under `docs/` and tests under `tests/`.
 - Keep installation predictable through Python packaging and the npm launcher.
+- Register new skills in `SKILLS` and route them through `src/agentbroko/cli.py`.
 
 ## Editing a user's video
 

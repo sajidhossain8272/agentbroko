@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agentbroko"
-version = "1.0.1"
+version = "1.1.0"
 description = "AgentBroko skills hub with local-first Video Forge video editing"
 readme = "README.md"
 requires-python = ">=3.10"

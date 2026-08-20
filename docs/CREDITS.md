@@ -5,6 +5,8 @@ AgentBroko is made possible by open standards and open-source software.
 ## Core runtime
 
 - [FFmpeg](https://ffmpeg.org/) and FFprobe: multimedia processing. FFmpeg components are available under LGPL/GPL terms depending on the build and enabled codecs. Users should review the license of their installed build.
+- [pypdf](https://github.com/py-pdf/pypdf): optional PDF parsing and text extraction, under a BSD-style license.
+- [Poppler](https://poppler.freedesktop.org/): optional PDF inspection and rendering tools, under GPL/LGPL components depending on the utility.
 - [Python](https://www.python.org/): runtime and standard library, under the Python Software Foundation License.
 
 ## Optional speech engines
@@ -20,4 +22,3 @@ AgentBroko is made possible by open standards and open-source software.
 - [GitHub Actions](https://github.com/features/actions): CI service subject to GitHub's terms.
 
 These projects are independent and do not sponsor or endorse AgentBroko. AgentBroko's MIT License covers this repository only; it does not replace third-party licenses. Report missing attribution to brokeinnovation@gmail.com.
-
