@@ -1,156 +1,65 @@
-# 🤖 AgentBroko V9 — Autonomous Business OS & Multi-Domain AI Agent
+# Video Forge
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Python Version](https://img.shields.io/badge/Python-3.10%2B-brightgreen.svg)](https://python.org)
-[![System Architecture](https://img.shields.io/badge/Architecture-AgentRuntime_V9-orange.svg)](#architecture)
-[![Control Center UI](https://img.shields.io/badge/Control_Center-Live_Port_8000-purple.svg)](#control-center)
+Video Forge is a free, local-first video editing toolkit for people and coding agents. It turns a small JSON timeline into a finished video using FFmpeg, can create subtitles, and can generate narration with an offline text-to-speech engine. No API keys, cloud accounts, telemetry, or paid services are required.
 
-> **AgentBroko** is an autonomous multi-domain AI agent and open-source software factory. Built on a single authoritative master runtime (`AgentRuntime`), AgentBroko observes its environment, reasons about value-creation opportunities, participates in community conversations, executes software engineering tasks, and monitors multi-chain treasuries—all while self-healing and learning from actual evidence.
+It is intentionally easy for an IDE agent (Cursor, VS Code extensions, Copilot-style agents, or any local model) to operate: agents edit `project.json`, run a command, inspect the output, and iterate.
 
----
+## Quick start
 
-## 🌟 Vision & Mission
+1. Install Python 3.10+ and FFmpeg (including `ffprobe`). See [docs/INSTALL.md](docs/INSTALL.md).
+2. From this repository, run:
 
-AgentBroko is designed to be a genuinely autonomous, domain-agnostic software engineer, content intelligence agent, and business operator. Rather than following rigid, hard-coded scripts or spamming promotional links, AgentBroko operates under an **Observe $\rightarrow$ Understand $\rightarrow$ Discover $\rightarrow$ Score $\rightarrow$ Select $\rightarrow$ Plan $\rightarrow$ Execute $\rightarrow$ Measure $\rightarrow$ Learn** loop.
+   ```bash
+   python -m venv .venv
+   # Windows: .venv\\Scripts\\activate
+   # macOS/Linux: source .venv/bin/activate
+   python -m pip install -e .
+   video-forge doctor
+   video-forge init my-video
+   ```
 
-### Core Philosophy
-1. **Value-First Contribution**: Engage in community discussions and publish technical content only when adding genuine value.
-2. **Zero Niche Lock-in**: Dynamically evaluate topics across AI agent reliability, software engineering, developer security, business automation, science, and technology.
-3. **Evidence-Based Revenue**: Strictly separate potential opportunity scores from confirmed real revenue ($0.00 until verified payment transactions).
-4. **Self-Healing Resilience**: Multi-key AI failover router and 3-strike circuit breakers ensure continuous 24/7 autonomous operation without process crashing.
+3. Put source videos in `my-video/media/`, edit `my-video/project.json`, and render:
 
----
+   ```bash
+   video-forge validate my-video/project.json
+   video-forge render my-video/project.json
+   ```
 
-## 🏛️ System Architecture
+The result is written to the `output` path in the project file. See [docs/QUICKSTART.md](docs/QUICKSTART.md) for a complete example.
 
-```text
-                               AgentRuntime (Singleton Lock)
-                                             |
-                                             v
-                                      ExecutiveBrain
-                                             |
-        +------------------+-----------------+------------------+
-        |                  |                 |                  |
-SituationAnalyzer     GoalManager    OpportunityEngine    ExperimentEngine
-        |                  |                 |                  |
-        +------------------+-----------------+------------------+
-                                             |
-                                             v
-                                    AIProviderRouter
-        (GEMINI_API_KEY -> FALLBACK_1 -> FALLBACK_2 -> FALLBACK_3 -> OPENROUTER_FREE)
-                                             |
-                                             v
-                                     Capability Router
-                   (Moltbook, GitHub, Business, Wallet, Engineering)
-                                             |
-                                             v
-                        VERIFY -> LEARN -> MEMORY (9 Categories)
-                                             |
-                                             v
-                             AgentEventBus & RevenueEngine
-                                             |
-                                             v
-                         REAL-TIME COMMAND CENTER WEB UI (Port 8000)
-```
+## Offline narration and captions
 
----
+Generate a WAV without an API:
 
-## ⚡ Core Systems & Capabilities
-
-### 1. Master AgentRuntime (`agent_runtime.py`)
-- Single authoritative master loop driving explicit state transitions (`STARTING` $\rightarrow$ `OBSERVING` $\rightarrow$ `PLANNING` $\rightarrow$ `SELECTING` $\rightarrow$ `EXECUTING` $\rightarrow$ `VERIFYING` $\rightarrow$ `LEARNING` $\rightarrow$ `WAITING`).
-- Governed by a singleton process lock (`agentbroko.lock`) to prevent duplicate runner instances.
-
-### 2. Executive Brain (`executive_brain.py`)
-- Coordinates situation analysis, persistent goal management, business opportunity discovery, controlled hypothesis-driven experiments, content selection, and strategy management.
-
-### 3. AI Provider Router (`ai_provider_router.py`)
-- Centralized LLM gateway managing `GEMINI_API_KEY`, `GEMINI_API_KEY_FALLBACK_1..3`, and `OPENROUTER_FREE`.
-- Classifies requests by task complexity (`HIGH_REASONING`, `CONTENT_GENERATION`, `RESEARCH`, `CODE`, `ANALYSIS`).
-- Automatic failover upon rate limits (429) or timeouts without crashing. Zero API key exposure in logs.
-
-### 4. Content Intelligence Engine (`content_brain.py` & `content_memory.py`)
-- Discovers candidate topics across AI Agents, Developer Tools, Security Scanning, Business Automation, Tech Trends, and Crypto.
-- Calculates `topic_fatigue` penalties to prevent repetitive subjects and enforce topic diversity.
-- Dynamically selects content format (`Technical Breakdown`, `Problem + Solution`, `Tutorial`, `Case Study`), length (`SHORT`, `MEDIUM`, `LONG`), and community destination (`m/technology`, `m/tooling`, `m/agentfinance`, `m/todayilearned`, `m/general`).
-- Supports valid decisions: `POST`, `COMMENT`, `REPLY`, `RESEARCH`, or `WAIT`.
-
-### 5. Moltbook Autonomous Social Agent (`moltbook_feed_intelligence.py` & `social_memory.py`)
-- Categorizes feed discussions and scores conversation priority.
-- Engages in non-spam, value-first technical comments and multi-turn thread replies.
-- Automatically extracts developer pain points and tool requests into the Opportunity Discovery Engine.
-
-### 6. Revenue Engine & Monetization Registry (`revenue_engine.py`)
-- Tracks `potential_revenue`, `expected_revenue`, `confirmed_revenue`, `received_revenue`, `expenses`, and `net_profit`.
-- Strictly separates potential opportunity scores from confirmed real revenue ($0.00 until payment).
-
-### 7. Wallet Engine & 3-Strike Circuit Breaker (`capabilities/wallet_capability.py`)
-- Monitors multi-chain balances across Bitcoin, Solana, Base, Polygon, Arbitrum, and Ethereum.
-- 3-strike circuit breaker isolates provider timeouts (`DEGRADED`/`OFFLINE` state with 2-minute backoff) so wallet queries never block main agent cycles.
-
-### 8. Real-Time Command Center Web UI (`control_center_server.py` & `static/control_center.html`)
-- Glassmorphism Web Dashboard running live on `http://localhost:8000`.
-- Features Real-Time Activity Stream, AI Provider Health, Confirmed Revenue Ledger, Content Intelligence Hub, Permissions & Safe Mode controls, and Error Center.
-
----
-
-## 🚀 Quick Start
-
-### 1. Prerequisites
-- Python 3.10+
-- `git`
-
-### 2. Installation
 ```bash
-git clone https://github.com/agentbroko/agentbroko.git
-cd agentbroko
-
-# Create virtual environment
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-
-# Install dependencies (standard library + optional requests/urllib)
-pip install -r requirements.txt
+video-forge speak --file my-video/script.txt --output my-video/audio/narration.wav
+video-forge captions --file my-video/script.txt --output my-video/captions/subtitles.srt
 ```
 
-### 3. Environment Configuration
-Create a `.env` file in the root directory:
-```env
-MNEMONIC_PHRASE="your twelve word secret phrase here"
-github_token="github_pat_11B..."
-GEMINI_API_KEY="AIzaSy..."
-GEMINI_API_KEY_FALLBACK="AIzaSy..."
-OPENROUTER_FREE="sk-or-v1-..."
-```
+The command automatically uses Piper, espeak-ng, Windows SAPI, or macOS `say` when available. Piper voice models are downloaded separately by the user and are not bundled in this repository. Details are in [docs/TTS.md](docs/TTS.md).
 
-### 4. Launch AgentBroko Master OS
+## Agent workflow
+
+Give your coding agent the task: “Edit `project.json` to make a 30-second vertical trailer from the clips in `media/`, generate narration from `script.txt`, then run `video-forge validate` and `video-forge render`.” Agents can safely change clip order, trims, speed, volumes, output dimensions, title, narration, music, and subtitles.
+
+The project schema is documented in [docs/PROJECT.md](docs/PROJECT.md). Keep media and generated outputs local; `.gitignore` excludes common private media, audio, and output files by default.
+
+## Development
+
 ```bash
-python agentbroko_runner.py
-```
-Then open your browser and navigate to:
-**`http://localhost:8000`**
-
----
-
-## 🧪 Test Suite
-
-Run the full V9 System Acceptance & Regression Test Suite:
-```bash
-python test_v9_system_acceptance.py
-python test_v8_master_orchestrator.py
-python test_content_intelligence.py
-python test_moltbook_social.py
-python test_money_intelligence.py
+python -m pip install -e .
+python -m pytest
 ```
 
----
+## Contact and donations
 
-## 📜 License
+Questions, ideas, and contributions: [brokeinnovation@gmail.com](mailto:brokeinnovation@gmail.com)
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Bitcoin donations: `bc1q59457phgvxtyxvsyuw0k2pqljkcvkt3jej67xh`
 
----
+Donations are optional and do not unlock features. Please verify the address before sending funds.
 
-<p align="center">
-  <i>Built with ❤️ by the AgentBroko Core Architecture Team</i>
-</p>
+## License
+
+MIT. See [LICENSE](LICENSE).
+
