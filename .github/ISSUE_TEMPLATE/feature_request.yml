@@ -1,0 +1,30 @@
+name: Feature request
+description: Propose an improvement or a new local-first skill
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: checkboxes
+    id: principles
+    attributes:
+      label: Project principles
+      options:
+        - label: This can work without a mandatory paid API.
+          required: true
+        - label: I have considered privacy and third-party licensing.
+          required: true
