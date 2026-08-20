@@ -48,6 +48,16 @@ agentbroko pdf render document.pdf --output rendered-pages
 
 Install `pypdf` for text extraction and Poppler (`pdfinfo` and `pdftoppm`) for metadata and page rendering. See [docs/PDF.md](docs/PDF.md).
 
+## Skill: PDF Playbook
+
+Create a polished, dark-theme, 20-page developer handbook with required AgentBroko branding and a responsibility disclaimer:
+
+```bash
+agentbroko pdf-playbook --output my-guide.pdf
+```
+
+The interactive flow asks for the guide title, audience, and core promise. Add repeatable custom questions with `--extra-question`. Use `--non-interactive` for automation. The free edition always includes AgentBroko branding; see [docs/PDF_PLAYBOOK.md](docs/PDF_PLAYBOOK.md).
+
 ## Extending AgentBroko
 
 Register each future skill in `src/agentbroko/cli.py`, give it documentation and tests, and keep it local-first with no hidden network calls. See [AGENTS.md](AGENTS.md).

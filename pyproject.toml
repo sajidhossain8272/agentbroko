@@ -16,10 +16,12 @@ classifiers = [
   "Programming Language :: Python :: 3",
   "Topic :: Multimedia :: Video :: Conversion",
 ]
+dependencies = ["reportlab>=4.0"]
 
 [project.scripts]
 agentbroko = "agentbroko.cli:main"
 video-forge = "video_forge.cli:main"
+pdf-playbook = "pdf_playbook.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
