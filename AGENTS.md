@@ -1,6 +1,13 @@
 # Instructions for coding agents
 
-This repository is designed to be operated and extended by coding agents.
+This repository is designed to be operated and extended by coding agents. AgentBroko is the product; Video Forge is its first skill.
+
+## Skill contract
+
+- Register each user-facing skill in `src/agentbroko/cli.py` so `agentbroko skills` exposes it.
+- Keep a direct skill command for scripting compatibility.
+- Add documentation under `docs/` and tests under `tests/`.
+- Keep installation predictable through Python packaging and the npm launcher.
 
 ## Editing a user's video
 
@@ -18,4 +25,3 @@ This repository is designed to be operated and extended by coding agents.
 - Prefer FFmpeg filters and Python standard-library code.
 - Add focused tests for project parsing and deterministic helpers.
 - Preserve compatibility with Python 3.10+ and Windows, macOS, and Linux.
-

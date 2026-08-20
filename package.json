@@ -1,0 +1,1 @@
+{"name":"agentbroko","version":"1.0.0","description":"AgentBroko skills hub with local-first Video Forge","license":"MIT","bin":{"agentbroko":"bin/agentbroko.js"},"files":["bin","README.md","LICENSE","docs"],"engines":{"node":">=18"},"repository":{"type":"git","url":"https://github.com/sajidhossain8272/agentbroko.git"}}
