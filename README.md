@@ -57,3 +57,13 @@ Contact: [brokeinnovation@gmail.com](mailto:brokeinnovation@gmail.com)
 Bitcoin: `bc1q59457phgvxtyxvsyuw0k2pqljkcvkt3jej67xh`
 
 MIT licensed. See [LICENSE](LICENSE).
+
+## Documentation
+
+- [Installation](docs/INSTALL.md) and [quickstart](docs/QUICKSTART.md)
+- [Architecture](docs/ARCHITECTURE.md) and [technology stack](docs/TECH_STACK.md)
+- [Video Forge project format](docs/PROJECT.md) and [offline TTS](docs/TTS.md)
+- [Open-source credits](docs/CREDITS.md) and [roadmap](docs/ROADMAP.md)
+- [Contributing](CONTRIBUTING.md) and [adding a skill](docs/ADDING_A_SKILL.md)
+- [Privacy](PRIVACY.md), [terms](TERMS.md), [security](SECURITY.md), and [support](SUPPORT.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md), [changelog](CHANGELOG.md), and [release guide](docs/RELEASING.md)

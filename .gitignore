@@ -22,4 +22,5 @@ workspace/
 .env
 .env.*
 !.env.example
-
+.npm-cache/
+*.tgz
