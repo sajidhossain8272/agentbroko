@@ -1,6 +1,6 @@
 {
   "name": "agentbroko",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "AgentBroko Autonomous AI Executive OS & Skills Hub with local-first Video Forge & PDF Playbook",
   "license": "MIT",
   "bin": {
