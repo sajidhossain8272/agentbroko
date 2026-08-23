@@ -79,28 +79,28 @@ npx agentbroko pdf info document.pdf
 
 ---
 
-## 🎬 Skill 1: Video Forge (Video Editing)
+## 🎬 Skill 1: Video Forge (10/10 Procedural & Cinematic Video Engine)
 
-Video Forge is an automated local video production skill:
+Video Forge is a procedural video engine designed to create broadcast-quality product ads, viral YouTube Shorts, Instagram Reels, and cinematic documentary stories with fluid motion, particle physics, atmospheric parallax, and neural voiceover synchronization:
 
 ```bash
-# 1. Check local environment (FFmpeg, TTS engines)
+# 1. Prompt-to-Video: Turn a brief into a finished video
+agentbroko video-forge generate "60s ad for MyProduct, an autonomous developer OS" --name myproduct --seconds 30
+
+# 2. Render 9:16 Vertical Storytelling Short / Reel (3D parallax, volumetric rays, kinetic typography)
+agentbroko video-forge short --type story --theme golden -o outputs/short.mp4
+
+# 3. Render a procedural spec.json ad
+agentbroko video-forge render ads/demo/spec.json
+
+# 4. Check local environment (FFmpeg, Pillow, NumPy, Neural TTS)
 agentbroko video-forge doctor
 
-# 2. Initialize a new video project scaffold
-agentbroko video-forge init my-video
+# 5. Synthesize high-fidelity neural speech voiceover
+agentbroko video-forge speak --text "Welcome to AgentBroko." --output audio/vo.wav --engine edge --voice en-US-ChristopherNeural
 
-# 3. Validate project schema
-agentbroko video-forge validate my-video/project.json
-
-# 4. Synthesize speech voiceover from script
-agentbroko video-forge speak --file my-video/script.txt --output my-video/audio/narration.wav
-
-# 5. Generate synchronized SRT subtitles
-agentbroko video-forge captions --file my-video/script.txt --output my-video/captions/subtitles.srt
-
-# 6. Render final broadcast MP4
-agentbroko video-forge render my-video/project.json
+# 6. Initialize classic clip timeline or procedural project
+agentbroko video-forge init my-video --template procedural
 ```
 
 ---

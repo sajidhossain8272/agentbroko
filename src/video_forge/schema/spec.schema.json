@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Ad video spec",
+  "type": "object",
+  "required": ["scenes"],
+  "additionalProperties": false,
+  "properties": {
+    "brand": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "wordmark": { "type": ["string", "null"] },
+        "url": { "type": ["string", "null"] },
+        "accent": { "type": "string", "description": "hex colour, e.g. #5B4BFF" },
+        "font": { "type": ["string", "null"], "description": "optional .ttf path override" }
+      }
+    },
+    "video": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "width": { "type": "integer" },
+        "height": { "type": "integer" },
+        "fps": { "type": "integer" },
+        "target_seconds": { "type": "number" },
+        "supersample": { "type": "number", "minimum": 1.0, "maximum": 2.0 },
+        "crossfade": { "type": "number" },
+        "fade_in": { "type": "number" },
+        "fade_out": { "type": "number" }
+      }
+    },
+    "voice": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "backend": { "type": "string", "enum": ["windows", "elevenlabs", "openai"] },
+        "voice": { "type": ["string", "null"] },
+        "rate": { "type": "integer", "minimum": -10, "maximum": 10 }
+      }
+    },
+    "music": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "file": { "type": ["string", "null"] },
+        "gain_db": { "type": "number" },
+        "duck_db": { "type": "number" }
+      }
+    },
+    "scenes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["type"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["cold_open", "statement", "pill_list", "message",
+                     "node_stack", "orbit", "waveform", "feature_grid", "stat",
+                     "split_compare", "cta", "logo_reveal", "screenshot"]
+          },
+          "act": { "type": "string", "enum": ["light", "dark"] },
+          "vo": { "type": "string", "description": "narration for this scene" },
+          "duration": { "type": "number", "description": "override VO-driven timing" },
+
+          "glyph": { "type": "string", "description": "cold_open: pause|play|dot|<text>" },
+          "label": { "type": "string" },
+          "kicker": { "type": "string", "description": "statement: small label above" },
+          "weight": { "type": "string" },
+          "lines": {
+            "type": "array",
+            "description": "statement/cta: 1-3 lines (string or {text,color})",
+            "items": {
+              "oneOf": [
+                { "type": "string" },
+                {
+                  "type": "object",
+                  "properties": {
+                    "text": { "type": "string" },
+                    "color": { "type": "string", "enum": ["ink", "accent", "muted", "faint"] }
+                  },
+                  "required": ["text"]
+                }
+              ]
+            }
+          },
+          "text": { "type": "string", "description": "waveform: single centred line" },
+          "items": {
+            "type": "array",
+            "description": "pill_list/orbit/feature_grid list content"
+          },
+          "columns": {
+            "description": "node_stack: [{title,rows}]; feature_grid: int column count"
+          },
+          "center": { "type": "string", "enum": ["sphere", "dot"] },
+          "value": { "type": "string", "description": "stat: e.g. 99.99% or $175" },
+          "caption": { "type": "string" },
+          "sub": { "type": "string" },
+          "left": { "type": "object", "description": "split_compare {label,value,color}" },
+          "right": { "type": "object", "description": "split_compare {label,value,color}" },
+          "arrow": { "type": "boolean" },
+          "message": { "type": "string", "description": "message: bubble text" },
+          "toggle": { "type": "boolean" },
+          "call": { "type": "boolean" },
+          "button": { "type": "string", "description": "cta: button label" },
+          "url": { "type": "string" },
+          "wordmark": { "type": "string" },
+          "mark": { "type": ["string", "null"], "description": "logo_reveal: pause|null" },
+          "image": { "type": "string", "description": "screenshot: image path" },
+          "fit": { "type": "string", "enum": ["cover", "contain"] },
+          "zoom": { "type": "number" },
+          "color": { "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -4,19 +4,27 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agentbroko"
-version = "1.3.0"
-description = "AgentBroko Autonomous AI Executive OS & Skills Hub with local-first Video Forge & PDF Playbook"
+version = "1.4.0"
+description = "AgentBroko Autonomous AI Executive OS & Skills Hub with local-first Video Forge (10/10 Procedural Video Engine) & PDF Playbook"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [{ name = "Broke Innovation", email = "brokeinnovation@gmail.com" }]
-keywords = ["ai-agent", "autonomous-os", "video-editing", "pdf-playbook", "skills-hub"]
+keywords = ["ai-agent", "autonomous-os", "video-editing", "procedural-graphics", "kinetic-typography", "pdf-playbook", "skills-hub"]
 classifiers = [
   "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3",
   "Topic :: Multimedia :: Video :: Conversion",
 ]
-dependencies = ["reportlab>=4.0"]
+dependencies = [
+  "reportlab>=4.0",
+  "Pillow>=10.0",
+  "numpy>=1.24"
+]
+
+[project.optional-dependencies]
+tts = ["edge-tts>=6.1.0", "requests>=2.28"]
+all = ["edge-tts>=6.1.0", "requests>=2.28", "jsonschema>=4.0"]
 
 [project.scripts]
 agentbroko = "agentbroko.cli:main"

@@ -17,65 +17,51 @@ GITHUB_REPO_RAW = "https://raw.githubusercontent.com/sajidhossain8272/agentbroko
 
 VIDEO_FORGE_SKILL_MD = """---
 name: video-forge
-description: Local video editing, procedural timeline assembly, speech narration, and synchronized caption rendering via FFmpeg. Use whenever the user asks to generate, edit, or produce short/long videos, speech voiceovers, or subtitles.
+description: 10/10 Procedural and cinematic video engine, prompt-to-video generation, vertical shorts/reels synthesis, neural VO narration, and FFmpeg assembly. Use whenever the user asks to generate, edit, or produce marketing ads, storytelling shorts, voiceovers, or kinetic subtitles.
 ---
 
 # Video Forge Skill Guide
 
-Use Video Forge to build broadcast-quality MP4 videos, vertical shorts (9:16), or landscape ads (16:9) entirely on your local machine with zero external cloud dependencies.
+Use Video Forge to build broadcast-quality MP4 videos, 9:16 vertical shorts, or 16:9 landscape product ads entirely on your local machine with zero external cloud dependencies.
 
-## Standard Workflow for Coding Agents
+## Key Capabilities
 
-### 1. Initialize a Video Project
-When the user asks to create a video:
-```bash
-npx agentbroko video-forge init <project-folder>
-```
-This generates:
-- `<project-folder>/project.json`: Timeline, clips, audio, and subtitle specifications.
-- `<project-folder>/script.txt`: Spoken voiceover narration script.
-- `<project-folder>/audio/`: Folder for generated speech `.wav` and background music.
-- `<project-folder>/captions/`: Folder for generated `.srt` subtitles.
-- `<project-folder>/media/`: Folder for input clips or images.
-- `<project-folder>/outputs/`: Target folder for the rendered `final.mp4`.
+1. **Prompt-to-Video Generator**:
+   Transform a natural language brief into a finished procedural ad video:
+   ```bash
+   npx agentbroko video-forge generate "60s ad for MyProduct, an autonomous developer OS" --name myproduct --accent "#3B5BFF" --seconds 30
+   ```
 
-### 2. Synthesize Speech & Subtitles
-Write the voiceover script to `<project-folder>/script.txt` and run:
-```bash
-# Generate offline speech narration
-npx agentbroko video-forge speak --file <project-folder>/script.txt --output <project-folder>/audio/narration.wav
+2. **9:16 Vertical Storytelling Shorts & Reels Engine**:
+   Generate cinematic vertical shorts with atmospheric sandstone ridges, 3D parallax dunes, volumetric god rays, particle physics, and kinetic subtitles:
+   ```bash
+   npx agentbroko video-forge short --type story --theme golden -o outputs/story_short.mp4
+   ```
 
-# Generate synchronized SRT subtitles
-npx agentbroko video-forge captions --file <project-folder>/script.txt --output <project-folder>/captions/subtitles.srt
-```
+3. **10/10 Procedural Motion Graphics (`spec.json`)**:
+   Render multi-scene declarative specs with PIL + NumPy + FFmpeg rawvideo pipe:
+   - 13+ Scene modules: `cold_open`, `statement`, `pill_list`, `message`, `node_stack`, `orbit`, `waveform`, `feature_grid`, `stat`, `split_compare`, `cta`, `logo_reveal`, `screenshot`.
+   - Dynamic speech-driven scene duration solver.
+   - Real-time audio ducking, loudness envelope detection, and peak limiting (-1.5 dBFS).
+   - Render command:
+     ```bash
+     npx agentbroko video-forge render ads/demo/spec.json
+     ```
 
-### 3. Assemble and Validate `project.json`
-Define the scenes, clips, aspect ratio, and transitions in `project.json`:
-```json
-{
-  "output": "outputs/final.mp4",
-  "title": "My Product Launch Video",
-  "video": { "width": 1080, "height": 1920, "fps": 60 },
-  "clips": [
-    { "source": "media/clip-01.mp4", "start": 0, "duration": 5, "speed": 1, "volume": 1 }
-  ],
-  "audio": {
-    "narration": "audio/narration.wav",
-    "music": "audio/bed.mp3",
-    "music_volume": 0.12
-  },
-  "subtitles": "captions/subtitles.srt"
-}
-```
-Validate the schema before rendering:
-```bash
-npx agentbroko video-forge validate <project-folder>/project.json
-```
+4. **High-Fidelity Neural & Offline TTS (`speak`)**:
+   ```bash
+   # Neural Edge-TTS voice (high-fidelity, 100% free)
+   npx agentbroko video-forge speak --text "Welcome to AgentBroko." --output audio/vo.wav --engine edge --voice en-US-ChristopherNeural
 
-### 4. Render the Final MP4
-```bash
-npx agentbroko video-forge render <project-folder>/project.json
-```
+   # Native Windows SAPI, macOS say, or Linux espeak
+   npx agentbroko video-forge speak --text "Welcome to AgentBroko." --output audio/vo.wav --engine auto
+   ```
+
+5. **Clip Timeline Assembly (`project.json`)**:
+   ```bash
+   npx agentbroko video-forge init my-video --template clips
+   npx agentbroko video-forge render my-video/project.json
+   ```
 
 ---
 
@@ -84,18 +70,14 @@ npx agentbroko video-forge render <project-folder>/project.json
 If you encounter errors during video generation:
 1. **FFmpeg / FFprobe Missing or Not Found**:
    - Run `npx agentbroko doctor` to diagnose.
-   - Install FFmpeg locally:
-     - **Windows**: `winget install Gyan.FFmpeg` or `choco install ffmpeg`
-     - **macOS**: `brew install ffmpeg`
-     - **Linux**: `sudo apt install ffmpeg`
-2. **Project Validation Fails**:
-   - Check that all files referenced in `project.json` (media clips, narration `.wav`, subtitles `.srt`) exist on disk at the exact relative or absolute paths.
-   - Run `npx agentbroko video-forge validate <project-folder>/project.json` to get line-by-line error messages.
-3. **Voice / Speech Synthesis (TTS) is Silent or Errors**:
-   - Test speech generation directly: `npx agentbroko video-forge speak --text "Test audio" --output test.wav`
-   - On Windows, Video Forge automatically uses the native SAPI Windows TTS engine. On macOS it uses `say`. On Linux it uses `espeak` or Piper.
-4. **Media Resolution / Aspect Ratio Issues**:
-   - Use `ffprobe -v error -show_entries stream=width,height,duration -of default=noprint_wrappers=1 <media-file>` to inspect source dimensions.
+   - Windows: `winget install Gyan.FFmpeg`
+   - macOS: `brew install ffmpeg`
+   - Linux: `sudo apt install ffmpeg`
+2. **Missing Python Modules**:
+   - `python -m pip install Pillow numpy reportlab`
+   - Optional neural TTS: `python -m pip install edge-tts`
+3. **Spec or Project Validation Fails**:
+   - Run `npx agentbroko video-forge validate <file>` to view exact schema errors.
 """
 
 PDF_PLAYBOOK_SKILL_MD = """---
@@ -220,10 +202,10 @@ SAMPLE_PLAYBOOK_SPEC = {
 SKILL_REGISTRY = {
     "video-forge": {
         "title": "🎬 Video Forge",
-        "description": "Local video editing, procedural timeline assembly, speech narration, and synchronized captions",
+        "description": "10/10 Procedural video engine, prompt-to-video, vertical shorts, and neural speech",
         "skill_md": VIDEO_FORGE_SKILL_MD,
         "sample_file": ("examples/sample_project.json", json.dumps(SAMPLE_PROJECT_JSON, indent=2)),
-        "command_hint": "npx agentbroko video-forge init my-video",
+        "command_hint": "npx agentbroko video-forge generate 'Brief' --seconds 30",
     },
     "pdf-playbook": {
         "title": "📄 PDF Playbook",

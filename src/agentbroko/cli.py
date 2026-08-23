@@ -9,7 +9,7 @@ from .skills_installer import install_skills, clone_repository, SKILL_REGISTRY
 from . import __version__
 
 SKILLS = {
-    "video-forge": "Local video editing, offline narration, subtitles, and FFmpeg assembly",
+    "video-forge": "10/10 Procedural video engine, prompt-to-video, vertical shorts, and neural speech",
     "pdf-playbook": "Premium branded 20-page developer handbook PDF generation with ReportLab",
     "pdf": "Offline local PDF metadata inspection, text extraction, and page rendering",
 }

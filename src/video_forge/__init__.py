@@ -1,3 +1,3 @@
-"""Video Forge: local video automation for people and coding agents."""
+"""Video Forge: 10/10 Procedural, Cinematic & Storytelling Video Engine."""
 
-__version__ = "1.3.0"
+__version__ = "1.4.0"
