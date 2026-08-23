@@ -1,0 +1,39 @@
+name: Bug report
+description: Report a reproducible AgentBroko or skill problem
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Never include tokens, private media, or personal data.
+  - type: input
+    id: version
+    attributes:
+      label: AgentBroko version
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python, Node/npm, and FFmpeg versions as applicable
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and sanitized logs
+    validations:
+      required: true

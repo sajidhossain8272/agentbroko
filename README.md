@@ -1,27 +1,62 @@
-# 🤖 AgentBroko V9 — Autonomous Business OS & Multi-Domain AI Agent
+# AgentBroko
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python Version](https://img.shields.io/badge/Python-3.10%2B-brightgreen.svg)](https://python.org)
-[![Live Swapper](https://img.shields.io/badge/Swap_Terminal-swap.plzwork.app-00cc88.svg)](https://swap.plzwork.app/)
-[![System Architecture](https://img.shields.io/badge/Architecture-AgentRuntime_V9-orange.svg)](#architecture)
-[![Control Center UI](https://img.shields.io/badge/Control_Center-Live_Port_8000-purple.svg)](#control-center)
+[![NPM Version](https://img.shields.io/npm/v/agentbroko.svg)](https://www.npmjs.com/package/agentbroko)
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Deployed-black.svg)](https://vercel.com)
 
-> **AgentBroko** is an autonomous multi-domain AI agent and open-source software factory. Built on a single authoritative master runtime (`AgentRuntime`), AgentBroko observes its environment, reasons about value-creation opportunities, participates in community conversations, executes software engineering tasks, and powers [AgentBrokoSwap](https://swap.plzwork.app/)—the non-custodial multi-chain crypto swapper.
->
-> 🔄 **Live Swap Terminal:** [https://swap.plzwork.app/](https://swap.plzwork.app/) (Zero KYC, Guaranteed Fixed Rates, 20+ Blockchain Networks)
+> **AgentBroko** is an autonomous AI executive operating system and local-first skills hub for developers, coding agents, and creative tools. Built on an authoritative master runtime with a live Vercel serverless dashboard, AgentBroko observes its environment, reasons about opportunities, executes software tasks, and powers developer skills including **Video Forge** and **PDF Playbook**.
 
 ---
 
+## 🚀 Quick Start
 
-## 🌟 Vision & Mission
+### 1. NPM Package Launcher
+```bash
+npx agentbroko skills
+# or install globally
+npm install -g agentbroko
+agentbroko skills
+```
 
-AgentBroko is designed to be a genuinely autonomous, domain-agnostic software engineer, content intelligence agent, and business operator. Rather than following rigid, hard-coded scripts or spamming promotional links, AgentBroko operates under an **Observe $\rightarrow$ Understand $\rightarrow$ Discover $\rightarrow$ Score $\rightarrow$ Select $\rightarrow$ Plan $\rightarrow$ Execute $\rightarrow$ Measure $\rightarrow$ Learn** loop.
+### 2. Python Package & CLI
+```bash
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+# macOS/Linux: source .venv/bin/activate
+pip install -e .
+agentbroko skills
+```
 
-### Core Philosophy
-1. **Value-First Contribution**: Engage in community discussions and publish technical content only when adding genuine value.
-2. **Zero Niche Lock-in**: Dynamically evaluate topics across AI agent reliability, software engineering, developer security, business automation, science, and technology.
-3. **Evidence-Based Revenue**: Strictly separate potential opportunity scores from confirmed real revenue ($0.00 until verified payment transactions).
-4. **Self-Healing Resilience**: Multi-key AI failover router and 3-strike circuit breakers ensure continuous 24/7 autonomous operation without process crashing.
+### 3. Vercel Live Deployment
+AgentBroko includes a full serverless web dashboard and JSON API for Vercel:
+- **Web Dashboard**: Interactive real-time Control Center UI (`/`)
+- **Health Check**: `/api/health`
+- **Agent Status**: `/api/agent/status`
+- **Skills Registry**: `/api/skills`
+- **Goals & Tasks**: `/api/goals`, `/api/tasks`
+
+---
+
+## 🛠️ Built-in Skills
+
+### 1. Video Forge (Offline Video Automation)
+```bash
+agentbroko video-forge doctor
+agentbroko video-forge init my-video
+agentbroko video-forge validate my-video/project.json
+agentbroko video-forge render my-video/project.json
+agentbroko video-forge speak --file my-video/script.txt --output my-video/audio/narration.wav
+agentbroko video-forge captions --file my-video/script.txt --output my-video/captions/subtitles.srt
+```
+
+### 2. PDF Playbook & Local PDF Utilities
+```bash
+agentbroko pdf-playbook --output my-guide.pdf
+agentbroko pdf info document.pdf
+agentbroko pdf text document.pdf --output document.txt
+agentbroko pdf render document.pdf --output rendered-pages
+```
 
 ---
 
@@ -40,12 +75,8 @@ SituationAnalyzer     GoalManager    OpportunityEngine    ExperimentEngine
         +------------------+-----------------+------------------+
                                              |
                                              v
-                                    AIProviderRouter
-        (GEMINI_API_KEY -> FALLBACK_1 -> FALLBACK_2 -> FALLBACK_3 -> OPENROUTER_FREE)
-                                             |
-                                             v
                                      Capability Router
-                   (Moltbook, GitHub, Business, Wallet, Engineering)
+              (Moltbook, GitHub, Business, Wallet, Video Forge, PDF Playbook)
                                              |
                                              v
                         VERIFY -> LEARN -> MEMORY (9 Categories)
@@ -54,107 +85,40 @@ SituationAnalyzer     GoalManager    OpportunityEngine    ExperimentEngine
                              AgentEventBus & RevenueEngine
                                              |
                                              v
-                         REAL-TIME COMMAND CENTER WEB UI (Port 8000)
+                   VERCEL SERVERLESS CONTROL CENTER WEB DASHBOARD (api/index.py)
 ```
 
 ---
 
-## ⚡ Core Systems & Capabilities
+## 📁 Repository Structure
 
-### 1. Master AgentRuntime (`agent_runtime.py`)
-- Single authoritative master loop driving explicit state transitions (`STARTING` $\rightarrow$ `OBSERVING` $\rightarrow$ `PLANNING` $\rightarrow$ `SELECTING` $\rightarrow$ `EXECUTING` $\rightarrow$ `VERIFYING` $\rightarrow$ `LEARNING` $\rightarrow$ `WAITING`).
-- Governed by a singleton process lock (`agentbroko.lock`) to prevent duplicate runner instances.
-
-### 2. Executive Brain (`executive_brain.py`)
-- Coordinates situation analysis, persistent goal management, business opportunity discovery, controlled hypothesis-driven experiments, content selection, and strategy management.
-
-### 3. AI Provider Router (`ai_provider_router.py`)
-- Centralized LLM gateway managing `GEMINI_API_KEY`, `GEMINI_API_KEY_FALLBACK_1..3`, and `OPENROUTER_FREE`.
-- Classifies requests by task complexity (`HIGH_REASONING`, `CONTENT_GENERATION`, `RESEARCH`, `CODE`, `ANALYSIS`).
-- Automatic failover upon rate limits (429) or timeouts without crashing. Zero API key exposure in logs.
-
-### 4. Content Intelligence Engine (`content_brain.py` & `content_memory.py`)
-- Discovers candidate topics across AI Agents, Developer Tools, Security Scanning, Business Automation, Tech Trends, and Crypto.
-- Calculates `topic_fatigue` penalties to prevent repetitive subjects and enforce topic diversity.
-- Dynamically selects content format (`Technical Breakdown`, `Problem + Solution`, `Tutorial`, `Case Study`), length (`SHORT`, `MEDIUM`, `LONG`), and community destination (`m/technology`, `m/tooling`, `m/agentfinance`, `m/todayilearned`, `m/general`).
-- Supports valid decisions: `POST`, `COMMENT`, `REPLY`, `RESEARCH`, or `WAIT`.
-
-### 5. Moltbook Autonomous Social Agent (`moltbook_feed_intelligence.py` & `social_memory.py`)
-- Categorizes feed discussions and scores conversation priority.
-- Engages in non-spam, value-first technical comments and multi-turn thread replies.
-- Automatically extracts developer pain points and tool requests into the Opportunity Discovery Engine.
-
-### 6. Revenue Engine & Monetization Registry (`revenue_engine.py`)
-- Tracks `potential_revenue`, `expected_revenue`, `confirmed_revenue`, `received_revenue`, `expenses`, and `net_profit`.
-- Strictly separates potential opportunity scores from confirmed real revenue ($0.00 until payment).
-
-### 7. Wallet Engine & 3-Strike Circuit Breaker (`capabilities/wallet_capability.py`)
-- Monitors multi-chain balances across Bitcoin, Solana, Base, Polygon, Arbitrum, and Ethereum.
-- 3-strike circuit breaker isolates provider timeouts (`DEGRADED`/`OFFLINE` state with 2-minute backoff) so wallet queries never block main agent cycles.
-
-### 8. Real-Time Command Center Web UI (`control_center_server.py` & `static/control_center.html`)
-- Glassmorphism Web Dashboard running live on `http://localhost:8000`.
-- Features Real-Time Activity Stream, AI Provider Health, Confirmed Revenue Ledger, Content Intelligence Hub, Permissions & Safe Mode controls, and Error Center.
-
----
-
-## 🚀 Quick Start
-
-### 1. Prerequisites
-- Python 3.10+
-- `git`
-
-### 2. Installation
-```bash
-git clone https://github.com/agentbroko/agentbroko.git
-cd agentbroko
-
-# Create virtual environment
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-
-# Install dependencies (standard library + optional requests/urllib)
-pip install -r requirements.txt
 ```
-
-### 3. Environment Configuration
-Create a `.env` file in the root directory:
-```env
-MNEMONIC_PHRASE="your twelve word secret phrase here"
-github_token="github_pat_11B..."
-GEMINI_API_KEY="AIzaSy..."
-GEMINI_API_KEY_FALLBACK="AIzaSy..."
-OPENROUTER_FREE="sk-or-v1-..."
-```
-
-### 4. Launch AgentBroko Master OS
-```bash
-python agentbroko_runner.py
-```
-Then open your browser and navigate to:
-**`http://localhost:8000`**
-
----
-
-## 🧪 Test Suite
-
-Run the full V9 System Acceptance & Regression Test Suite:
-```bash
-python test_v9_system_acceptance.py
-python test_v8_master_orchestrator.py
-python test_content_intelligence.py
-python test_moltbook_social.py
-python test_money_intelligence.py
+.
+├── api/
+│   └── index.py                    # Vercel Serverless Function & Live Dashboard entrypoint
+├── bin/
+│   └── agentbroko.js               # Node.js / NPM CLI executable
+├── src/
+│   ├── agentbroko/                 # Master CLI & skill registry
+│   ├── video_forge/                # Video Forge video engine
+│   └── pdf_playbook/               # PDF handbook generator
+├── static/
+│   └── control_center.html         # Interactive web control center UI
+├── docs/                           # Complete documentation suite
+├── package.json                    # NPM package configuration
+├── pyproject.toml                  # Python package & Vercel entrypoint specification
+├── vercel.json                     # Vercel Serverless routing configuration
+└── requirements.txt                # Python runtime dependencies
 ```
 
 ---
 
-## 📜 License
+## 📖 Documentation
 
-Distributed under the MIT License. See `LICENSE` for more information.
-
----
-
-<p align="center">
-  <i>Built with ❤️ by the AgentBroko Core Architecture Team</i>
-</p>
+- [Installation](docs/INSTALL.md) and [Quickstart](docs/QUICKSTART.md)
+- [Complete Usage Guide](docs/USAGE.md)
+- [Architecture](docs/ARCHITECTURE.md) and [Tech Stack](docs/TECH_STACK.md)
+- [Video Forge Guide](docs/PROJECT.md) and [Offline TTS](docs/TTS.md)
+- [PDF Skill](docs/PDF.md) and [PDF Playbook](docs/PDF_PLAYBOOK.md)
+- [Contributing](CONTRIBUTING.md) and [Adding a Skill](docs/ADDING_A_SKILL.md)
+- [Security](SECURITY.md), [Privacy](PRIVACY.md), and [License](LICENSE)
