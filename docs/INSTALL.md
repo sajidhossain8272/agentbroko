@@ -1,25 +1,50 @@
-# Installation
+# Installation & Setup Guide
 
-## FFmpeg
+AgentBroko can be added to any project workspace to empower AI coding agents with Video Forge and PDF Playbook capabilities.
 
-Install FFmpeg and ensure both `ffmpeg` and `ffprobe` are on your PATH.
+## 1. Quick Setup in Any Workspace (Recommended)
 
-- Windows: install a trusted FFmpeg build, extract it, and add its `bin` directory to PATH.
-- macOS: `brew install ffmpeg`
-- Debian/Ubuntu: `sudo apt update && sudo apt install ffmpeg`
-
-## Python package
-
-Python 3.10 or newer is recommended:
-
+Run directly in your project root:
 ```bash
-python -m venv .venv
-# Windows PowerShell
-.venv\\Scripts\\Activate.ps1
-# macOS/Linux
-source .venv/bin/activate
-python -m pip install -e .
+npx agentbroko init
 ```
 
-No runtime Python dependency is required beyond the standard library.
+This automatically configures:
+- `.agents/skills/video-forge/SKILL.md` (Video Forge skill contract)
+- `.agents/skills/pdf-playbook/SKILL.md` (PDF Playbook skill contract)
+- `.agents/skills/pdf/SKILL.md` (Offline PDF tools)
+- `.agents/AGENTS.md` and `.cursorrules` (IDE agent instructions)
 
+---
+
+## 2. NPM Package Installation
+
+### Local Development Dependency:
+```bash
+npm install -D agentbroko
+```
+
+### Global Terminal CLI:
+```bash
+npm install -g agentbroko
+```
+
+---
+
+## 3. Python Package Installation
+
+```bash
+git clone https://github.com/sajidhossain8272/agentbroko.git
+cd agentbroko
+pip install -e .
+```
+
+---
+
+## 4. Prerequisites for Video Rendering
+
+- **Python 3.10+**
+- **FFmpeg & FFprobe**: Ensure `ffmpeg` is available on your system `PATH`.
+  - Windows: `winget install Gyan.FFmpeg` or `choco install ffmpeg`
+  - macOS: `brew install ffmpeg`
+  - Ubuntu/Debian: `sudo apt install ffmpeg`

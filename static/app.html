@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgentBroko Documentation | Local-First Skills Hub</title>
+    <title>AgentBroko Documentation | Skills Hub for Coding Agents & Creators</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,6 +19,7 @@
             --text-secondary: #475569;
             --text-muted: #64748b;
             --accent-blue: #2563eb;
+            --accent-purple: #7c3aed;
             --accent-emerald: #10b981;
             --radius-sm: 6px;
             --radius-md: 10px;
@@ -78,7 +79,7 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.25rem;
         }
 
         .nav-link {
@@ -127,12 +128,12 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            color: var(--accent-blue);
+            color: var(--accent-purple);
             margin-bottom: 0.6rem;
         }
 
         .hero h1 {
-            font-size: 2.6rem;
+            font-size: 2.75rem;
             font-weight: 800;
             letter-spacing: -0.04em;
             color: var(--text-primary);
@@ -156,7 +157,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 540px;
+            max-width: 560px;
         }
 
         .install-code {
@@ -184,6 +185,57 @@
         .btn-copy:hover {
             color: var(--text-primary);
             border-color: var(--text-primary);
+        }
+
+        /* Workflows Overview Cards */
+        .workflow-box {
+            background: #f8fafc;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .workflow-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .workflow-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .workflow-step {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+        }
+
+        .step-num {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--accent-purple);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.4rem;
+        }
+
+        .step-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.4rem;
+        }
+
+        .step-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
         }
 
         /* Documentation Sections */
@@ -315,6 +367,40 @@
             color: var(--text-primary);
         }
 
+        /* Prompt Box Simulation */
+        .prompt-example-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 1rem 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .prompt-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent-purple);
+            background: rgba(124, 58, 237, 0.1);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .prompt-text {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            font-style: italic;
+            border-left: 3px solid var(--accent-purple);
+            padding-left: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .prompt-output-note {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
         /* Skills Reference Table */
         .skills-table {
             width: 100%;
@@ -385,14 +471,14 @@
     <header>
         <a href="/" class="brand">
             AgentBroko
-            <span class="version-badge">v1.1.0</span>
+            <span class="version-badge">v1.2.0</span>
         </a>
 
         <nav class="nav-links">
-            <a href="#quickstart" class="nav-link">Installation</a>
+            <a href="#how-it-works" class="nav-link">How It Works</a>
+            <a href="#install" class="nav-link">Install Skills</a>
             <a href="#video-forge" class="nav-link">Video Forge</a>
             <a href="#pdf-playbook" class="nav-link">PDF Playbook</a>
-            <a href="#pdf-tools" class="nav-link">PDF Tools</a>
             <a href="https://github.com/sajidhossain8272/agentbroko" target="_blank" class="nav-link">GitHub</a>
             <a href="https://www.npmjs.com/package/agentbroko" target="_blank" class="btn-nav-primary">npm package</a>
         </nav>
@@ -403,32 +489,62 @@
 
         <!-- Hero Section -->
         <div class="hero">
-            <div class="hero-tag">Developer Documentation</div>
-            <h1>Local-First Skills Hub for Coding Agents & Creators</h1>
+            <div class="hero-tag">AI Agent Skills Ecosystem</div>
+            <h1>Empower Your IDE Coding Agent with Video &amp; PDF Skills</h1>
             <p>
-                Install AgentBroko once to discover and execute creative skills from a single CLI. Automate video editing, offline speech synthesis, and developer handbook creation without cloud accounts, telemetry, or API keys.
+                Install AgentBroko skills into any workspace. Open your AI editor (Google Antigravity, Cursor, VS Code Cline, Windsurf, Roo Code), prompt your agent in plain English, and watch it generate broadcast videos and 20-page handbooks with zero external API keys.
             </p>
 
             <div class="install-bar">
-                <span class="install-code">npm install -g agentbroko</span>
-                <button class="btn-copy" onclick="copySnippet('npm install -g agentbroko', this)">
+                <span class="install-code">npx agentbroko init</span>
+                <button class="btn-copy" onclick="copySnippet('npx agentbroko init', this)">
                     <span>Copy</span>
                 </button>
             </div>
         </div>
 
         <!-- ========================================================= -->
+        <!-- THE 3-STEP AGENT-FIRST USER JOURNEY -->
+        <!-- ========================================================= -->
+        <div class="workflow-box" id="how-it-works">
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">
+                🚀 The Agent-First Experience
+            </h3>
+            <p style="font-size: 0.92rem; color: var(--text-secondary);">
+                Just like software packages live in <code>node_modules</code>, AgentBroko provisions standard skill contracts in <code>.agents/skills/</code> so your coding agent knows exactly how to build media for you.
+            </p>
+
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-num">Step 1 • Install</div>
+                    <div class="step-title">Initialize Skills</div>
+                    <div class="step-desc">Run <code>npx agentbroko init</code> in your project to install skill blueprints into <code>.agents/skills/</code>.</div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-num">Step 2 • Prompt</div>
+                    <div class="step-title">Ask Your Agent</div>
+                    <div class="step-desc">In Cursor, Antigravity, or VS Code, tell your agent: <i>"Create a 30s TikTok short for my SaaS launch using Video Forge."</i></div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-num">Step 3 • Deliver</div>
+                    <div class="step-title">Instant Media</div>
+                    <div class="step-desc">Your agent plans the timeline, generates voiceovers, builds SRTs, and outputs <code>final.mp4</code> or <code>playbook.pdf</code> locally.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================================= -->
         <!-- 1. INSTALLATION & SETUP (TABBED SWITCHER) -->
         <!-- ========================================================= -->
-        <section id="quickstart" class="doc-section">
-            <h2 class="section-heading">1. Installation & Setup</h2>
-            <p class="section-desc">Select your preferred package manager or runtime to get started:</p>
+        <section id="install" class="doc-section">
+            <h2 class="section-heading">1. Workspace Installation &amp; Setup</h2>
+            <p class="section-desc">Add AgentBroko skills to any existing repository or new project:</p>
 
             <div class="tabbed-card" id="install-card">
                 <div class="tab-bar-header">
                     <div class="tab-buttons-group">
-                        <button class="tab-btn active" onclick="switchTab('install-card', 'npx', this)">npx (Instant)</button>
-                        <button class="tab-btn" onclick="switchTab('install-card', 'npm', this)">npm (Global)</button>
+                        <button class="tab-btn active" onclick="switchTab('install-card', 'init', this)">npx init (Recommended)</button>
+                        <button class="tab-btn" onclick="switchTab('install-card', 'npm', this)">npm install</button>
                         <button class="tab-btn" onclick="switchTab('install-card', 'pnpm', this)">pnpm</button>
                         <button class="tab-btn" onclick="switchTab('install-card', 'yarn', this)">yarn</button>
                         <button class="tab-btn" onclick="switchTab('install-card', 'python', this)">Python (pip)</button>
@@ -436,40 +552,44 @@
                     <button class="tab-btn-copy" onclick="copyActiveTabCode('install-card', this)">Copy</button>
                 </div>
 
-                <!-- Tab 1: npx -->
-                <div class="code-pane active" id="pane-install-card-npx">
-                    <pre><span class="comment"># Run instantly without installing anything</span>
-<span class="cmd">npx agentbroko skills</span>
+                <!-- Tab 1: npx init -->
+                <div class="code-pane active" id="pane-install-card-init">
+                    <pre><span class="comment"># 1. Initialize agent skills in your project workspace</span>
+<span class="cmd">npx agentbroko init</span>
 
-<span class="comment"># Initialize a new video scaffold</span>
-<span class="cmd">npx agentbroko video-forge init my-video</span></pre>
+<span class="comment"># Installs:</span>
+<span class="comment">#  .agents/skills/video-forge/SKILL.md  (Video editing skill contract)</span>
+<span class="comment">#  .agents/skills/pdf-playbook/SKILL.md (Handbook synthesis skill contract)</span>
+<span class="comment">#  .agents/skills/pdf/SKILL.md          (Offline PDF tools)</span>
+<span class="comment">#  .cursorrules & .agents/AGENTS.md     (IDE Agent instructions)</span></pre>
                 </div>
 
                 <!-- Tab 2: npm -->
                 <div class="code-pane" id="pane-install-card-npm">
-                    <pre><span class="comment"># Install globally on your system</span>
-<span class="cmd">npm install -g agentbroko</span>
+                    <pre><span class="comment"># Install locally as a development dependency</span>
+<span class="cmd">npm install -D agentbroko</span>
+<span class="cmd">npx agentbroko init</span>
 
-<span class="comment"># Run from anywhere in your terminal</span>
-<span class="cmd">agentbroko skills</span></pre>
+<span class="comment"># Or install globally for terminal access</span>
+<span class="cmd">npm install -g agentbroko</span></pre>
                 </div>
 
                 <!-- Tab 3: pnpm -->
                 <div class="code-pane" id="pane-install-card-pnpm">
-                    <pre><span class="comment"># Run directly with pnpm dlx</span>
-<span class="cmd">pnpm dlx agentbroko skills</span>
+                    <pre><span class="comment"># Initialize with pnpm dlx</span>
+<span class="cmd">pnpm dlx agentbroko init</span>
 
-<span class="comment"># Or install globally</span>
-<span class="cmd">pnpm add -g agentbroko</span></pre>
+<span class="comment"># Or add as dev dependency</span>
+<span class="cmd">pnpm add -D agentbroko</span></pre>
                 </div>
 
                 <!-- Tab 4: yarn -->
                 <div class="code-pane" id="pane-install-card-yarn">
-                    <pre><span class="comment"># Run directly with yarn dlx</span>
-<span class="cmd">yarn dlx agentbroko skills</span>
+                    <pre><span class="comment"># Initialize with yarn dlx</span>
+<span class="cmd">yarn dlx agentbroko init</span>
 
-<span class="comment"># Or install globally</span>
-<span class="cmd">yarn global add agentbroko</span></pre>
+<span class="comment"># Or add as dev dependency</span>
+<span class="cmd">yarn add -D agentbroko</span></pre>
                 </div>
 
                 <!-- Tab 5: python -->
@@ -479,8 +599,8 @@
 <span class="cmd">cd agentbroko</span>
 <span class="cmd">pip install -e .</span>
 
-<span class="comment"># Run via python module</span>
-<span class="cmd">python -m agentbroko skills</span></pre>
+<span class="comment"># Initialize skills in current workspace</span>
+<span class="cmd">agentbroko init</span></pre>
                 </div>
             </div>
 
@@ -490,12 +610,40 @@
         </section>
 
         <!-- ========================================================= -->
-        <!-- 2. SKILL: VIDEO FORGE -->
+        <!-- 2. PROMPTING YOUR IDE AGENT -->
+        <!-- ========================================================= -->
+        <section class="doc-section">
+            <h2 class="section-heading">2. How to Prompt Your IDE Coding Agent</h2>
+            <p class="section-desc">Once initialized, open your AI editor (Cursor, Google Antigravity, Cline, Roo Code, Windsurf) and prompt your agent directly:</p>
+
+            <div class="prompt-example-card">
+                <span class="prompt-badge">🎬 Video Forge Agent Prompt Example</span>
+                <div class="prompt-text">
+                    "Hey agent, create a 30-second 9:16 vertical TikTok short for my new AI Developer Tool launch. Use Video Forge to write the voiceover script, synthesize speech narration, generate kinetic SRT subtitles, and render the final MP4 video."
+                </div>
+                <div class="prompt-output-note">
+                    ✓ Your agent reads <code>.agents/skills/video-forge/SKILL.md</code>, creates <code>project.json</code>, synthesizes <code>narration.wav</code> and <code>subtitles.srt</code>, and renders <code>outputs/final.mp4</code> automatically.
+                </div>
+            </div>
+
+            <div class="prompt-example-card">
+                <span class="prompt-badge">📄 PDF Playbook Agent Prompt Example</span>
+                <div class="prompt-text">
+                    "Agent, generate a complete 20-page developer handbook on 'Building AI Agents with Microservices' for Backend Engineers. Use PDF Playbook skill to structure the chapters, checklists, and compile the final PDF."
+                </div>
+                <div class="prompt-output-note">
+                    ✓ Your agent reads <code>.agents/skills/pdf-playbook/SKILL.md</code>, writes a structured 18-chapter blueprint <code>spec.json</code>, and compiles a publication-ready ReportLab PDF.
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- 3. SKILL: VIDEO FORGE -->
         <!-- ========================================================= -->
         <section id="video-forge" class="doc-section">
-            <h2 class="section-heading">2. Skill: Video Forge (Video Editing)</h2>
+            <h2 class="section-heading">3. Skill: Video Forge Reference</h2>
             <p class="section-desc">
-                Video Forge is a local-first video editing skill for humans and coding agents. Initialize video projects, generate offline TTS speech, create synchronized SRT subtitles, and render MP4 videos:
+                Local-first video editing, offline speech synthesis, and FFmpeg video compositing:
             </p>
 
             <div class="tabbed-card" id="video-card">
@@ -533,7 +681,7 @@
                     <pre>{
   <span class="flag">"output"</span>: <span class="str">"outputs/final.mp4"</span>,
   <span class="flag">"title"</span>: <span class="str">"My Video"</span>,
-  <span class="flag">"video"</span>: { <span class="flag">"width"</span>: 1920, <span class="flag">"height"</span>: 1080, <span class="flag">"fps"</span>: 30 },
+  <span class="flag">"video"</span>: { <span class="flag">"width"</span>: 1080, <span class="flag">"height"</span>: 1920, <span class="flag">"fps"</span>: 60 },
   <span class="flag">"clips"</span>: [
     { <span class="flag">"source"</span>: <span class="str">"media/clip-01.mp4"</span>, <span class="flag">"start"</span>: 0, <span class="flag">"duration"</span>: 5, <span class="flag">"speed"</span>: 1, <span class="flag">"volume"</span>: 1 }
   ],
@@ -545,67 +693,37 @@
         </section>
 
         <!-- ========================================================= -->
-        <!-- 3. SKILL: PDF PLAYBOOK -->
+        <!-- 4. SKILL: PDF PLAYBOOK -->
         <!-- ========================================================= -->
         <section id="pdf-playbook" class="doc-section">
-            <h2 class="section-heading">3. Skill: PDF Playbook</h2>
+            <h2 class="section-heading">4. Skill: PDF Playbook Reference</h2>
             <p class="section-desc">
-                Generate polished, dark-theme 20-page developer handbooks with structured tables, chapters, checklists, and code layouts using ReportLab:
+                Publication-grade 20-page developer handbook and technical documentation synthesis via ReportLab:
             </p>
 
             <div class="tabbed-card" id="pdf-card">
                 <div class="tab-bar-header">
                     <div class="tab-buttons-group">
-                        <button class="tab-btn active" onclick="switchTab('pdf-card', 'interactive', this)">Interactive Wizard</button>
-                        <button class="tab-btn" onclick="switchTab('pdf-card', 'automated', this)">Automated CI/CD</button>
+                        <button class="tab-btn active" onclick="switchTab('pdf-card', 'spec', this)">Agent Spec Mode</button>
+                        <button class="tab-btn" onclick="switchTab('pdf-card', 'gemini', this)">Gemini AI</button>
+                        <button class="tab-btn" onclick="switchTab('pdf-card', 'ollama', this)">Ollama (Offline)</button>
                     </div>
                     <button class="tab-btn-copy" onclick="copyActiveTabCode('pdf-card', this)">Copy</button>
                 </div>
 
-                <div class="code-pane active" id="pane-pdf-card-interactive">
-                    <pre><span class="comment"># Interactive wizard mode (prompts for title, audience, and core promise)</span>
-<span class="cmd">agentbroko pdf-playbook <span class="flag">--output</span> <span class="arg">my-guide.pdf</span></span></pre>
+                <div class="code-pane active" id="pane-pdf-card-spec">
+                    <pre><span class="comment"># Compile PDF from your AI coding agent's structured JSON spec</span>
+<span class="cmd">agentbroko pdf-playbook <span class="flag">--spec</span> <span class="arg">playbook_spec.json</span> <span class="flag">--output</span> <span class="arg">my-guide.pdf</span></span></pre>
                 </div>
 
-                <div class="code-pane" id="pane-pdf-card-automated">
-                    <pre><span class="comment"># Non-interactive automated build for scripts and headless agents</span>
-<span class="cmd">agentbroko pdf-playbook <span class="flag">--non-interactive</span> <span class="flag">--output</span> <span class="arg">production-playbook.pdf</span></span></pre>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========================================================= -->
-        <!-- 4. SKILL: LOCAL PDF UTILITIES -->
-        <!-- ========================================================= -->
-        <section id="pdf-tools" class="doc-section">
-            <h2 class="section-heading">4. Skill: Local PDF Utilities</h2>
-            <p class="section-desc">
-                Extract text, inspect metadata, and render PDF pages completely offline without sending documents to third-party APIs:
-            </p>
-
-            <div class="tabbed-card" id="tools-card">
-                <div class="tab-bar-header">
-                    <div class="tab-buttons-group">
-                        <button class="tab-btn active" onclick="switchTab('tools-card', 'info', this)">Info</button>
-                        <button class="tab-btn" onclick="switchTab('tools-card', 'text', this)">Extract Text</button>
-                        <button class="tab-btn" onclick="switchTab('tools-card', 'render', this)">Render Pages</button>
-                    </div>
-                    <button class="tab-btn-copy" onclick="copyActiveTabCode('tools-card', this)">Copy</button>
+                <div class="code-pane" id="pane-pdf-card-gemini">
+                    <pre><span class="comment"># Generate with Google Gemini API</span>
+<span class="cmd">agentbroko pdf-playbook <span class="flag">--api-key</span> <span class="arg">AIzaSy...</span> <span class="flag">--title</span> <span class="str">"AI Engineering Playbook"</span> <span class="flag">--output</span> <span class="arg">guide.pdf</span></span></pre>
                 </div>
 
-                <div class="code-pane active" id="pane-tools-card-info">
-                    <pre><span class="comment"># Inspect PDF metadata & page count</span>
-<span class="cmd">agentbroko pdf info <span class="arg">document.pdf</span></span></pre>
-                </div>
-
-                <div class="code-pane" id="pane-tools-card-text">
-                    <pre><span class="comment"># Extract clean UTF-8 text from PDF</span>
-<span class="cmd">agentbroko pdf text <span class="arg">document.pdf</span> <span class="flag">--output</span> <span class="arg">document.txt</span></span></pre>
-                </div>
-
-                <div class="code-pane" id="pane-tools-card-render">
-                    <pre><span class="comment"># Render PDF pages to high-resolution PNG images (requires Poppler)</span>
-<span class="cmd">agentbroko pdf render <span class="arg">document.pdf</span> <span class="flag">--output</span> <span class="arg">rendered-pages/</span></span></pre>
+                <div class="code-pane" id="pane-pdf-card-ollama">
+                    <pre><span class="comment"># Generate 100% offline with local Ollama (run 'ollama run llama3' first)</span>
+<span class="cmd">agentbroko pdf-playbook <span class="flag">--provider</span> <span class="arg">ollama</span> <span class="flag">--output</span> <span class="arg">local-guide.pdf</span></span></pre>
                 </div>
             </div>
         </section>
@@ -613,20 +731,26 @@
         <!-- ========================================================= -->
         <!-- 5. REGISTERED SKILLS REFERENCE -->
         <!-- ========================================================= -->
-        <section id="reference" class="doc-section">
+        <section class="doc-section">
             <h2 class="section-heading">5. Registered Skills Reference</h2>
-            <p class="section-desc">All skills are discoverable from the single command line interface:</p>
+            <p class="section-desc">All skills are discoverable from your command line or coding agent context:</p>
 
             <table class="skills-table">
                 <thead>
                     <tr>
                         <th>Skill</th>
-                        <th>Command</th>
+                        <th>CLI Command</th>
                         <th>Purpose</th>
                         <th>Network</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td><strong>Skills Setup</strong></td>
+                        <td><code>npx agentbroko init</code></td>
+                        <td>Provisions <code>.agents/skills/</code> and IDE rules into workspace</td>
+                        <td>Offline (0 KB)</td>
+                    </tr>
                     <tr>
                         <td><strong>Video Forge</strong></td>
                         <td><code>agentbroko video-forge</code></td>
@@ -637,7 +761,7 @@
                         <td><strong>PDF Playbook</strong></td>
                         <td><code>agentbroko pdf-playbook</code></td>
                         <td>20-page developer handbook synthesis via ReportLab</td>
-                        <td>Offline (0 KB)</td>
+                        <td>Offline / AI</td>
                     </tr>
                     <tr>
                         <td><strong>PDF Tools</strong></td>
@@ -660,7 +784,7 @@
             <a href="https://github.com/sajidhossain8272/agentbroko/blob/main/docs/USAGE.md" target="_blank">Usage Guide</a>
             <a href="https://github.com/sajidhossain8272/agentbroko/blob/main/LICENSE" target="_blank">MIT License</a>
         </div>
-        <p>AgentBroko • Open Source Skills Hub by Broke Innovation</p>
+        <p>AgentBroko • Open Source Skills Hub by Broke Innovation • MIT Licensed</p>
     </footer>
 
     <!-- Interactive Tab & Copy Scripts -->
