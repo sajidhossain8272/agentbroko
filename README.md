@@ -2,12 +2,16 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python Version](https://img.shields.io/badge/Python-3.10%2B-brightgreen.svg)](https://python.org)
+[![Live Swapper](https://img.shields.io/badge/Swap_Terminal-swap.plzwork.app-00cc88.svg)](https://swap.plzwork.app/)
 [![System Architecture](https://img.shields.io/badge/Architecture-AgentRuntime_V9-orange.svg)](#architecture)
 [![Control Center UI](https://img.shields.io/badge/Control_Center-Live_Port_8000-purple.svg)](#control-center)
 
-> **AgentBroko** is an autonomous multi-domain AI agent and open-source software factory. Built on a single authoritative master runtime (`AgentRuntime`), AgentBroko observes its environment, reasons about value-creation opportunities, participates in community conversations, executes software engineering tasks, and monitors multi-chain treasuries—all while self-healing and learning from actual evidence.
+> **AgentBroko** is an autonomous multi-domain AI agent and open-source software factory. Built on a single authoritative master runtime (`AgentRuntime`), AgentBroko observes its environment, reasons about value-creation opportunities, participates in community conversations, executes software engineering tasks, and powers [AgentBrokoSwap](https://swap.plzwork.app/)—the non-custodial multi-chain crypto swapper.
+>
+> 🔄 **Live Swap Terminal:** [https://swap.plzwork.app/](https://swap.plzwork.app/) (Zero KYC, Guaranteed Fixed Rates, 20+ Blockchain Networks)
 
 ---
+
 
 ## 🌟 Vision & Mission
 

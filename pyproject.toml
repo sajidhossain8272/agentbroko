@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentbroko"
+version = "1.1.0"
+description = "AgentBroko Autonomous AI Executive OS & Skills Hub with local-first Video Forge & PDF Playbook"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Broke Innovation", email = "brokeinnovation@gmail.com" }]
+keywords = ["ai-agent", "autonomous-os", "video-editing", "pdf-playbook", "skills-hub"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Multimedia :: Video :: Conversion",
+]
+dependencies = ["reportlab>=4.0"]
+
+[project.scripts]
+agentbroko = "agentbroko.cli:main"
+video-forge = "video_forge.cli:main"
+pdf-playbook = "pdf_playbook.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.vercel]
+entrypoint = "api/index.py"
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]

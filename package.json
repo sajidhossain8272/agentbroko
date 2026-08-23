@@ -1,0 +1,32 @@
+{
+  "name": "agentbroko",
+  "version": "1.1.0",
+  "description": "AgentBroko Autonomous AI Executive OS & Skills Hub with local-first Video Forge & PDF Playbook",
+  "license": "MIT",
+  "bin": {
+    "agentbroko": "bin/agentbroko.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "static",
+    "api",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "PRIVACY.md",
+    "SECURITY.md",
+    "SUPPORT.md",
+    "TERMS.md",
+    "docs"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sajidhossain8272/agentbroko.git"
+  }
+}

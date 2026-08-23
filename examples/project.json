@@ -1,0 +1,32 @@
+{
+  "output": "outputs/final.mp4",
+  "title": "Built with Video Forge",
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "clips": [
+    {
+      "source": "media/intro.mp4",
+      "start": 0,
+      "duration": 4,
+      "speed": 1.0,
+      "volume": 0.8
+    },
+    {
+      "source": "media/demo.mp4",
+      "start": 2,
+      "duration": 8,
+      "speed": 1.0,
+      "volume": 0.5
+    }
+  ],
+  "audio": {
+    "narration": "audio/narration.wav",
+    "music": "audio/music.mp3",
+    "music_volume": 0.12
+  },
+  "subtitles": "captions/subtitles.srt"
+}
+
