@@ -1,16 +1,47 @@
 from pathlib import Path
-from agentbroko.skills_installer import install_skills
+import pytest
+from agentbroko.skills_installer import install_skills, SKILL_REGISTRY
 from agentbroko.cli import main
 
-def test_install_skills(tmp_path: Path):
+def test_install_all_skills(tmp_path: Path):
     created = install_skills(tmp_path)
     assert len(created) >= 4
     assert (tmp_path / ".agents" / "skills" / "video-forge" / "SKILL.md").exists()
     assert (tmp_path / ".agents" / "skills" / "pdf-playbook" / "SKILL.md").exists()
     assert (tmp_path / ".agents" / "skills" / "pdf" / "SKILL.md").exists()
     assert (tmp_path / ".agents" / "AGENTS.md").exists()
+    assert (tmp_path / ".cursorrules").exists()
+    assert (tmp_path / "CLAUDE.md").exists()
+
+def test_install_single_skill(tmp_path: Path):
+    created = install_skills(tmp_path, skill_name="video-forge")
+    assert (tmp_path / ".agents" / "skills" / "video-forge" / "SKILL.md").exists()
+    assert not (tmp_path / ".agents" / "skills" / "pdf-playbook" / "SKILL.md").exists()
+    
+    # Check that AGENTS.md contains video-forge
+    agents_md = (tmp_path / ".agents" / "AGENTS.md").read_text(encoding="utf-8")
+    assert "Video Forge" in agents_md
+    assert "Agent Stuck" in agents_md
+
+def test_install_invalid_skill_raises(tmp_path: Path):
+    with pytest.raises(ValueError, match="Unknown skill"):
+        install_skills(tmp_path, skill_name="non-existent-skill")
+
+def test_cli_add_single_skill(tmp_path: Path):
+    result = main(["add", "pdf-playbook", str(tmp_path)])
+    assert result == 0
+    assert (tmp_path / ".agents" / "skills" / "pdf-playbook" / "SKILL.md").exists()
 
 def test_cli_init_command(tmp_path: Path):
     result = main(["init", str(tmp_path)])
     assert result == 0
     assert (tmp_path / ".agents" / "skills" / "video-forge" / "SKILL.md").exists()
+
+def test_cli_guide_and_skills_menu(capsys):
+    assert main(["guide"]) == 0
+    captured = capsys.readouterr()
+    assert "AGENTBROKO AI AGENT INSTRUCTION" in captured.out
+
+    assert main(["skills"]) == 0
+    captured = capsys.readouterr()
+    assert "AgentBroko Autonomous AI Skills Hub" in captured.out

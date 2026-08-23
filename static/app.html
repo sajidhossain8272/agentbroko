@@ -471,7 +471,7 @@
     <header>
         <a href="/" class="brand">
             AgentBroko
-            <span class="version-badge">v1.2.1</span>
+            <span class="version-badge">v1.3.0</span>
         </a>
 
         <nav class="nav-links">
@@ -479,6 +479,7 @@
             <a href="#install" class="nav-link">Install Skills</a>
             <a href="#video-forge" class="nav-link">Video Forge</a>
             <a href="#pdf-playbook" class="nav-link">PDF Playbook</a>
+            <a href="#troubleshooting" class="nav-link">Agent Guide</a>
             <a href="https://github.com/sajidhossain8272/agentbroko" target="_blank" class="nav-link">GitHub</a>
             <a href="https://www.npmjs.com/package/agentbroko" target="_blank" class="btn-nav-primary">npm package</a>
         </nav>
@@ -518,7 +519,7 @@
                 <div class="workflow-step">
                     <div class="step-num">Step 1 • Install</div>
                     <div class="step-title">Initialize Skills</div>
-                    <div class="step-desc">Run <code>npx agentbroko init</code> in your project to install skill blueprints into <code>.agents/skills/</code>.</div>
+                    <div class="step-desc">Run <code>npx agentbroko init</code> or <code>npx agentbroko add video-forge</code> in your project.</div>
                 </div>
                 <div class="workflow-step">
                     <div class="step-num">Step 2 • Prompt</div>
@@ -543,10 +544,10 @@
             <div class="tabbed-card" id="install-card">
                 <div class="tab-bar-header">
                     <div class="tab-buttons-group">
-                        <button class="tab-btn active" onclick="switchTab('install-card', 'init', this)">npx init (Recommended)</button>
+                        <button class="tab-btn active" onclick="switchTab('install-card', 'init', this)">npx init (All Skills)</button>
+                        <button class="tab-btn" onclick="switchTab('install-card', 'add', this)">npx add (Single Skill)</button>
+                        <button class="tab-btn" onclick="switchTab('install-card', 'doctor', this)">Doctor &amp; Diagnostics</button>
                         <button class="tab-btn" onclick="switchTab('install-card', 'npm', this)">npm install</button>
-                        <button class="tab-btn" onclick="switchTab('install-card', 'pnpm', this)">pnpm</button>
-                        <button class="tab-btn" onclick="switchTab('install-card', 'yarn', this)">yarn</button>
                         <button class="tab-btn" onclick="switchTab('install-card', 'python', this)">Python (pip)</button>
                     </div>
                     <button class="tab-btn-copy" onclick="copyActiveTabCode('install-card', this)">Copy</button>
@@ -554,17 +555,38 @@
 
                 <!-- Tab 1: npx init -->
                 <div class="code-pane active" id="pane-install-card-init">
-                    <pre><span class="comment"># 1. Initialize agent skills in your project workspace</span>
+                    <pre><span class="comment"># 1. Initialize ALL agent skills in your project workspace</span>
 <span class="cmd">npx agentbroko init</span>
 
-<span class="comment"># Installs:</span>
+<span class="comment"># Provisions:</span>
 <span class="comment">#  .agents/skills/video-forge/SKILL.md  (Video editing skill contract)</span>
 <span class="comment">#  .agents/skills/pdf-playbook/SKILL.md (Handbook synthesis skill contract)</span>
 <span class="comment">#  .agents/skills/pdf/SKILL.md          (Offline PDF tools)</span>
-<span class="comment">#  .cursorrules & .agents/AGENTS.md     (IDE Agent instructions)</span></pre>
+<span class="comment">#  .cursorrules, CLAUDE.md & .agents/AGENTS.md (IDE Agent instructions + stuck recovery)</span></pre>
                 </div>
 
-                <!-- Tab 2: npm -->
+                <!-- Tab 2: npx add single skill -->
+                <div class="code-pane" id="pane-install-card-add">
+                    <pre><span class="comment"># Add only Video Forge skill:</span>
+<span class="cmd">npx agentbroko add video-forge</span>
+
+<span class="comment"># Add only PDF Playbook skill:</span>
+<span class="cmd">npx agentbroko add pdf-playbook</span>
+
+<span class="comment"># Add only Offline PDF tools:</span>
+<span class="cmd">npx agentbroko add pdf</span></pre>
+                </div>
+
+                <!-- Tab 3: doctor -->
+                <div class="code-pane" id="pane-install-card-doctor">
+                    <pre><span class="comment"># Check environment diagnostics for FFmpeg, Python, ReportLab, and TTS</span>
+<span class="cmd">npx agentbroko doctor</span>
+
+<span class="comment"># Print full AI coding agent instruction and self-recovery guide</span>
+<span class="cmd">npx agentbroko guide</span></pre>
+                </div>
+
+                <!-- Tab 4: npm -->
                 <div class="code-pane" id="pane-install-card-npm">
                     <pre><span class="comment"># Install locally as a development dependency</span>
 <span class="cmd">npm install -D agentbroko</span>
@@ -572,24 +594,6 @@
 
 <span class="comment"># Or install globally for terminal access</span>
 <span class="cmd">npm install -g agentbroko</span></pre>
-                </div>
-
-                <!-- Tab 3: pnpm -->
-                <div class="code-pane" id="pane-install-card-pnpm">
-                    <pre><span class="comment"># Initialize with pnpm dlx</span>
-<span class="cmd">pnpm dlx agentbroko init</span>
-
-<span class="comment"># Or add as dev dependency</span>
-<span class="cmd">pnpm add -D agentbroko</span></pre>
-                </div>
-
-                <!-- Tab 4: yarn -->
-                <div class="code-pane" id="pane-install-card-yarn">
-                    <pre><span class="comment"># Initialize with yarn dlx</span>
-<span class="cmd">yarn dlx agentbroko init</span>
-
-<span class="comment"># Or add as dev dependency</span>
-<span class="cmd">yarn add -D agentbroko</span></pre>
                 </div>
 
                 <!-- Tab 5: python -->
@@ -738,7 +742,7 @@
             <table class="skills-table">
                 <thead>
                     <tr>
-                        <th>Skill</th>
+                        <th>Skill / Tool</th>
                         <th>CLI Command</th>
                         <th>Purpose</th>
                         <th>Network</th>
@@ -746,9 +750,27 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Skills Setup</strong></td>
+                        <td><strong>All Skills Init</strong></td>
                         <td><code>npx agentbroko init</code></td>
-                        <td>Provisions <code>.agents/skills/</code> and IDE rules into workspace</td>
+                        <td>Provisions all <code>.agents/skills/</code> and IDE rules into workspace</td>
+                        <td>Offline (0 KB)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Add Single Skill</strong></td>
+                        <td><code>npx agentbroko add &lt;skill&gt;</code></td>
+                        <td>Installs one specific skill (e.g. <code>video-forge</code>, <code>pdf-playbook</code>)</td>
+                        <td>Offline (0 KB)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Doctor Check</strong></td>
+                        <td><code>npx agentbroko doctor</code></td>
+                        <td>Verifies FFmpeg, Python, ReportLab, and offline TTS engines</td>
+                        <td>Offline (0 KB)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Agent Stuck Guide</strong></td>
+                        <td><code>npx agentbroko guide</code></td>
+                        <td>Prints self-recovery instructions for coding agents</td>
                         <td>Offline (0 KB)</td>
                     </tr>
                     <tr>
@@ -771,6 +793,26 @@
                     </tr>
                 </tbody>
             </table>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- 6. 🆘 AGENT STUCK & RECOVERY GUIDE -->
+        <!-- ========================================================= -->
+        <section id="troubleshooting" class="doc-section">
+            <h2 class="section-heading">6. 🆘 Agent Stuck &amp; Self-Recovery Protocol</h2>
+            <p class="section-desc">If your AI coding agent runs into issues or fails during execution, follow this deterministic recovery checklist:</p>
+
+            <div class="prompt-example-card" style="border-left: 4px solid var(--accent-orange, #f59e0b);">
+                <span class="prompt-badge" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b;">Emergency Resolution Checklist</span>
+                <div class="prompt-text" style="font-family: var(--font-mono, monospace); font-size: 0.88rem; line-height: 1.6;">
+                    1. <b>Run Doctor:</b> <code>npx agentbroko doctor</code><br>
+                    2. <b>Missing FFmpeg:</b> Install via <code>winget install Gyan.FFmpeg</code> (Windows), <code>brew install ffmpeg</code> (macOS), or <code>sudo apt install ffmpeg</code> (Linux).<br>
+                    3. <b>Missing ReportLab:</b> Run <code>python -m pip install reportlab</code>.<br>
+                    4. <b>Project Validation Error:</b> Run <code>npx agentbroko video-forge validate project.json</code> and check file existence on disk.<br>
+                    5. <b>Inspect Local Media:</b> Run <code>ffprobe -v error -show_entries stream=width,height,duration &lt;file&gt;</code>.<br>
+                    6. <b>Zero Cloud Leaks:</b> Never send media or sensitive PDFs to external cloud APIs.
+                </div>
+            </div>
         </section>
 
     </div>

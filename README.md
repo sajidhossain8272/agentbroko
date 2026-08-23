@@ -7,7 +7,7 @@
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-brightgreen.svg)](pyproject.toml)
 [![Node 18+](https://img.shields.io/badge/Node-18%2B-green.svg)](package.json)
 
-AgentBroko transforms your IDE coding agent (**Google Antigravity**, **Cursor**, **VS Code Cline**, **Roo Code**, **Windsurf**, **Claude Code**) into a creative production engine. Install skills into your workspace, prompt your agent in plain English, and generate broadcast-grade 60 FPS MP4 videos and 20-page technical handbooks without cloud dependencies or external API fees.
+AgentBroko transforms your IDE coding agent (**Google Antigravity**, **Cursor**, **VS Code Cline**, **Roo Code**, **Windsurf**, **Claude Code**, **GitHub Copilot**) into a creative production engine. Install skills into your workspace, prompt your agent in plain English, and generate broadcast-grade 60 FPS MP4 videos and 20-page technical handbooks without cloud dependencies or external API fees.
 
 ---
 
@@ -16,19 +16,28 @@ AgentBroko transforms your IDE coding agent (**Google Antigravity**, **Cursor**,
 ```mermaid
 graph LR
     A["1. Run 'npx agentbroko init'"] --> B["2. Prompt your IDE Coding Agent"]
-    B --> C["3. Agent generates outputs/final.mp4 & playbook.pdf"]
+    B --> C["3. Agent produces outputs/final.mp4 & playbook.pdf"]
 ```
 
-### Step 1: Initialize Skills in Your Project
-Run in your repository or workspace:
+### Step 1: Initialize or Add Skills in Your Project
+
 ```bash
+# Provision ALL skills into workspace (.agents/skills/, AGENTS.md, .cursorrules, CLAUDE.md)
 npx agentbroko init
+
+# Or install just ONE specific skill:
+npx agentbroko add video-forge     # Add Video Forge only
+npx agentbroko add pdf-playbook   # Add PDF Playbook only
+npx agentbroko add pdf            # Add Offline PDF Tools only
+
+# Or clone the full starter repo:
+npx agentbroko clone my-agent-workspace
 ```
-This automatically installs:
-- `.agents/skills/video-forge/SKILL.md` (Video Forge skill contract)
-- `.agents/skills/pdf-playbook/SKILL.md` (PDF Playbook skill contract)
-- `.agents/skills/pdf/SKILL.md` (Offline PDF tools)
-- `.cursorrules` & `.agents/AGENTS.md` (IDE agent instructions)
+
+This automatically creates:
+- `.agents/skills/<skill>/SKILL.md` (Formal skill definition contract & CLI blueprints)
+- `.agents/skills/<skill>/examples/` (Sample template configurations)
+- `.agents/AGENTS.md` & `.cursorrules` & `CLAUDE.md` (Agent instructions + 🆘 emergency troubleshooting guide)
 
 ---
 
@@ -50,35 +59,29 @@ Your AI agent reads the installed skill contracts, writes the structured `projec
 
 ---
 
-## 📦 Installation Options
+## 🛠️ CLI Commands & Utilities
 
-### 1. Instant Execution with `npx`
 ```bash
-# Initialize workspace skills
-npx agentbroko init
-
-# List available skills
+# Show skills and commands
 npx agentbroko skills
-```
 
-### 2. Global NPM Install
-```bash
-npm install -g agentbroko
-agentbroko init
-```
+# System diagnostic check (FFmpeg, Python, ReportLab, TTS)
+npx agentbroko doctor
 
-### 3. Local Python Package Install
-```bash
-git clone https://github.com/sajidhossain8272/agentbroko.git
-cd agentbroko
-pip install -e .
+# View AI agent instruction and recovery guide
+npx agentbroko guide
+
+# Direct skill commands
+npx agentbroko video-forge doctor
+npx agentbroko pdf-playbook --help
+npx agentbroko pdf info document.pdf
 ```
 
 ---
 
 ## 🎬 Skill 1: Video Forge (Video Editing)
 
-Video Forge is an automated video production skill:
+Video Forge is an automated local video production skill:
 
 ```bash
 # 1. Check local environment (FFmpeg, TTS engines)
@@ -134,11 +137,29 @@ agentbroko pdf render document.pdf --output rendered-pages/
 
 ---
 
+## 🆘 Agent Stuck / Self-Recovery Protocol
+
+If an AI agent gets stuck or encounters an error during execution:
+1. **Run Doctor**: Execute `npx agentbroko doctor` to identify missing runtime tools.
+2. **FFmpeg missing**:
+   - Windows: `winget install Gyan.FFmpeg`
+   - macOS: `brew install ffmpeg`
+   - Linux: `sudo apt install ffmpeg`
+3. **ReportLab missing**:
+   - `python -m pip install reportlab`
+4. **Project Validation**:
+   - Always run `npx agentbroko video-forge validate <path>/project.json` before rendering.
+5. **Inspect Media**:
+   - Use `ffprobe` to verify audio and video dimensions locally.
+
+---
+
 ## 🌟 Registered Skills Overview
 
 | Skill | Command | Deliverable | Network Requirements |
 | :--- | :--- | :--- | :--- |
-| **Workspace Init** | `npx agentbroko init` | Provisions `.agents/skills/` & rules | Offline (0 KB) |
+| **Workspace Init** | `npx agentbroko init` | Provisions all `.agents/skills/` & rules | Offline (0 KB) |
+| **Add Single Skill** | `npx agentbroko add <skill>` | Provisions a specific skill | Offline (0 KB) |
 | **Video Forge** | `agentbroko video-forge` | 60 FPS MP4 video with TTS & captions | Offline (0 KB) |
 | **PDF Playbook** | `agentbroko pdf-playbook` | 20-page formatted `.pdf` handbook | Offline / AI Agent / Ollama |
 | **PDF Tools** | `agentbroko pdf` | Clean text extraction & page rendering | Offline (0 KB) |

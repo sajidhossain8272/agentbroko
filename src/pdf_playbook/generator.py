@@ -31,7 +31,7 @@ def get_available_ai_engines() -> dict[str, str]:
         
     # Check if local Ollama is running
     try:
-        req = urllib.request.Request("http://localhost:11434/api/tags", headers={"User-Agent": "AgentBroko/1.2.1"})
+        req = urllib.request.Request("http://localhost:11434/api/tags", headers={"User-Agent": "AgentBroko/1.3.0"})
         with urllib.request.urlopen(req, timeout=1.5) as res:
             data = json.loads(res.read().decode("utf-8"))
             models = [m.get("name") for m in data.get("models", [])]
