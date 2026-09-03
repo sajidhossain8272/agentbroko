@@ -26,6 +26,92 @@ if SRC_DIR not in sys.path:
 
 APP_HTML_PATH = os.path.join(ROOT_DIR, "static", "app.html")
 
+CHATGPT_OPENAPI = {
+    "openapi": "3.0.3",
+    "info": {
+        "title": "AgentBroko",
+        "version": "1.4.2",
+        "description": "Generate local-first video project blueprints and discover AgentBroko skills.",
+    },
+    "servers": [{"url": "https://agentbroko.vercel.app"}],
+    "paths": {
+        "/api/generate/video": {
+            "post": {
+                "operationId": "generateVideoProject",
+                "summary": "Generate a structured Video Forge project",
+                "description": "Creates a video project blueprint and SRT subtitles from a brief. It does not upload or render user media.",
+                "requestBody": {
+                    "required": True,
+                    "content": {
+                        "application/json": {
+                            "schema": {"$ref": "#/components/schemas/VideoRequest"}
+                        }
+                    },
+                },
+                "responses": {
+                    "200": {
+                        "description": "Generated project blueprint",
+                        "content": {"application/json": {"schema": {"$ref": "#/components/schemas/VideoResponse"}}},
+                    }
+                },
+            }
+        },
+        "/api/skills": {
+            "get": {
+                "operationId": "listSkills",
+                "summary": "List available AgentBroko skills",
+                "responses": {"200": {"description": "Skill registry", "content": {"application/json": {"schema": {"type": "object"}}}}},
+            }
+        },
+        "/api/health": {
+            "get": {
+                "operationId": "checkHealth",
+                "summary": "Check AgentBroko availability",
+                "responses": {"200": {"description": "Health status", "content": {"application/json": {"schema": {"type": "object"}}}}},
+            }
+        },
+    },
+    "components": {
+        "schemas": {
+            "VideoRequest": {
+                "type": "object",
+                "properties": {
+                    "prompt": {"type": "string", "description": "The video concept or production brief."},
+                    "aspect": {"type": "string", "enum": ["9:16", "16:9"]},
+                    "style": {"type": "string"},
+                    "duration": {"type": "integer", "minimum": 3, "maximum": 300},
+                    "voice": {"type": "string"},
+                    "captions": {"type": "string"},
+                },
+                "required": ["prompt"],
+            },
+            "VideoResponse": {
+                "type": "object",
+                "required": ["project", "scenes", "srt", "duration"],
+                "properties": {
+                    "project": {"type": "object"},
+                    "scenes": {"type": "array", "items": {"type": "object"}},
+                    "srt": {"type": "string"},
+                    "duration": {"type": "integer"},
+                },
+            },
+        }
+    },
+}
+
+CHATGPT_PLUGIN_MANIFEST = {
+    "schema_version": "v1",
+    "name_for_model": "agentbroko",
+    "name_for_human": "AgentBroko",
+    "description_for_model": "Generate local-first Video Forge project blueprints and list AgentBroko skills. Use for video concepts, storyboards, captions, and production planning.",
+    "description_for_human": "Create video project blueprints and discover local-first creative skills.",
+    "auth": {"type": "none"},
+    "api": {"type": "openapi", "url": "https://agentbroko.vercel.app/openapi.json", "has_user_authentication": False},
+    "logo_url": "https://agentbroko.vercel.app/icon.png",
+    "contact_email": "brokeinnovation@gmail.com",
+    "legal_info_url": "https://agentbroko.vercel.app/TERMS.md",
+}
+
 def get_app_html():
     if os.path.exists(APP_HTML_PATH):
         try:
@@ -222,6 +308,12 @@ def handle_api_route(path, query_params=None, post_data=None):
     # 1. Main Web Studio Page
     if path in ("/", "/index.html", "/app", "/studio"):
         return (200, "text/html; charset=utf-8", get_app_html().encode("utf-8"))
+
+    if path == "/openapi.json":
+        return (200, "application/json", json.dumps(CHATGPT_OPENAPI, indent=2).encode("utf-8"))
+
+    if path == "/.well-known/ai-plugin.json":
+        return (200, "application/json", json.dumps(CHATGPT_PLUGIN_MANIFEST, indent=2).encode("utf-8"))
 
     # 2. PDF Direct Download Endpoint
     if path == "/api/generate/pdf":
