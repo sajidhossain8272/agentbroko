@@ -5,6 +5,10 @@ This directory contains reusable, agent-discoverable skill packages that follow 
 ## Included skills
 
 - `video-forge` — local-first video creation, editing, subtitles, and narration.
+- `video-edit` — optional post-production workflow for existing footage and reels.
+
+These skills are packaged for ChatGPT/Codex through the repository-level
+`.codex-plugin/plugin.json` manifest.
 
 ## Standard structure
 

@@ -1,0 +1,32 @@
+{
+  "name": "agentbroko",
+  "version": "1.4.2",
+  "description": "Local-first video creation, editing workflows, subtitles, narration, and document automation for ChatGPT and Codex.",
+  "author": {
+    "name": "Broke Innovation",
+    "email": "brokeinnovation@gmail.com",
+    "url": "https://agentbroko.vercel.app"
+  },
+  "homepage": "https://agentbroko.vercel.app",
+  "repository": "https://github.com/sajidhossain8272/agentbroko",
+  "license": "MIT",
+  "keywords": ["video", "video-editing", "video-generation", "reels", "subtitles", "skills"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AgentBroko",
+    "shortDescription": "Local-first video and document workflows",
+    "longDescription": "Create procedural videos, polish existing footage, generate subtitles and narration, and build technical PDFs with reusable skills that run locally.",
+    "developerName": "Broke Innovation",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://agentbroko.vercel.app",
+    "privacyPolicyURL": "https://github.com/sajidhossain8272/agentbroko/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/sajidhossain8272/agentbroko/blob/main/TERMS.md",
+    "defaultPrompt": [
+      "Create a 30-second 9:16 product short using AgentBroko Video Forge.",
+      "Polish this existing reel with the AgentBroko Video Edit workflow.",
+      "Show me which AgentBroko skills are available."
+    ],
+    "brandColor": "#10A37F"
+  }
+}

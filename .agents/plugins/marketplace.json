@@ -1,0 +1,22 @@
+{
+  "name": "agentbroko-marketplace",
+  "interface": {
+    "displayName": "AgentBroko Plugins"
+  },
+  "plugins": [
+    {
+      "name": "agentbroko",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/sajidhossain8272/agentbroko.git",
+        "path": "./",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
