@@ -1,0 +1,16 @@
+{
+  "name": "generic_episode",
+  "series": "Stories of the Ummah",
+  "episode": 0,
+  "title": "Stories of the Ummah Episode",
+  "source": "Replace this with a verified primary source before publication.",
+  "video": {"width": 1080, "height": 1920, "fps": 30, "aspect": "9:16"},
+  "audio": {"narration": "Calm, respectful documentary voice from a verified script.", "music": "License-cleared ambient music or environmental sound subordinate to narration.", "mix": "Duck the bed by 8-12 dB under speech, leave headroom, and inspect the export."},
+  "scenes": [
+    {"duration": 3.5, "pose": "walk_rear", "text": "Begin with a specific hook.", "vo": "Begin with a specific hook grounded in the verified story."},
+    {"duration": 4.0, "pose": "push_rock", "text": "Introduce the test.", "vo": "Introduce the central test without adding details that are not in the source."},
+    {"duration": 4.0, "pose": "dua_kneel", "text": "Show the sincere response.", "vo": "Show the sincere response and keep the language respectful."},
+    {"duration": 4.0, "pose": "dua_kneel", "text": "Deliver the lesson.", "vo": "Deliver the lesson clearly and distinguish sourced facts from reflection."},
+    {"duration": 3.5, "pose": "walk_rear", "text": "End with a reflection.", "vo": "End with a short reflection and verify the citation before publishing."}
+  ]
+}

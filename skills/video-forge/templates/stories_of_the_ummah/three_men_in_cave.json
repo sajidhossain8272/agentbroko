@@ -1,0 +1,19 @@
+{
+  "name": "three_men_in_cave",
+  "series": "Stories of the Ummah",
+  "episode": 1,
+  "title": "Three Men Were Trapped in a Cave",
+  "source": "Sahih al-Bukhari 2272; Sahih Muslim 2743. Verify citations before publication.",
+  "video": {"width": 1080, "height": 1920, "fps": 30, "aspect": "9:16"},
+  "audio": {"narration": "Calm, clear documentary narration.", "music": "Restrained, license-cleared atmospheric bed or environmental soundscape.", "mix": "Keep narration dominant and duck the bed by 8-12 dB during speech."},
+  "scenes": [
+    {"duration": 3.8, "pose": "walk_rear", "text": "Three men entered a cave to escape the rain.", "vo": "Three men entered a cave to escape the pouring rain."},
+    {"duration": 3.8, "pose": "push_rock", "text": "A boulder sealed the entrance.", "vo": "Suddenly, a massive boulder fell and sealed the entrance."},
+    {"duration": 3.2, "pose": "push_rock", "text": "There was no human way out.", "vo": "They tried to move it, but it would not budge."},
+    {"duration": 4.6, "pose": "dua_kneel", "text": "They called upon Allah through sincere deeds.", "vo": "They called upon Allah through the righteous deeds they had done sincerely."},
+    {"duration": 4.0, "pose": "dua_kneel", "text": "One honored his elderly parents.", "vo": "The first remembered honoring his elderly parents."},
+    {"duration": 3.8, "pose": "dua_kneel", "text": "One left sin for Allah's sake.", "vo": "The second remembered leaving a sinful act for the sake of Allah."},
+    {"duration": 3.2, "pose": "dua_kneel", "text": "One protected a trust.", "vo": "The third remembered faithfully returning what had been entrusted to him."},
+    {"duration": 3.6, "pose": "walk_rear", "text": "The stone moved. Daylight returned.", "vo": "With every sincere supplication, the rock moved until they walked out into the light."}
+  ]
+}

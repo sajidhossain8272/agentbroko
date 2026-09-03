@@ -1,6 +1,6 @@
 {
   "name": "agentbroko",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Local-first video creation, editing workflows, subtitles, narration, and document automation for ChatGPT and Codex.",
   "author": {
     "name": "Broke Innovation",
@@ -27,6 +27,8 @@
       "Polish this existing reel with the AgentBroko Video Edit workflow.",
       "Show me which AgentBroko skills are available."
     ],
-    "brandColor": "#10A37F"
+    "brandColor": "#10A37F",
+    "composerIcon": "./assets/agentbroko-icon.svg",
+    "logo": "./assets/agentbroko-icon.svg"
   }
 }

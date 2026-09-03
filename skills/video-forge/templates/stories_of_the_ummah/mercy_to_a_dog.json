@@ -1,0 +1,17 @@
+{
+  "name": "mercy_to_a_dog",
+  "series": "Stories of the Ummah",
+  "episode": 2,
+  "title": "She Gave Water to a Dying Dog",
+  "source": "Supply and verify the exact hadith citation before publication. Do not invent a source.",
+  "video": {"width": 1080, "height": 1920, "fps": 30, "aspect": "9:16"},
+  "audio": {"narration": "Warm documentary voice with deliberate pauses.", "music": "Quiet, license-cleared ambient bed with no distracting melody.", "mix": "Keep narration dominant and duck the bed by 8-12 dB while speaking."},
+  "scenes": [
+    {"duration": 3.5, "pose": "walk_rear", "text": "The heat had left an animal desperate for water.", "vo": "Under the burning heat, an animal was left desperate for water."},
+    {"duration": 3.5, "pose": "dua_kneel", "text": "Someone noticed its suffering.", "vo": "Then someone noticed its suffering and stopped."},
+    {"duration": 4.0, "pose": "dua_kneel", "text": "Compassion became action.", "vo": "Compassion was not only a feeling. It became an act of mercy."},
+    {"duration": 4.0, "pose": "dua_kneel", "text": "A small deed can carry great weight.", "vo": "A small deed, done sincerely, can carry a weight we cannot see."},
+    {"duration": 4.0, "pose": "walk_rear", "text": "Mercy is never wasted.", "vo": "The lesson is simple: mercy is never wasted."},
+    {"duration": 3.5, "pose": "walk_rear", "text": "Verify the source. Share the lesson.", "vo": "Verify the source before sharing, then carry the lesson into your own life."}
+  ]
+}

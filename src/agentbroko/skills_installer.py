@@ -63,6 +63,15 @@ Use Video Forge to build broadcast-quality MP4 videos, 9:16 vertical shorts, or 
    npx agentbroko video-forge render my-video/project.json
    ```
 
+6. **Stories of the Ummah Templates**:
+    Use reusable 9:16 narrative structures instead of rebuilding each story from scratch:
+    ```bash
+    npx agentbroko video-forge short --template three_men_in_cave --output outputs/ummah_ep01.mp4
+    npx agentbroko video-forge short --template mercy_to_a_dog --audio audio/master.wav -o outputs/ummah_ep02.mp4
+    ```
+    Available templates: `three_men_in_cave`, `mercy_to_a_dog`, and `generic_episode`.
+    Each template includes scene timing, narration beats, source/citation reminders, and audio/music mix guidance. Verify religious citations before publishing.
+
 ---
 
 ## 🆘 Agent Stuck / Troubleshooting Guide

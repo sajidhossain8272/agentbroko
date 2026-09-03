@@ -16,7 +16,7 @@ def test_agentbroko_cli_version(capsys):
     rc = agentbroko_main(["--version"])
     assert rc == 0
     captured = capsys.readouterr()
-    assert "1.4.2" in captured.out
+    assert "1.4.3" in captured.out
 
 
 def test_video_forge_cli_doctor(capsys):
@@ -24,3 +24,10 @@ def test_video_forge_cli_doctor(capsys):
     assert rc == 0
     captured = capsys.readouterr()
     assert "Video Forge System Diagnostics" in captured.out
+
+
+def test_video_forge_short_parser_has_story_template():
+    from video_forge.cli import build_parser
+
+    args = build_parser().parse_args(["short", "--template", "three_men_in_cave"])
+    assert args.template == "three_men_in_cave"

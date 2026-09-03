@@ -14,6 +14,7 @@ from .project import load_project, validate_project
 from .render import render_project
 from .tts import available_engines, synthesize
 from ._ffmpeg import ffmpeg_bin, ffprobe_bin
+from .templates import available_story_templates, load_story_template
 
 # Starter procedural spec template
 STARTER_PROCEDURAL = {
@@ -132,9 +133,12 @@ def build_parser() -> argparse.ArgumentParser:
     # 5. Short (Vertical 9:16 storytelling / reels / viral short generator)
     short = sub.add_parser("short", help="Generate a 9:16 vertical storytelling short or reel")
     short.add_argument("--type", choices=["story", "romantic", "tech"], default="story", help="Short template archetype")
+    short.add_argument("--template", choices=available_story_templates(), default=None,
+                       help="Built-in storytelling template (for example: three_men_in_cave)")
     short.add_argument("--theme", choices=["golden", "sunset", "desert"], default="golden", help="Visual color palette")
     short.add_argument("--output", "-o", type=Path, default=Path("outputs/short_9x16.mp4"), help="Target MP4 file")
     short.add_argument("--fps", type=int, default=30, help="FPS (30 or 60)")
+    short.add_argument("--audio", type=Path, default=None, help="Optional mastered narration/music WAV or MP3 to mux")
 
     # 6. Validate
     validate = sub.add_parser("validate", help="Validate a project or spec without rendering")
@@ -268,7 +272,7 @@ def main(argv: list[str] | None = None) -> int:
         # 5. Short command (Vertical 9:16)
         if args.command == "short":
             from .shorts.story_engine import render_vertical_story
-            sample_story_scenes = [
+            default_story_scenes = [
                 {
                     "duration": 4.0,
                     "pose": "walk_rear",
@@ -294,16 +298,29 @@ def main(argv: list[str] | None = None) -> int:
                     "vo": "With every supplication, the stone moved until they walked out into the light."
                 }
             ]
-            print(f"[video-forge] Rendering 9:16 vertical storytelling short ({args.fps} FPS, {args.theme} theme)...")
+            template = load_story_template(args.template) if args.template else None
+            scenes = template["scenes"] if template else default_story_scenes
+            template_label = f" using {args.template}" if args.template else ""
+            print(f"[video-forge] Rendering 9:16 vertical storytelling short{template_label} ({args.fps} FPS, {args.theme} theme)...")
             out_file = str(Path(args.output).resolve())
             render_vertical_story(
-                scenes=sample_story_scenes,
+                scenes=scenes,
                 output_path=out_file,
                 fps=args.fps,
                 theme=args.theme,
                 include_particles=True,
-                mastering=True
+                mastering=True,
+                audio_path=str(args.audio.resolve()) if args.audio else None,
             )
+            if template:
+                guide_path = Path(out_file).with_suffix(".audio-guide.md")
+                audio = template.get("audio", {})
+                guide = "# Audio Guide\n\n"
+                guide += f"- Narration: {audio.get('narration', '')}\n"
+                guide += f"- Music: {audio.get('music', '')}\n"
+                guide += f"- Mix: {audio.get('mix', '')}\n"
+                guide_path.write_text(guide, encoding="utf-8")
+                print(f"✓ Wrote audio/music guide: {guide_path}")
             print(f"✓ Rendered vertical short: {out_file}")
             return 0
 

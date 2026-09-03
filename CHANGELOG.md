@@ -2,6 +2,13 @@
 
 All notable changes will be documented here. This project follows Semantic Versioning where practical.
 
+## 1.4.3 - 2026-09-04
+
+### Stories of the Ummah Templates
+- Added reusable 9:16 storytelling templates for cave, mercy, and generic Ummah episodes.
+- Added narration, music, ducking, citation, and output guidance to every story template.
+- Added `video-forge short --template` and optional `--audio` muxing with an audio guide sidecar.
+
 ## 1.4.2 - 2026-09-04
 
 ### ChatGPT Integration

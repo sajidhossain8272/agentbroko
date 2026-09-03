@@ -56,8 +56,21 @@ Choose this skill for requests such as:
 npx agentbroko video-forge validate project.json
 npx agentbroko video-forge render project.json
 npx agentbroko video-forge short --type story --theme golden -o outputs/story_short.mp4
+npx agentbroko video-forge short --template three_men_in_cave --audio audio/master.wav -o outputs/ummah_ep01.mp4
 npx agentbroko video-forge speak --text "Welcome to AgentBroko." --output audio/vo.wav --engine auto
 ```
+
+## Stories of the Ummah templates
+
+Video Forge includes reusable 9:16 storytelling templates under
+`templates/stories_of_the_ummah/` in this skill package. The installed CLI also
+ships the runtime copies under `src/video_forge/templates/stories_of_the_ummah/`:
+
+- `three_men_in_cave` — an eight-beat cave, supplication, and resolution structure.
+- `mercy_to_a_dog` — a compassion and reflection structure.
+- `generic_episode` — a safe starting structure for a verified story.
+
+Use `--template` to select one. The renderer writes an `.audio-guide.md` file beside the MP4 with narration, music, and ducking guidance. Provide a mastered file with `--audio` when available. Templates intentionally include citation reminders; verify the exact source before publication and do not invent religious facts.
 
 ## Output expectations
 
