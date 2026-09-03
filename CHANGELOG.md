@@ -2,6 +2,12 @@
 
 All notable changes will be documented here. This project follows Semantic Versioning where practical.
 
+## 1.4.4 - 2026-09-04
+
+### Packaging and Release
+- Published the final OpenAI skills-only plugin package with required icon, logo, skill directories, and reusable storytelling templates.
+- Synced npm, Python, AgentBroko, API, and plugin manifest versions.
+
 ## 1.4.3 - 2026-09-04
 
 ### Stories of the Ummah Templates
