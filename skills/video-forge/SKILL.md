@@ -1,7 +1,7 @@
 ---
 name: video-forge
 description: Create and edit local videos, reels, subtitles, and narration using FFmpeg and AgentBroko's procedural video engine.
-version: 1.4.0
+version: 1.4.3
 author: AgentBroko
 license: MIT
 tags:
