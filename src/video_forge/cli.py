@@ -315,10 +315,20 @@ def main(argv: list[str] | None = None) -> int:
             if template:
                 guide_path = Path(out_file).with_suffix(".audio-guide.md")
                 audio = template.get("audio", {})
-                guide = "# Audio Guide\n\n"
+                story = template.get("story", {})
+                visual = template.get("visual_style", {})
+                guide = "# Story Production Guide\n\n"
+                guide += f"- Series: {template.get('series', '')}\n"
+                guide += f"- Title: {template.get('title', '')}\n"
+                guide += f"- Source: {template.get('source', '')}\n"
+                guide += f"- Genre / era / location: {story.get('genre', '')} / {story.get('era', '')} / {story.get('location', '')}\n"
+                guide += f"- Visual style: {visual.get('render_mode', '')}, palette {visual.get('palette', args.theme)}, camera {visual.get('camera', '')}\n"
+                guide += "\n## Audio\n\n"
                 guide += f"- Narration: {audio.get('narration', '')}\n"
                 guide += f"- Music: {audio.get('music', '')}\n"
+                guide += f"- Sound design: {', '.join(audio.get('sound_design', []))}\n"
                 guide += f"- Mix: {audio.get('mix', '')}\n"
+                guide += "\nVerify every source and label dramatization or fiction before publication.\n"
                 guide_path.write_text(guide, encoding="utf-8")
                 print(f"✓ Wrote audio/music guide: {guide_path}")
             print(f"✓ Rendered vertical short: {out_file}")

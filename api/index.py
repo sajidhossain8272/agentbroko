@@ -30,7 +30,7 @@ CHATGPT_OPENAPI = {
     "openapi": "3.0.3",
     "info": {
         "title": "AgentBroko",
-        "version": "1.4.4",
+        "version": "1.4.5",
         "description": "Generate local-first video project blueprints and discover AgentBroko skills.",
     },
     "servers": [{"url": "https://agentbroko.vercel.app"}],

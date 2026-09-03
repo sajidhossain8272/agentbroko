@@ -1,7 +1,7 @@
 ---
 name: video-edit
 description: Optional desktop editing workflow for polishing an existing video, reel, or project with a local NLE or an external MCP video editor. Use when the user wants to edit existing footage, trim timelines, refine cuts, or apply final polish after local generation.
-version: 1.4.3
+version: 1.4.5
 author: AgentBroko
 license: MIT
 tags:

@@ -63,6 +63,14 @@ Use Video Forge to build broadcast-quality MP4 videos, 9:16 vertical shorts, or 
    npx agentbroko video-forge render my-video/project.json
    ```
 
+6. **Universal Storytelling Templates**:
+    Reuse the production structure behind Stories of the Ummah and adapt it to ancient civilizations, realistic history, original fiction, or futuristic stories:
+    ```bash
+    npx agentbroko video-forge short --template universal_story -o outputs/story.mp4
+    npx agentbroko video-forge short --template three_men_in_cave --audio audio/master.wav -o outputs/ummah_ep01.mp4
+    ```
+    The universal template covers story arc, era, location, environments, faceless characters, camera motion, particles, lighting, transitions, mastering, narration, music, sound design, captions, thumbnails, SEO, and delivery. Verify historical or religious sources and label fiction or dramatization clearly.
+
 6. **Stories of the Ummah Templates**:
     Use reusable 9:16 narrative structures instead of rebuilding each story from scratch:
     ```bash
@@ -270,6 +278,12 @@ SKILL_REGISTRY = {
         "sample_file": ("examples/sample_project.json", json.dumps(SAMPLE_PROJECT_JSON, indent=2)),
         "command_hint": "npx agentbroko video-forge generate 'Brief' --seconds 30",
         "capabilities": ["video-generation", "reels-and-shorts", "subtitles", "narration", "ffmpeg-rendering"],
+        "template_files": [
+            "generic_episode.json",
+            "mercy_to_a_dog.json",
+            "three_men_in_cave.json",
+            "universal_story.json",
+        ],
     },
     "video-edit": {
         "title": "🎞️ Video Edit",
@@ -410,6 +424,16 @@ def install_skills(
             if not sample_full_path.exists():
                 sample_full_path.write_text(sample_data.strip() + "\n", encoding="utf-8")
                 created_files.append(str(sample_full_path))
+
+        # Ship reusable story templates with the installed Video Forge skill.
+        for template_name in meta.get("template_files", []):
+            source_path = Path(__file__).resolve().parents[2] / "skills" / key / "templates" / "stories_of_the_ummah" / template_name
+            if source_path.exists():
+                template_path = dest_dir / "templates" / "stories_of_the_ummah" / template_name
+                template_path.parent.mkdir(parents=True, exist_ok=True)
+                if not template_path.exists():
+                    shutil.copyfile(source_path, template_path)
+                    created_files.append(str(template_path))
 
     # Detect existing installed skills in .agents/skills to keep AGENTS.md complete
     currently_installed = set(target_keys)

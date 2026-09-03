@@ -16,7 +16,7 @@ def test_agentbroko_cli_version(capsys):
     rc = agentbroko_main(["--version"])
     assert rc == 0
     captured = capsys.readouterr()
-    assert "1.4.4" in captured.out
+    assert "1.4.5" in captured.out
 
 
 def test_video_forge_cli_doctor(capsys):

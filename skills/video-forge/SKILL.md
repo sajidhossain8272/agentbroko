@@ -1,7 +1,7 @@
 ---
 name: video-forge
 description: Create and edit local videos, reels, subtitles, and narration using FFmpeg and AgentBroko's procedural video engine.
-version: 1.4.3
+version: 1.4.5
 author: AgentBroko
 license: MIT
 tags:
@@ -69,8 +69,9 @@ ships the runtime copies under `src/video_forge/templates/stories_of_the_ummah/`
 - `three_men_in_cave` — an eight-beat cave, supplication, and resolution structure.
 - `mercy_to_a_dog` — a compassion and reflection structure.
 - `generic_episode` — a safe starting structure for a verified story.
+- `universal_story` — a fully configurable blueprint for Ummah, ancient, historical, realistic, fictional, or futuristic storytelling.
 
-Use `--template` to select one. The renderer writes an `.audio-guide.md` file beside the MP4 with narration, music, and ducking guidance. Provide a mastered file with `--audio` when available. Templates intentionally include citation reminders; verify the exact source before publication and do not invent religious facts.
+Use `--template` to select one. The universal blueprint covers story arc, era, location, environment, faceless characters, camera motion, particles, lighting, transitions, mastering, narration, music, sound design, captions, thumbnails, SEO, and delivery settings. The renderer writes an `.audio-guide.md` file beside the MP4 with narration, music, and ducking guidance. Provide a mastered file with `--audio` when available. Templates intentionally include citation reminders; verify the exact source before publication and do not invent religious facts.
 
 ## Output expectations
 

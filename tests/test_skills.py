@@ -7,6 +7,7 @@ def test_install_all_skills(tmp_path: Path):
     created = install_skills(tmp_path)
     assert len(created) >= 5
     assert (tmp_path / ".agents" / "skills" / "video-forge" / "SKILL.md").exists()
+    assert (tmp_path / ".agents" / "skills" / "video-forge" / "templates" / "stories_of_the_ummah" / "universal_story.json").exists()
     assert (tmp_path / ".agents" / "skills" / "video-edit" / "SKILL.md").exists()
     assert (tmp_path / ".agents" / "skills" / "pdf-playbook" / "SKILL.md").exists()
     assert (tmp_path / ".agents" / "skills" / "pdf" / "SKILL.md").exists()

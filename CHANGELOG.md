@@ -2,6 +2,13 @@
 
 All notable changes will be documented here. This project follows Semantic Versioning where practical.
 
+## 1.4.5 - 2026-09-04
+
+### Universal Storytelling Production System
+- Added enriched universal story templates covering Ummah, ancient, historical, realistic, fictional, and futuristic storytelling.
+- Added configurable environments, characters, effects, camera, captions, thumbnails, SEO, audio, and delivery guidance.
+- Added storm/cave/celestial rendering behavior and bundled template installation for Video Forge agents.
+
 ## 1.4.4 - 2026-09-04
 
 ### Packaging and Release

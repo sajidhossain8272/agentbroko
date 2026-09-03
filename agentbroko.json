@@ -1,14 +1,14 @@
 {
   "schema": "https://agentbroko.dev/schema/v1",
   "name": "agentbroko",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "Open AgentBroko skill registry for local-first AI video and document automation.",
   "skills": [
     {
       "name": "video-forge",
       "description": "Create and edit local videos, shorts, captions, and narration with FFmpeg and Python.",
       "path": "skills/video-forge",
-      "version": "1.4.4",
+      "version": "1.4.5",
       "capabilities": [
         "video-generation",
         "reels-and-shorts",
