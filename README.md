@@ -27,6 +27,7 @@ npx agentbroko init
 
 # Or install just ONE specific skill:
 npx agentbroko add video-forge     # Add Video Forge only
+npx agentbroko add video-edit       # Add optional desktop edit workflow
 npx agentbroko add pdf-playbook   # Add PDF Playbook only
 npx agentbroko add pdf            # Add Offline PDF Tools only
 
@@ -47,6 +48,9 @@ Open your AI editor and prompt your agent:
 
 #### 🎬 For Video Generation:
 > *"Create a 30-second vertical TikTok short for our SaaS launch. Use Video Forge to write the narration, synthesize speech, extract subtitles, and render the final MP4 video."*
+
+#### 🎞️ For Post-Production Editing:
+> *"Use the optional video-edit workflow to trim and polish this existing reel. Keep the final cut in 9:16 and preserve the local-first workflow."*
 
 #### 📄 For Developer Handbooks:
 > *"Generate a 20-page developer playbook on 'Building AI Agents with Microservices' for Backend Engineers using the PDF Playbook skill."*
@@ -161,6 +165,7 @@ If an AI agent gets stuck or encounters an error during execution:
 | **Workspace Init** | `npx agentbroko init` | Provisions all `.agents/skills/` & rules | Offline (0 KB) |
 | **Add Single Skill** | `npx agentbroko add <skill>` | Provisions a specific skill | Offline (0 KB) |
 | **Video Forge** | `agentbroko video-forge` | 60 FPS MP4 video with TTS & captions | Offline (0 KB) |
+| **Video Edit** | `agentbroko add video-edit` | Optional polishing pass for existing footage or MCP-connected desktop editors | Optional |
 | **PDF Playbook** | `agentbroko pdf-playbook` | 20-page formatted `.pdf` handbook | Offline / AI Agent / Ollama |
 | **PDF Tools** | `agentbroko pdf` | Clean text extraction & page rendering | Offline (0 KB) |
 

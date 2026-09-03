@@ -5,8 +5,9 @@ from agentbroko.cli import main
 
 def test_install_all_skills(tmp_path: Path):
     created = install_skills(tmp_path)
-    assert len(created) >= 4
+    assert len(created) >= 5
     assert (tmp_path / ".agents" / "skills" / "video-forge" / "SKILL.md").exists()
+    assert (tmp_path / ".agents" / "skills" / "video-edit" / "SKILL.md").exists()
     assert (tmp_path / ".agents" / "skills" / "pdf-playbook" / "SKILL.md").exists()
     assert (tmp_path / ".agents" / "skills" / "pdf" / "SKILL.md").exists()
     assert (tmp_path / ".agents" / "AGENTS.md").exists()
@@ -43,10 +44,15 @@ def test_standard_skill_packaging_exists():
     assert "name: video-forge" in (skill_dir / "SKILL.md").read_text(encoding="utf-8")
     assert "description:" in (skill_dir / "SKILL.md").read_text(encoding="utf-8")
 
+    optional_skill_dir = Path(__file__).resolve().parents[1] / "skills" / "video-edit"
+    assert (optional_skill_dir / "SKILL.md").exists()
+    assert "name: video-edit" in (optional_skill_dir / "SKILL.md").read_text(encoding="utf-8")
+
     root_manifest = Path(__file__).resolve().parents[1] / "agentbroko.json"
     assert root_manifest.exists()
     text = root_manifest.read_text(encoding="utf-8")
     assert '"name": "video-forge"' in text
+    assert '"name": "video-edit"' in text
     assert '"skills":' in text
 
 

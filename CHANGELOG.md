@@ -2,6 +2,13 @@
 
 All notable changes will be documented here. This project follows Semantic Versioning where practical.
 
+## 1.4.1 - 2026-09-04
+
+### Optional Video Edit Workflow
+- Added discoverable `video-edit` skill packaging for existing footage, reels, timeline polish, caption sync, and optional MCP-connected desktop editing.
+- Documented routing between local Video Forge generation and external editing tools without adding a mandatory editor dependency.
+- Added reusable 9:16 short, social metadata, and post-production workflow guidance from the Video Edit workspace.
+
 ## 1.4.0 - 2026-08-24
 
 ### 🚀 Video Forge 10/10 Masterclass Procedural & Cinematic Engine

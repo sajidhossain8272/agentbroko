@@ -80,6 +80,60 @@ If you encounter errors during video generation:
    - Run `npx agentbroko video-forge validate <file>` to view exact schema errors.
 """
 
+VIDEO_EDIT_SKILL_MD = """---
+name: video-edit
+description: Optional desktop editing workflow for polishing an existing video, reel, or project with a local NLE or an external MCP video editor. Use when the user wants to edit existing footage, trim timelines, refine cuts, or apply final polish after local generation.
+---
+
+# Video Edit Skill Guide
+
+Use this skill when the request is about editing or polishing an existing video project rather than creating a brand-new procedural asset from scratch.
+
+This is intentionally optional and separate from AgentBroko's local-first Video Forge engine. Video Forge remains the default for generating a video from a brief or spec. Video Edit is for the extra step where a user already has footage, a project timeline, or a desktop editor workflow they want to continue in a professional editing tool.
+
+## When to use this skill
+
+Choose this skill for requests such as:
+- trim or rearrange existing footage
+- polish a generated short with a final desktop edit pass
+- use an optional external MCP video editor when connected
+- create a final 9:16 cut, social cut, or delivery export
+- move from a generated draft to a final marketable edit
+
+## Routing rules
+
+1. If the user wants a new video from a prompt or product brief, prefer `video-forge`.
+2. If the user already has footage or a project and wants editing, trim, pacing, B-roll, captions, or final polish, use `video-edit`.
+3. If a dedicated video editor is available via MCP, connect it as an optional tool; do not fake a built-in integration that the repo does not own.
+
+## Reusable workflow patterns from the Video Edit workspace
+
+- 9:16 vertical shorts and reels
+- social-first storytelling structures
+- caption / subtitle synchronization
+- thumbnail and SEO metadata creation
+- story, romantic, and tech short templates
+- fast local export and validation before final delivery
+
+## Commands
+
+```bash
+# Preferred local generation path
+npx agentbroko video-forge short --type story --theme golden -o outputs/story_short.mp4
+
+# Optional desktop editing workflow when an external editor/MCP bridge is available
+npx agentbroko add video-edit
+```
+
+## Output expectations
+
+The agent should prefer the local generator when a new video is being created from scratch, and use the optional editor only when the user explicitly wants timeline editing or a final production polish pass on existing footage.
+
+## Safety and trust
+
+This skill is optional and local-first. It must not pretend to have a direct media-editor SDK unless one is explicitly connected in the runtime environment. The repository remains honest about the boundary between AgentBroko's built-in engine and external desktop editing tools.
+"""
+
 PDF_PLAYBOOK_SKILL_MD = """---
 name: pdf-playbook
 description: Publication-grade 20-page developer handbook and technical documentation PDF generation using ReportLab. Use whenever the user asks to generate a guide, book, playbook, handbook, or multi-page documentation PDF.
@@ -207,6 +261,14 @@ SKILL_REGISTRY = {
         "sample_file": ("examples/sample_project.json", json.dumps(SAMPLE_PROJECT_JSON, indent=2)),
         "command_hint": "npx agentbroko video-forge generate 'Brief' --seconds 30",
         "capabilities": ["video-generation", "reels-and-shorts", "subtitles", "narration", "ffmpeg-rendering"],
+    },
+    "video-edit": {
+        "title": "🎞️ Video Edit",
+        "description": "Optional desktop editing workflow for polishing existing footage, reels, and final delivery cuts",
+        "skill_md": VIDEO_EDIT_SKILL_MD,
+        "sample_file": None,
+        "command_hint": "npx agentbroko add video-edit",
+        "capabilities": ["video-editing", "timeline-polish", "short-form-post-production", "caption-sync", "optional-mcp-integration"],
     },
     "pdf-playbook": {
         "title": "📄 PDF Playbook",

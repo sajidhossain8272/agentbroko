@@ -10,6 +10,7 @@ from . import __version__
 
 SKILLS = {
     "video-forge": "10/10 Procedural video engine, prompt-to-video, vertical shorts, and neural speech",
+    "video-edit": "Optional editing workflow for existing footage, reels, and final polish via desktop or MCP tools",
     "pdf-playbook": "Premium branded 20-page developer handbook PDF generation with ReportLab",
     "pdf": "Offline local PDF metadata inspection, text extraction, and page rendering",
 }
@@ -26,12 +27,14 @@ AGENT_GUIDE_TEXT = """
 
 ► Available Skills:
   1. video-forge   - Video editing, speech voiceovers, captions, and FFmpeg renders.
-  2. pdf-playbook  - 20-page developer handbook synthesis with ReportLab.
-  3. pdf           - Local PDF metadata, text extraction, and page rendering.
+    2. video-edit    - Optional final editing pass for existing footage or desktop/MCP workflows.
+    3. pdf-playbook  - 20-page developer handbook synthesis with ReportLab.
+    4. pdf           - Local PDF metadata, text extraction, and page rendering.
 
 ► Adding Skills to a Project:
   - Install all skills:     npx agentbroko init
   - Install single skill:   npx agentbroko add video-forge
+    - Install desktop edit:   npx agentbroko add video-edit
   - Install PDF Playbook:   npx agentbroko add pdf-playbook
 
 ► 🆘 What to Do if an Agent is Stuck / Facing Errors:
@@ -66,12 +69,13 @@ def print_skills_menu() -> None:
     print("\nWorkspace Setup Commands:")
     print("  agentbroko init                  Provision all skills (.agents/skills/) in workspace")
     print("  agentbroko init <skill>          Provision a single skill (e.g. agentbroko init video-forge)")
-    print("  agentbroko add <skill>           Add a specific skill to workspace (video-forge, pdf-playbook, pdf)")
+    print("  agentbroko add <skill>           Add a specific skill to workspace (video-forge, video-edit, pdf-playbook, pdf)")
     print("  agentbroko clone [dir]           Clone full AgentBroko starter repository")
     print("  agentbroko doctor                Diagnose local FFmpeg, Python, ReportLab, and TTS engines")
     print("  agentbroko guide                 Show complete AI coding agent execution and stuck recovery guide")
     print("\nDirect Skill Commands:")
     print("  agentbroko video-forge ...       Execute Video Forge CLI")
+    print("  agentbroko video-edit ...        Optional project edit workflow guidance")
     print("  agentbroko pdf-playbook ...      Execute PDF Playbook CLI")
     print("  agentbroko pdf ...               Execute PDF Tools CLI")
     print("\nDocumentation: https://agentbroko.vercel.app | GitHub: https://github.com/sajidhossain8272/agentbroko\n")
