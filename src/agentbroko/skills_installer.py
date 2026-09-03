@@ -206,6 +206,7 @@ SKILL_REGISTRY = {
         "skill_md": VIDEO_FORGE_SKILL_MD,
         "sample_file": ("examples/sample_project.json", json.dumps(SAMPLE_PROJECT_JSON, indent=2)),
         "command_hint": "npx agentbroko video-forge generate 'Brief' --seconds 30",
+        "capabilities": ["video-generation", "reels-and-shorts", "subtitles", "narration", "ffmpeg-rendering"],
     },
     "pdf-playbook": {
         "title": "📄 PDF Playbook",
@@ -213,6 +214,7 @@ SKILL_REGISTRY = {
         "skill_md": PDF_PLAYBOOK_SKILL_MD,
         "sample_file": ("examples/sample_spec.json", json.dumps(SAMPLE_PLAYBOOK_SPEC, indent=2)),
         "command_hint": "npx agentbroko pdf-playbook --spec playbook_spec.json --output out.pdf",
+        "capabilities": ["pdf-generation", "playbooks", "documentation"],
     },
     "pdf": {
         "title": "📑 PDF Tools",
@@ -220,8 +222,26 @@ SKILL_REGISTRY = {
         "skill_md": PDF_TOOLS_SKILL_MD,
         "sample_file": None,
         "command_hint": "npx agentbroko pdf info document.pdf",
+        "capabilities": ["pdf-inspection", "text-extraction", "page-rendering"],
     }
 }
+
+
+def search_skills(query: str | None = None) -> list[tuple[str, dict[str, object]]]:
+    """Return a list of skills matching a search query. A blank query returns all skills."""
+    query_tokens = (query or "").strip().lower().split()
+    matches: list[tuple[str, dict[str, object]]] = []
+
+    for name, meta in SKILL_REGISTRY.items():
+        haystack = " ".join([
+            name,
+            str(meta.get("description", "")),
+            *[str(item) for item in meta.get("capabilities", [])],
+        ]).lower()
+        if not query_tokens or all(token in haystack for token in query_tokens):
+            matches.append((name, meta))
+
+    return matches
 
 
 def build_agents_md(installed_skills: list[str]) -> str:

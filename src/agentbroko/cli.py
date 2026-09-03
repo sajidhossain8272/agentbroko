@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 from video_forge.cli import main as video_forge_main
 from .pdf_skill import main as pdf_main
-from .skills_installer import install_skills, clone_repository, SKILL_REGISTRY
+from .skills_installer import install_skills, clone_repository, SKILL_REGISTRY, search_skills
 from . import __version__
 
 SKILLS = {
@@ -93,6 +93,20 @@ def main(argv: list[str] | None = None) -> int:
     command = argv[0]
     rest = argv[1:]
 
+    if command in ("search", "find"):
+        query = " ".join(rest).strip()
+        matches = search_skills(query)
+        if not matches:
+            print(f"No AgentBroko skills matched '{query or 'all'}'.")
+            return 1
+        print("AgentBroko Skills:")
+        for name, meta in matches:
+            capabilities = ", ".join(meta.get("capabilities", [])) if isinstance(meta.get("capabilities", []), list) else ""
+            print(f"  • {name}: {meta['description']}")
+            if capabilities:
+                print(f"      capabilities: {capabilities}")
+        return 0
+
     # 1. Guide / Agent recovery command
     if command in ("guide", "agent-rules", "troubleshooting", "stuck"):
         print(AGENT_GUIDE_TEXT)
@@ -129,16 +143,16 @@ def main(argv: list[str] | None = None) -> int:
             return 1
 
     # 4. Add single skill command
-    if command == "add":
+    if command in ("add", "install"):
         if not rest:
-            print("Usage: agentbroko add <skill-name> [target-directory]")
+            print("Usage: agentbroko install <skill-name> [target-directory]")
             print(f"Available skills: {', '.join(SKILL_REGISTRY.keys())}")
             return 1
-        
+
         skill_name = rest[0]
         target_dir = rest[1] if len(rest) > 1 else "."
         fetch_remote = "--remote" in rest or "--fetch" in rest
-        
+
         try:
             created = install_skills(target_dir=target_dir, skill_name=skill_name, fetch_remote=fetch_remote)
             print(f"\n✓ Successfully added skill '{skill_name}' to workspace ({Path(target_dir).resolve()}):")

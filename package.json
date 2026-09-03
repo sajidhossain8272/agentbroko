@@ -9,6 +9,8 @@
   "files": [
     "bin",
     "src",
+    "skills",
+    "agentbroko.json",
     "static",
     "api",
     "README.md",

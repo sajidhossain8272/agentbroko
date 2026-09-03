@@ -37,6 +37,26 @@ def test_cli_init_command(tmp_path: Path):
     assert result == 0
     assert (tmp_path / ".agents" / "skills" / "video-forge" / "SKILL.md").exists()
 
+def test_standard_skill_packaging_exists():
+    skill_dir = Path(__file__).resolve().parents[1] / "skills" / "video-forge"
+    assert (skill_dir / "SKILL.md").exists()
+    assert "name: video-forge" in (skill_dir / "SKILL.md").read_text(encoding="utf-8")
+    assert "description:" in (skill_dir / "SKILL.md").read_text(encoding="utf-8")
+
+    root_manifest = Path(__file__).resolve().parents[1] / "agentbroko.json"
+    assert root_manifest.exists()
+    text = root_manifest.read_text(encoding="utf-8")
+    assert '"name": "video-forge"' in text
+    assert '"skills":' in text
+
+
+def test_cli_search_lists_video_skill(capsys):
+    assert main(["search", "video"]) == 0
+    captured = capsys.readouterr()
+    assert "video-forge" in captured.out.lower()
+    assert "video" in captured.out.lower()
+
+
 def test_cli_guide_and_skills_menu(capsys):
     assert main(["guide"]) == 0
     captured = capsys.readouterr()
