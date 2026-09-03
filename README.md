@@ -35,6 +35,10 @@ npx agentbroko add pdf            # Add Offline PDF Tools only
 npx agentbroko clone my-agent-workspace
 ```
 
+### Connect AgentBroko to ChatGPT
+
+Deploy the repository to a public HTTPS host, then import `https://YOUR-DOMAIN/openapi.json` as a Custom GPT Action. See [docs/CHATGPT.md](docs/CHATGPT.md) for the setup and the optional legacy plugin manifest.
+
 This automatically creates:
 - `.agents/skills/<skill>/SKILL.md` (Formal skill definition contract & CLI blueprints)
 - `.agents/skills/<skill>/examples/` (Sample template configurations)

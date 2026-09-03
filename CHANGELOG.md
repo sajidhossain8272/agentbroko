@@ -2,6 +2,13 @@
 
 All notable changes will be documented here. This project follows Semantic Versioning where practical.
 
+## 1.4.2 - 2026-09-04
+
+### ChatGPT Integration
+- Added an OpenAPI contract for registering AgentBroko as a Custom GPT Action.
+- Added a legacy `ai-plugin.json` compatibility manifest for plugin discovery tools.
+- Added API contract tests and setup documentation.
+
 ## 1.4.1 - 2026-09-04
 
 ### Optional Video Edit Workflow
