@@ -2,6 +2,22 @@
 
 All notable changes will be documented here. This project follows Semantic Versioning where practical.
 
+## 1.4.6 - 2026-09-04
+
+### PDF, Thumbnail, SEO & Skill Catalog
+- Added `pdf-tools` skill for offline PDF inspection, text extraction, and page rendering.
+- Added `pdf-playbook` skill for structured handbook generation.
+- Added `thumbnail-generator` skill for platform-specific cover frames and safe-area text.
+- Added `seo-metadata-writer` skill for accurate titles, descriptions, tags, hashtags, timestamps, and pinned comments.
+- Added `script-storyboard-writer` skill for timed narration, scene beats, and production storyboards.
+- Added `caption-translator` skill for subtitle translation preserving timing and meaning.
+- Added `content-series-planner` skill for multi-episode series planning with source tracking.
+- Added `audio-mixer` skill for narration, music ducking, loudness, and clipping checks.
+- Added `social-exporter` skill for validated Shorts, Reels, TikTok, square, and landscape deliverables.
+- Added universal storytelling template with environments, characters, effects, audio, captions, thumbnails, SEO, and delivery guidance.
+- Added template installation into the Video Forge skill package.
+- Added ChatGPT skill names and CLI hints.
+
 ## 1.4.5 - 2026-09-04
 
 ### Universal Storytelling Production System
