@@ -31,3 +31,5 @@ agentbroko.lock
 heartbeat.json
 agent_state.json
 *.log
+.vercel
+.env*

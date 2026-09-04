@@ -13,6 +13,7 @@ SKILLS = {
     "video-edit": "Optional editing workflow for existing footage, reels, and final polish via desktop or MCP tools",
     "pdf-playbook": "Premium branded 20-page developer handbook PDF generation with ReportLab",
     "pdf": "Offline local PDF metadata inspection, text extraction, and page rendering",
+    "pdf-tools": "Offline local PDF metadata inspection, text extraction, and page rendering",
 }
 
 AGENT_GUIDE_TEXT = """

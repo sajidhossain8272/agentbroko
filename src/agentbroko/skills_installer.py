@@ -238,6 +238,41 @@ If you encounter errors during PDF inspection or rendering:
    - Text extraction works out-of-the-box. For high-resolution image rasterization, ensure `pdftoppm` (poppler-utils) or `pymupdf` is installed.
 """
 
+WORKFLOW_SKILL_SPECS = {
+    "thumbnail-generator": ("Thumbnail Generator", "Design video thumbnails and social cover frames with readable safe-area text and platform dimensions.", "npx agentbroko add thumbnail-generator"),
+    "seo-metadata-writer": ("SEO Metadata Writer", "Write accurate video titles, descriptions, tags, hashtags, timestamps, and pinned comments.", "npx agentbroko add seo-metadata-writer"),
+    "script-storyboard-writer": ("Script and Storyboard Writer", "Turn a video idea into timed narration, scene beats, captions, and a production storyboard.", "npx agentbroko add script-storyboard-writer"),
+    "caption-translator": ("Caption Translator", "Translate subtitles while preserving timing, reading speed, meaning, and line length.", "npx agentbroko add caption-translator"),
+    "content-series-planner": ("Content Series Planner", "Plan multi-episode video series with arcs, cadence, source tracking, and reusable templates.", "npx agentbroko add content-series-planner"),
+    "audio-mixer": ("Audio Mixer", "Plan and perform local narration, music ducking, sound design, loudness, and clipping checks.", "npx agentbroko add audio-mixer"),
+    "social-exporter": ("Social Exporter", "Prepare validated Shorts, Reels, TikTok, square, and landscape video deliverables.", "npx agentbroko add social-exporter"),
+}
+
+
+def workflow_skill_md(name: str, description: str) -> str:
+    """Create concise installer instructions for a packaged workflow skill."""
+    return f"""---
+name: {name}
+description: {description}
+---
+
+# {name.replace('-', ' ').title()}
+
+Use this skill when the user requests: {description.lower()}
+
+## Workflow
+
+1. Clarify the platform, source assets, audience, format, and desired output.
+2. Preserve user-provided facts, timing, names, citations, and licensing constraints.
+3. Produce the requested plan or artifact with explicit assumptions and validation steps.
+4. Use local AgentBroko/FFmpeg commands when available and report the exact output path.
+5. Never claim an export, translation, render, or upload happened unless it actually completed.
+
+## Safety
+
+Keep private media local unless the user explicitly approves an external service. Do not invent sources, quotes, identities, rights, or performance guarantees. Label fiction and dramatization clearly.
+"""
+
 SAMPLE_PROJECT_JSON = {
     "output": "outputs/final.mp4",
     "title": "AgentBroko Demo Project",
@@ -310,6 +345,26 @@ SKILL_REGISTRY = {
         "capabilities": ["pdf-inspection", "text-extraction", "page-rendering"],
     }
 }
+
+# Keep the historical `pdf` CLI alias while exposing the clearer plugin skill name.
+SKILL_REGISTRY["pdf-tools"] = {
+    "title": "📑 PDF Tools",
+    "description": "Offline local PDF inspection, text extraction, and page rendering with zero cloud upload",
+    "skill_md": PDF_TOOLS_SKILL_MD,
+    "sample_file": None,
+    "command_hint": "npx agentbroko pdf info document.pdf",
+    "capabilities": ["pdf-inspection", "text-extraction", "page-rendering", "chatgpt-workflow"],
+}
+
+for _skill_name, (_title, _description, _command_hint) in WORKFLOW_SKILL_SPECS.items():
+    SKILL_REGISTRY[_skill_name] = {
+        "title": _title,
+        "description": _description,
+        "skill_md": workflow_skill_md(_skill_name, _description),
+        "sample_file": None,
+        "command_hint": _command_hint,
+        "capabilities": [_skill_name, "local-first", "chatgpt-workflow"],
+    }
 
 
 def search_skills(query: str | None = None) -> list[tuple[str, dict[str, object]]]:

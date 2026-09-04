@@ -57,6 +57,20 @@ def test_standard_skill_packaging_exists():
     assert '"skills":' in text
 
 
+def test_requested_chatgpt_skills_are_packaged_and_registered():
+    root = Path(__file__).resolve().parents[1]
+    requested = {
+        "pdf-playbook", "pdf-tools", "thumbnail-generator", "seo-metadata-writer",
+        "script-storyboard-writer", "caption-translator", "content-series-planner",
+        "audio-mixer", "social-exporter",
+    }
+    assert requested.issubset(SKILL_REGISTRY)
+    for skill_name in requested:
+        skill_path = root / "skills" / skill_name / "SKILL.md"
+        assert skill_path.exists()
+        assert f"name: {skill_name}" in skill_path.read_text(encoding="utf-8")
+
+
 def test_cli_search_lists_video_skill(capsys):
     assert main(["search", "video"]) == 0
     captured = capsys.readouterr()
